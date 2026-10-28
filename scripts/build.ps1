@@ -22,6 +22,6 @@ Copy-Item -LiteralPath (Join-Path $projectRoot 'docs\audit-report.md') -Destinat
 $artifactDir = Join-Path $projectRoot 'artifacts'
 New-Item -ItemType Directory -Path $artifactDir -Force | Out-Null
 $version = ([xml](Get-Content -LiteralPath $project -Raw)).Project.PropertyGroup.Version
-$zip = Join-Path $artifactDir "Divine-Numbers-$version-test-build.zip"
+$zip = Join-Path $artifactDir "Divine-Numbers-$version.zip"
 Compress-Archive -Path (Join-Path $stageDir '*') -DestinationPath $zip -Force
 Get-FileHash -LiteralPath $dll, $zip -Algorithm SHA256

@@ -17,7 +17,7 @@ dotnet build src/ChainedBeasts.DivineNumbers/ChainedBeasts.DivineNumbers.csproj 
 dotnet run --project tests/LogicChecks/LogicChecks.csproj -c Release
 ```
 
-With the game closed, copy `src/ChainedBeasts.DivineNumbers/bin/Release/net6.0/ChainedBeasts.DivineNumbers.dll` into `BepInEx/plugins/ChainedBeasts.DivineNumbers/`. Only this DLL is needed; there is no Foundation dependency. Remove it to uninstall. `scripts/build.ps1` builds, verifies and packages a test ZIP (Python 3.11+ is required for provenance checks). No GitHub release has been published for this update.
+Download the ZIP from [GitHub Releases](https://github.com/Krrrrrrk/Chained-Beasts_Divine-Numbers/releases/latest) and, with the game closed, merge its `BepInEx` folder into the game folder. For a source build, copy `src/ChainedBeasts.DivineNumbers/bin/Release/net6.0/ChainedBeasts.DivineNumbers.dll` into `BepInEx/plugins/ChainedBeasts.DivineNumbers/`. Only this DLL is needed; there is no Foundation dependency. Remove it to uninstall. `scripts/build.ps1` builds, verifies and packages the ZIP (Python 3.11+ is required for provenance checks).
 
 The mod checks the audited binary, metadata and two asset files before enabling UI hooks. A changed build disables it until re-audited. It changes no combat, saves or network traffic.
 

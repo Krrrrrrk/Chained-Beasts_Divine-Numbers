@@ -1,4 +1,4 @@
-Divine Numbers 0.2.0 - TEST BUILD
+Divine Numbers 0.2.0
 
 Requires Steam build 26231777 and an existing BepInEx IL2CPP installation.
 No Foundation dependency.

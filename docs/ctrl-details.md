@@ -1,4 +1,4 @@
-# Ctrl details: 0.2.0 test build
+# Ctrl details: 0.2.0
 
 Hold either Ctrl key to see researched numbers in a separate native-style panel. Original descriptions stay intact and Shift retains its normal explanations. The user confirmed the 0.1.1 character-select support and smaller text work well. Expanded 0.2.0 interactions still need manual verification.
 
