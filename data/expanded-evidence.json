@@ -1,0 +1,866 @@
+{
+  "steamBuildId": "26231777",
+  "validation": "static native code and serialized assets; expanded runtime UI and gameplay not agent-tested",
+  "gameFiles": [
+    {
+      "path": "GameAssembly.dll",
+      "bytes": 87522304,
+      "sha256": "ba3ef02fa87da4c41bb27d7610539c9578132204f0fb5713833e2ef93415ce29"
+    },
+    {
+      "path": "ChainedBeasts_Data/il2cpp_data/Metadata/global-metadata.dat",
+      "bytes": 20312072,
+      "sha256": "b689ca1c435476874b1a2e6e0aab140f07af02a6a9700d8f457c79e89b170075"
+    },
+    {
+      "path": "ChainedBeasts_Data/level1",
+      "bytes": 282320,
+      "sha256": "2525f099cb56299f15a00b3f82c32495406b99e29f940cb948ae99d1ff7cf15d"
+    },
+    {
+      "path": "ChainedBeasts_Data/sharedassets1.assets",
+      "bytes": 308088312,
+      "sha256": "58e12dc39e28cabe47bf6fa42317b399f7b0a25dbbe6807dd21d2bfc1a593729"
+    }
+  ],
+  "nativeDumps": [
+    {
+      "file": "Player.txt",
+      "sha256": "e54237521c187c79d36a1744b3a440fd042d323483b012e40ea82704cb2e9fde"
+    },
+    {
+      "file": "PlayerData.txt",
+      "sha256": "d2d046844be90ff965a318e89d618e68a67d21e03c288f06ad40f89305863546"
+    },
+    {
+      "file": "PlayerCrowdData.txt",
+      "sha256": "f4a99dc2d4cf47b363478642e65ac07233d3eedfb1429dbe762735cba11d041b"
+    },
+    {
+      "file": "NetworkAgent.txt",
+      "sha256": "0445f626f2608ec4d414bef78f77b73fdd0a94332245167bb6c5a1b4a4b23ca3"
+    },
+    {
+      "file": "NetworkHealthObject.txt",
+      "sha256": "ce2c90eb3eb64423e0774532d284f32ad5e408f4b324e3bcc1ab916e476bd5a2"
+    },
+    {
+      "file": "RunDataManager.txt",
+      "sha256": "d6ea4e5314431820cb755af9097014c77b45b2d20a8a3693b884e4b19ec93497"
+    },
+    {
+      "file": "GladiatorConsts.txt",
+      "sha256": "8886d8bcd4a60a235ef5a5d101b79b471db80ad2f26ce548bccd344230415465"
+    },
+    {
+      "file": "Weapon.txt",
+      "sha256": "c4ea2c1435c4db6c16924717bd852a4450336d5d702f4fd5b58283582aeadd8a"
+    },
+    {
+      "file": "WeaponBow.txt",
+      "sha256": "8929479e0adee0e95cc75eee1b81af652429fd489d691b34d02ccf5f35a91a26"
+    },
+    {
+      "file": "WeaponPunch.txt",
+      "sha256": "ade05609948f627e498ac28ccd47bea18a0dcfecda69a64129d1690849cf3f0d"
+    },
+    {
+      "file": "WeaponKnockback.txt",
+      "sha256": "dadda27dde3832d16230009121556ac758deb08b5d12c46f7a52a1be4d448603"
+    },
+    {
+      "file": "WeaponWirecutters.txt",
+      "sha256": "8a217f75b0d4af325c2abe164b60c60ef1bb78e3fba104f93814ad4d8c60de36"
+    },
+    {
+      "file": "Enemy.txt",
+      "sha256": "6d25e2ba13ef714b0f8badad8a543087cd17fdea86b27c27ae57339837cba7c5"
+    },
+    {
+      "file": "EnemyManager.txt",
+      "sha256": "959337712266db126d81e0b19f66786fe99d06aa72f4893cf088c4f5b0864b73"
+    },
+    {
+      "file": "Chain.txt",
+      "sha256": "c192c89d71c75335fc4a41a68159bebb6973cc91cbc76a4413b0eb6ebd9f9fe6"
+    },
+    {
+      "file": "ChainManager.txt",
+      "sha256": "3d568a9870f7ea43e88f1c0f1cd5b25af832b510db9bbafb5890e169ada67d9e"
+    },
+    {
+      "file": "GameLevel.txt",
+      "sha256": "0077a71319c85fc818888845068cf6c06519cb523f42141d33497e05ca4fe31f"
+    },
+    {
+      "file": "NetworkPrefabSpawner.txt",
+      "sha256": "b682520a6f3b45855196f1f26865de9d1f12970e2a7f55c4f5303391e4ada961"
+    },
+    {
+      "file": "NetworkPrefabSpawnerList.txt",
+      "sha256": "c4ba45426704ba70f96f102b62bb8b57003756ac09766e51981a1cea4055ecf0"
+    },
+    {
+      "file": "UIGameLobbyTrainerRpc.txt",
+      "sha256": "eb2b4d8aec408ea9a563c06f8e3ac3f45e35e604512beb1edde7466ca4757fbb"
+    },
+    {
+      "file": "UIGameLobbyDoctorRpc.txt",
+      "sha256": "9a84e9b3ddeec2088fb68c0447299b0e52dc2f1d2dc83371f32ce665ef2c9218"
+    },
+    {
+      "file": "Pickup.txt",
+      "sha256": "9129af0bad515816f4b5a26211060883d5a085342d4af1de0e4abf41d70112dc"
+    },
+    {
+      "file": "PickupManager.txt",
+      "sha256": "bb09fee2557a8723a95b4630225c28419b98bf43f36abd07c5de95b3481ce304"
+    },
+    {
+      "file": "NearsightedVision.txt",
+      "sha256": "f13d8a842854d8e9a57555ee8a02e8dcd9784438ea39adfbcf22ae64c2365f09"
+    },
+    {
+      "file": "FarsightedVision.txt",
+      "sha256": "7b97052236b13d5f987ad8cfb6dc0f5e520ac7b331c18d8053b64e2a1f5b4b2d"
+    },
+    {
+      "file": "Glare.txt",
+      "sha256": "151640e5420c0e81d9ffe9c63e709d5766c2b9e347f29e8f46287bd2aaee9118"
+    },
+    {
+      "file": "DoubleVision.txt",
+      "sha256": "a01cb8c3a4fddab1bd6e8533395dc86bc319f757cb0a5a4e2409002e28249916"
+    },
+    {
+      "file": "BlackOutVision.txt",
+      "sha256": "055bad1be1ea71bc7e4234e69f6a003be8820106d5938efd281d8c7e8c38923e"
+    },
+    {
+      "file": "CameraZoomedIn.txt",
+      "sha256": "d6ef5ca650e5a810ad8b7a00cd7eb0c035a2ef2e9f65fbbf20ee95376a143a46"
+    },
+    {
+      "file": "ConeOfVision.txt",
+      "sha256": "6a455c79ff08ed34bab6e17bed215281112ddf2ebf7fede71838eaf3921eec62"
+    },
+    {
+      "file": "ConeOfVisionPass.txt",
+      "sha256": "2592a741be0fbb8fa3eb0b9881832879fa26208166743bd412f05418347004d9"
+    },
+    {
+      "file": "ColourBlindness.txt",
+      "sha256": "8681ed32e7fcec33840516f568d42e9fd5c60b3045e1b3441bbea3f6471c84e2"
+    },
+    {
+      "file": "RenderEffectManager.txt",
+      "sha256": "d7d35125ab926413028a6b755273d2a10b5a88a7e170af08ca9b38c89d79bc23"
+    },
+    {
+      "file": "UIGameServerLobbyPage.txt",
+      "sha256": "5bc2ab58096e22aa3ccc6b7ed97110ce9cc44aabe8181f878f279a4baed40a1c"
+    },
+    {
+      "file": "UIPlayerInfoTooltip.txt",
+      "sha256": "8b2a52a6110604fcea87075bac5b6fffb9646cf7089be4b6119f2112cc53bb2a"
+    }
+  ],
+  "floatConstants": [
+    {
+      "address": "0x183ba2c10",
+      "expected": 1.0
+    },
+    {
+      "address": "0x183ba3028",
+      "expected": 6.2831854820251465
+    },
+    {
+      "address": "0x183ba2c0c",
+      "expected": 0.5
+    },
+    {
+      "address": "0x183ba2da4",
+      "expected": 0.15000000596046448
+    },
+    {
+      "address": "0x183ba2ce4",
+      "expected": 4.0
+    },
+    {
+      "address": "0x183ba2ca0",
+      "expected": 0.3499999940395355
+    },
+    {
+      "address": "0x183ba2da8",
+      "expected": 0.4000000059604645
+    },
+    {
+      "address": "0x183ba2c70",
+      "expected": -1.0
+    },
+    {
+      "address": "0x183ba2dd0",
+      "expected": 360.0
+    },
+    {
+      "address": "0x183ba2d0c",
+      "expected": 90.0
+    },
+    {
+      "address": "0x183ba2cb0",
+      "expected": 0.800000011920929
+    },
+    {
+      "address": "0x183ba2c08",
+      "expected": 0.10000000149011612
+    },
+    {
+      "address": "0x183ba2db4",
+      "expected": 1.5499999523162842
+    },
+    {
+      "address": "0x183ba2dcc",
+      "expected": 20.0
+    },
+    {
+      "address": "0x183ba2ce8",
+      "expected": 6.0
+    },
+    {
+      "address": "0x183ba2c80",
+      "expected": 0.009999999776482582
+    },
+    {
+      "address": "0x183ba2dc0",
+      "expected": 1.600000023841858
+    },
+    {
+      "address": "0x183ba2cdc",
+      "expected": 2.5
+    },
+    {
+      "address": "0x183ba2de0",
+      "expected": 1.0
+    },
+    {
+      "address": "0x183ba2df0",
+      "expected": 0.0
+    },
+    {
+      "address": "0x183ba2c7c",
+      "expected": 9.999999747378752e-06
+    },
+    {
+      "address": "0x183ba2c78",
+      "expected": 9.999999439624929e-11
+    },
+    {
+      "address": "0x183ba2c84",
+      "expected": 0.05000000074505806
+    },
+    {
+      "address": "0x183ba2cbc",
+      "expected": 1.2000000476837158
+    },
+    {
+      "address": "0x183ba2db0",
+      "expected": 1.25
+    },
+    {
+      "address": "0x183ba2d9c",
+      "expected": 1.401298464324817e-45
+    },
+    {
+      "address": "0x183ba2dd4",
+      "expected": 500.0
+    },
+    {
+      "address": "0x183ba2e14",
+      "expected": 0.6600000262260437
+    },
+    {
+      "address": "0x183ba2cc4",
+      "expected": 1.5
+    },
+    {
+      "address": "0x183ba2cf0",
+      "expected": 8.0
+    },
+    {
+      "address": "0x183ba2eb4",
+      "expected": 14.0
+    },
+    {
+      "address": "0x183ba2cf4",
+      "expected": 10.0
+    },
+    {
+      "address": "0x183ba2ce0",
+      "expected": 3.5
+    },
+    {
+      "address": "0x183ba2c18",
+      "expected": 0.0
+    },
+    {
+      "address": "0x183ba3554",
+      "expected": 64.0
+    },
+    {
+      "address": "0x183ba2cac",
+      "expected": 0.75
+    },
+    {
+      "address": "0x183ba2d30",
+      "expected": -0.0
+    },
+    {
+      "address": "0x183ba2f94",
+      "expected": 45.0
+    },
+    {
+      "address": "0x183ba2d04",
+      "expected": 30.0
+    },
+    {
+      "address": "0x183ba2c38",
+      "expected": 15.0
+    },
+    {
+      "address": "0x183ba3550",
+      "expected": 22.0
+    },
+    {
+      "address": "0x183ba2d10",
+      "expected": 100.0
+    },
+    {
+      "address": "0x183ba2cc0",
+      "expected": 1.399999976158142
+    },
+    {
+      "address": "0x183ba2cc8",
+      "expected": 1.7999999523162842
+    },
+    {
+      "address": "0x183ba3548",
+      "expected": 0.666670024394989
+    },
+    {
+      "address": "0x183ba2dc8",
+      "expected": 7.0
+    },
+    {
+      "address": "0x183ba2ca4",
+      "expected": 0.6000000238418579
+    },
+    {
+      "address": "0x183ba2ee0",
+      "expected": -1.5707963705062866
+    },
+    {
+      "address": "0x183ba2c8c",
+      "expected": 0.20000000298023224
+    },
+    {
+      "address": "0x183ba2e60",
+      "expected": -0.20000000298023224
+    },
+    {
+      "address": "0x183ba2d28",
+      "expected": -90.0
+    },
+    {
+      "address": "0x183ba2c04",
+      "expected": 0.01745329238474369
+    },
+    {
+      "address": "0x183ba2e54",
+      "expected": 50.0
+    },
+    {
+      "address": "0x183ba2ca8",
+      "expected": 0.699999988079071
+    },
+    {
+      "address": "0x183ba30c0",
+      "expected": 0.949999988079071
+    },
+    {
+      "address": "0x183ba2e30",
+      "expected": 0.8500000238418579
+    },
+    {
+      "address": "0x183ba2fc8",
+      "expected": 13.0
+    },
+    {
+      "address": "0x183ba2f34",
+      "expected": 0.6499999761581421
+    },
+    {
+      "address": "0x183ba2c24",
+      "expected": 5.0
+    },
+    {
+      "address": "0x183ba2ec0",
+      "expected": 40.0
+    },
+    {
+      "address": "0x183ba2e44",
+      "expected": 4.5
+    },
+    {
+      "address": "0x183ba3164",
+      "expected": 0.07500000298023224
+    },
+    {
+      "address": "0x183ba2ee8",
+      "expected": -5.0
+    },
+    {
+      "address": "0x183ba2edc",
+      "expected": -0.5
+    },
+    {
+      "address": "0x183ba2f3c",
+      "expected": 1.75
+    },
+    {
+      "address": "0x183ba3314",
+      "expected": 999999.0
+    },
+    {
+      "address": "0x183ba2d00",
+      "expected": 16.0
+    },
+    {
+      "address": "0x183ba2cb8",
+      "expected": 1.100000023841858
+    },
+    {
+      "address": "0x183ba2c20",
+      "expected": 3.0
+    },
+    {
+      "address": "0x183ba2c98",
+      "expected": 0.30000001192092896
+    },
+    {
+      "address": "0x183ba2f4c",
+      "expected": 18.0
+    },
+    {
+      "address": "0x183ba2f58",
+      "expected": 999.0
+    },
+    {
+      "address": "0x183ba2ebc",
+      "expected": 25.0
+    },
+    {
+      "address": "0x183ba2f48",
+      "expected": 12.0
+    },
+    {
+      "address": "0x183ba3578",
+      "expected": -2000.0
+    },
+    {
+      "address": "0x183ba2f24",
+      "expected": 0.125
+    },
+    {
+      "address": "0x183ba2cb4",
+      "expected": 0.8999999761581421
+    },
+    {
+      "address": "0x183ba2e10",
+      "expected": 0.33000001311302185
+    },
+    {
+      "address": "0x183ba31b0",
+      "expected": 0.07999999821186066
+    },
+    {
+      "address": "0x183ba2fb8",
+      "expected": 2.5999999046325684
+    },
+    {
+      "address": "0x183ba31ec",
+      "expected": 2.1500000953674316
+    },
+    {
+      "address": "0x183ba31c0",
+      "expected": 1.0299999713897705
+    },
+    {
+      "address": "0x183ba31b4",
+      "expected": 0.8399999737739563
+    },
+    {
+      "address": "0x183ba30f0",
+      "expected": 1.0499999523162842
+    },
+    {
+      "address": "0x183ba31b8",
+      "expected": 0.9599999785423279
+    },
+    {
+      "address": "0x183ba31c8",
+      "expected": 1.090000033378601
+    },
+    {
+      "address": "0x183ba31c4",
+      "expected": 1.0399999618530273
+    },
+    {
+      "address": "0x183ba31bc",
+      "expected": 0.9700000286102295
+    },
+    {
+      "address": "0x183ba31e8",
+      "expected": 1.8450000286102295
+    },
+    {
+      "address": "0x183ba31cc",
+      "expected": 1.1024999618530273
+    },
+    {
+      "address": "0x183ba31d0",
+      "expected": 1.3200000524520874
+    },
+    {
+      "address": "0x183ba2ea8",
+      "expected": 1.0666600465774536
+    },
+    {
+      "address": "0x183ba2e94",
+      "expected": 0.019999999552965164
+    },
+    {
+      "address": "0x183ba2d14",
+      "expected": 180.0
+    },
+    {
+      "address": "0x183ba2e90",
+      "expected": 1.0000000031710769e-30
+    },
+    {
+      "address": "0x183ba2c3c",
+      "expected": 57.295780181884766
+    },
+    {
+      "address": "0x183ba2ecc",
+      "expected": 1500.0
+    },
+    {
+      "address": "0x183ba2e9c",
+      "expected": 0.4620000123977661
+    },
+    {
+      "address": "0x183ba2ec4",
+      "expected": 69.0
+    },
+    {
+      "address": "0x183ba2ea0",
+      "expected": 0.6060000061988831
+    },
+    {
+      "address": "0x183ba2ec8",
+      "expected": 480.0
+    },
+    {
+      "address": "0x183ba2e98",
+      "expected": 0.05999999865889549
+    },
+    {
+      "address": "0x183ba2c94",
+      "expected": 0.25
+    },
+    {
+      "address": "0x183ba2ea4",
+      "expected": 0.9999989867210388
+    },
+    {
+      "address": "0x183ba2eb8",
+      "expected": 17.5
+    },
+    {
+      "address": "0x183ba2ee4",
+      "expected": -3.0
+    },
+    {
+      "address": "0x183ba2ed4",
+      "expected": -0.10000000149011612
+    },
+    {
+      "address": "0x183ba2ed8",
+      "expected": -0.13962633907794952
+    },
+    {
+      "address": "0x183ba2eb0",
+      "expected": 3.1415927410125732
+    },
+    {
+      "address": "0x183ba2eac",
+      "expected": 1.5707963705062866
+    },
+    {
+      "address": "0x183ba2ef0",
+      "expected": 1.5
+    },
+    {
+      "address": "0x183ba2f00",
+      "expected": 0.18000000715255737
+    },
+    {
+      "address": "0x183ba2f9c",
+      "expected": 135.0
+    },
+    {
+      "address": "0x183ba2fa4",
+      "expected": -25.0
+    },
+    {
+      "address": "0x183ba2f80",
+      "expected": 0.014999999664723873
+    },
+    {
+      "address": "0x183ba2f18",
+      "expected": 0.029999999329447746
+    },
+    {
+      "address": "0x183ba2fa0",
+      "expected": -12.0
+    },
+    {
+      "address": "0x183ba2f04",
+      "expected": 1.2999999523162842
+    },
+    {
+      "address": "0x183ba2f54",
+      "expected": 600.0
+    },
+    {
+      "address": "0x183ba2bfc",
+      "expected": 9.999999747378752e-05
+    },
+    {
+      "address": "0x183ba2f1c",
+      "expected": 0.032999999821186066
+    },
+    {
+      "address": "0x183ba2f50",
+      "expected": 24.0
+    },
+    {
+      "address": "0x183ba2f28",
+      "expected": 0.3330000042915344
+    },
+    {
+      "address": "0x183ba2f2c",
+      "expected": 0.33329999446868896
+    },
+    {
+      "address": "0x183ba2f44",
+      "expected": 9.5
+    },
+    {
+      "address": "0x183ba2f20",
+      "expected": 0.0625
+    },
+    {
+      "address": "0x183ba2f5c",
+      "expected": -0.07843136787414551
+    },
+    {
+      "address": "0x183ba2f10",
+      "expected": 0.01568627543747425
+    },
+    {
+      "address": "0x183ba2f70",
+      "expected": 0.0
+    },
+    {
+      "address": "0x183ba2e00",
+      "expected": 1.0
+    },
+    {
+      "address": "0x183ba2f30",
+      "expected": 0.44999998807907104
+    },
+    {
+      "address": "0x183ba2cd8",
+      "expected": 2.0
+    },
+    {
+      "address": "0x183ba2f40",
+      "expected": 1.899999976158142
+    },
+    {
+      "address": "0x183ba2f14",
+      "expected": 0.02666660025715828
+    },
+    {
+      "address": "0x183ba2f0c",
+      "expected": 0.01333330012857914
+    },
+    {
+      "address": "0x183ba2f38",
+      "expected": 1.149999976158142
+    },
+    {
+      "address": "0x183ba2f08",
+      "expected": 9.999999974752427e-07
+    },
+    {
+      "address": "0x183ba2f60",
+      "expected": 1.0
+    },
+    {
+      "address": "0x183ba2f90",
+      "expected": 35.0
+    },
+    {
+      "address": "0x183ba2f98",
+      "expected": 70.0
+    },
+    {
+      "address": "0x183ba2f88",
+      "expected": 1.4500000476837158
+    },
+    {
+      "address": "0x183ba2f8c",
+      "expected": 1.9500000476837158
+    },
+    {
+      "address": "0x183ba2fa8",
+      "expected": 0.4440000057220459
+    },
+    {
+      "address": "0x183ba2fac",
+      "expected": 0.6660000085830688
+    },
+    {
+      "address": "0x183ba2fd8",
+      "expected": 18.84955596923828
+    },
+    {
+      "address": "0x183ba30a8",
+      "expected": -80.0
+    },
+    {
+      "address": "0x183ba309c",
+      "expected": 1.590000033378601
+    },
+    {
+      "address": "0x183ba30b8",
+      "expected": -2.299999952316284
+    },
+    {
+      "address": "0x183ba2e64",
+      "expected": -3.5
+    },
+    {
+      "address": "0x183ba30bc",
+      "expected": -180.0
+    },
+    {
+      "address": "0x183ba3208",
+      "expected": 0.6666666865348816
+    },
+    {
+      "address": "0x183ba2f84",
+      "expected": 0.03999999910593033
+    },
+    {
+      "address": "0x183ba304c",
+      "expected": 9.0
+    },
+    {
+      "address": "0x183ba302c",
+      "expected": 11.0
+    },
+    {
+      "address": "0x183ba3048",
+      "expected": 3.299999952316284
+    },
+    {
+      "address": "0x183ba3054",
+      "expected": -10.0
+    },
+    {
+      "address": "0x183ba3044",
+      "expected": 0.1899999976158142
+    }
+  ],
+  "assetFacts": {
+    "player": {
+      "staminaMax": 30,
+      "staminaRecoveryRate": 12.5,
+      "staminaRecoveryRateHaste": 6,
+      "staminaRecoveryRateHasteMultiplier": 1.5,
+      "dashDuration": 0.75,
+      "pantherPounceDuration": 0.55
+    },
+    "renderEffects": {
+      "BlurredVision": {
+        "blurDuration": 10,
+        "blurIntensity": 0.5
+      },
+      "TrippyVision": {
+        "duration": 10,
+        "intensity": 0.4
+      },
+      "ArenaWarpVision": {
+        "duration": 5,
+        "intensity": 1
+      },
+      "BlurLeftSideVision": {
+        "effectDuration": 5,
+        "effectIntensity": 1
+      },
+      "BlackRightSideVision": {
+        "blendDuration": 2
+      },
+      "DoubleVision": {
+        "duration": 9,
+        "intensityMax": 6,
+        "angleRate": 0.4,
+        "effectTimerMax": 4
+      },
+      "BlackSpotsVision": {
+        "moveRate": 0.03,
+        "blendDuration": 6
+      },
+      "WarpedVision": {
+        "moveRate": 0.05,
+        "blendDuration": 5
+      },
+      "BlackOutVision": {
+        "blendDuration": 2
+      },
+      "FarsightedVision": {
+        "blurDuration": 12,
+        "blurIntensity": 0.5
+      },
+      "NearsightedVision": {
+        "blurDuration": 2,
+        "blurIntensity": 0.5
+      },
+      "Glare": {
+        "intensityDuration": 8,
+        "intensityMaximum": 0.5
+      },
+      "DamagedVision": {
+        "effectDuration": 5,
+        "effectIntensity": 1
+      },
+      "RageVisionEffect": {
+        "pulseFrequency": 6
+      }
+    },
+    "weaponSource": "Curated base values in cards come from analysis/weapon-damage/weapon-prefabs.json; fired arrows use arrowPrefab, not the throwable bow projectile."
+  }
+}

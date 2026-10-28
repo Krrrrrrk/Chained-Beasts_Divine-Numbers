@@ -1,45 +1,46 @@
-# Ctrl numbers box: test build 0.1.1
+# Ctrl details: 0.2.0 test build
 
-Version 0.1.1 adds character-select support and reduces the type size from 26 to 22. It keeps the independent box introduced in 0.1.0 and never replaces the game's description or intercepts its translation lookups. Shift continues to show the game's ordinary status explanations.
+Hold either Ctrl key to see researched numbers in a separate native-style panel. Original descriptions stay intact and Shift retains its normal explanations. The user confirmed the 0.1.1 character-select support and smaller text work well. Expanded 0.2.0 interactions still need manual verification.
 
-## Supported interaction
+## Where to use it
 
-- Character-info tooltips: inspect a supported skill and hold either Ctrl key.
-- Character select: highlight a supported variant and hold Ctrl. The local player's displayed description supplies the exact skill key. Hovering another visible player's description can inspect its card too.
-- Lobby character-details list: hover a supported skill row and hold Ctrl.
-- Trainer skill cards: select or hover a supported skill card and hold Ctrl. The hooks are present even though the initial three beast variants are not ordinary trainer offers.
-- Release Ctrl, close the menu, or inspect an unsupported item to hide the box. Losing application focus also hides it.
+- Character select: highlight an unlocked supported variant. Hover another visible player's description to inspect theirs.
+- Character info: inspect an audited skill, affliction severity, purchase or status.
+- Trainer/character-details lists: select or hover the supported skill as before.
+- Shop, surgery and Codex: hover the displayed description text while holding Ctrl.
+- Vanilla Shift status boxes: hover an audited Vigor, Weak, Fire or Backstab explanation while holding Ctrl.
 
-Only Proud Lion, Lethal Eagle, and Mighty Bear have researched entries. This version supplies no affliction numbers or Codex boxes. Locked variants display native unlock requirements and receive no numeric card.
+New descriptions are discovered immediately when Ctrl is first held, then at most twice per second while it stays held. A pooled label's current key is checked again before display. Locked choices, unknown keys, invalid severities and unsupported custom-mod descriptions receive no guessed card. Release both Ctrl keys, close the menu or lose focus to hide the overlay.
 
-## Implementation
+There are 206 distinct cards: 50 skills/variants, 134 affliction severity entries, 18 purchases and four statuses. Some cards supplement a named status rather than restating an already numbered trigger. See [the audit report](audit-report.md), [complete coverage](../data/coverage.json) and [card data](../data/numeric-details.json).
 
-Seven postfix hooks observe native UI binding: four `UIPlayerInfoTooltip.Initialise` overloads, `UILobbyTrainerUpgradePage.SetSkill`, `UIGameLevelLobbyCharacterSkillInfo.Initialise`, and `UIGameServerLobbyPage.Refresh`. The original methods always run. No combat method, input action, description, or localization resolver is patched. Character-select lookup uses `characterDescription.Term` after native refresh, rather than treating beast enum values or progression levels as skill IDs. Native `StringManager.GetBeastDescription` produces `Skills/Beast_{BeastType}_Lv{variant+1}_Desc`; locked choices instead use unlock-requirement keys. This was traced in the installed build's native dump.
+## Implementation and limits
 
-The controller reads the current Ctrl keys in `LateUpdate` without consuming input. It chooses the visible hovered/selected context; unsupported contexts block previously selected supported cards. Hidden or destroyed widgets are excluded, including menus hidden by an ancestor CanvasGroup. A single private clone of `UIStatusTooltip` renders the current entry on a separate overlay canvas. Only the clone's localization components are disabled. Its graphics cannot receive raycasts. Native frames, fonts, and materials are borrowed without modifying the originals.
+Seven postfix hooks observe the same native UI methods as 0.1.1: the four UIPlayerInfoTooltip.Initialise overloads, UILobbyTrainerUpgradePage.SetSkill, UIGameLevelLobbyCharacterSkillInfo.Initialise and UIGameServerLobbyPage.Refresh. Injury, purchase and status overloads now bind their own namespaces/severities, so their integer IDs cannot collide with skills. Native methods run normally and native-entry alias guards remain.
 
-The panel uses 22-point type, a smaller variant-name line, and no empty line between the heading and body. The copied root stretches to the box; text has explicit 24-pixel horizontal and 20-pixel vertical padding, zero inherited TMP margins, and controlled line/paragraph spacing. Preferred height is measured using that exact inner width, with an additional 8 pixels of slack. Placement tries right, left, below, then above and clamps to the viewport. Visible Shift panels are included in the occupied bounds. On crowded screens where no free region can fit the panel, clamping can still overlap other UI; exact placement needs gameplay review.
+Additional contexts use visible I2.Loc.Localize.Term values discovered while Ctrl is held. Localization, translation resolution and input actions are not patched. Discovery has a half-second interval; resource scanning does not run every frame. Current keys are rechecked before showing pooled labels. Hovered description text has priority over selected/background contexts; the clone's own labels are excluded.
 
-The plugin uses an independent ID (`local.chainedbeasts.divinenumbers`), gates the recorded numeric data on the inspected game binary's SHA-256, checks for aliased native patch entries, and removes its hooks/overlay on unload. A UI exception disables this overlay and logs once while the native UI continues. It creates no save data or network messages.
+The private, non-interactive UIStatusTooltip clone keeps 22-point type, 24-pixel horizontal/20-pixel vertical padding and measured preferred height, with smaller type if needed. Placement tries right/left/below/above and clamps to the viewport. Known native Shift boxes are included in occupied bounds. Other screens and simultaneous Shift/Ctrl placement still require manual review where space is limited.
 
-## Completed verification
+Values are usually audited bases, not live player totals. Backstab reads the audited GladiatorConsts.BackstabMultiplierBase getter because a setting selects 2x or 1.5x. Target resistance can further change the bonus. The overlay patches no combat method and writes no saves or network messages. A UI exception disables it and logs once while native UI continues.
 
-- Release build against installed BepInEx/game interop assemblies: zero warnings and errors.
-- Offline checks: the three entries map to their audited IDs; unsupported IDs return no numeric details; the minimum-stun and ready-window qualifications are preserved.
-- Character-select lookup checks: exact description terms resolve to the right entry; locked, unsupported, name-only, malformed, and translated-text lookups clear the previous card.
-- Offline geometry checks: four placement directions and 1,575 viewport/edge combinations keep a fitting card on-screen.
-- Source provenance: game hashes, eight native float constants, existing code-dump hashes, and original English descriptions verified with `scripts/verify-first-pass.py`.
+Four input hashes gate loading: GameAssembly, metadata, level1 and sharedassets1. A changed input disables the mod for re-audit, including the asset-backed values. No Unity session or gameplay was launched/automated for this update. The user's confirmation applies to 0.1.1, not all new screens or mechanics.
 
-The user supplied a 0.1.0 screenshot showing the in-game Ctrl card, with crowded text and a last line touching the lower frame. The 0.1.1 changes address that report; neither the new character-select hook nor the updated fit has been agent-tested in Unity.
+## Completed checks
 
-## Manual checks still required
+- Release compilation: zero warnings/errors against installed interop files.
+- All 206 typed cards/exact keys; namespace/severity isolation; unknown/locked-key clearing; invalid-data rejection; shared-card isolation.
+- Evidence-sensitive examples: pickup disarm 16/32%, stamina drawback 25% per severity, fired arrows versus thrown bows, implemented stun chance versus localization.
+- Four placement directions and 1,575 viewport/edge combinations.
+- Four game hashes, 157 native literals, 35 native dump hashes and all active card keys checked. Input/literal identity checks do not independently prove every inferred semantic relationship.
 
-1. Open character info for each of the three supported variants. Hold left Ctrl, then right Ctrl. Confirm the original text is unchanged and the extra card contains the matching numbers.
-2. Hold both Ctrl keys; release one, then the other. The card should remain until both are released.
-3. Use Shift alone, Ctrl alone, then Shift+Ctrl. Confirm vanilla status descriptions continue to work and the two boxes remain readable.
-4. Move to an unsupported skill, an affliction, equipment, and an empty slot while holding Ctrl. Confirm the old numeric card disappears.
-5. Close/reopen the menu, change scene, and switch application focus while holding Ctrl. Confirm no old card stays on-screen.
-6. Hover skill rows in character details. Check that the card follows the hovered row. Trainer contexts need a future audited trainer skill to exercise a positive entry; unsupported cards should show no card now.
-7. Check smaller windows, wide screens, UI scaling, multiplayer clients/local player sheets, and coexistence with other installed mods.
-8. On character select, switch between supported, unsupported, and locked variants while holding Ctrl. Confirm matching cards appear only for supported displayed descriptions, then hide when leaving the screen.
-9. Confirm the smaller text stays within the frame with space below the final line on all three cards.
+## Manual checks
+
+1. Hold left/right/both Ctrl keys and release individually. Original descriptions must stay unchanged.
+2. Switch supported, unsupported and locked variants while holding Ctrl. Check matching cards and old-card clearing.
+3. Inspect 1/2/3-skull afflictions and purchases/skills sharing integer IDs. Check severity-specific numbers.
+4. Open shop, surgery and Codex. Hover description text with Ctrl; allow up to half a second for newly opened labels. Change pooled selections.
+5. Try Shift, Ctrl and both. Hover native status text. Confirm the overlay cannot steal clicks/hover.
+6. Close/reopen menus, change scenes and application focus. No stale card should remain.
+7. Check smaller windows, wide screens, UI scaling, multiplayer/local-player pages and other installed mods.
+8. Review long cards and Backstab's setting-dependent value. Compare selected mechanics in controlled gameplay before treating them as measured final damage.

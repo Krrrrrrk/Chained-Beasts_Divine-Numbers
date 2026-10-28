@@ -2,28 +2,40 @@ using System.Text.Json;
 
 namespace ChainedBeasts.DivineNumbers;
 
-internal sealed record NumericDetail(int Skill, string Name, string Body);
+internal sealed record NumericDetail(string Kind, int Id, int Severity, string Name, string Body);
 
 internal sealed class DetailCatalog
 {
-    private readonly Dictionary<int, NumericDetail> _skills = new();
+    private readonly Dictionary<(string Kind, int Id, int Severity), NumericDetail> _entries = new();
     private readonly Dictionary<string, NumericDetail> _terms = new(StringComparer.Ordinal);
     internal DetailCatalog(Stream source)
     {
         using var json = JsonDocument.Parse(source);
-        foreach (var row in json.RootElement.GetProperty("abilities").EnumerateArray())
+        foreach (var row in json.RootElement.GetProperty("entries").EnumerateArray())
         {
-            var skill = row.GetProperty("skillType").GetInt32();
+            var kind = row.GetProperty("kind").GetString()!;
+            var id = row.GetProperty("id").GetInt32();
+            var severity = row.GetProperty("severity").GetInt32();
             var name = row.GetProperty("name").GetString()!;
             var lines = row.GetProperty("details").EnumerateArray().Select(x => x.GetString()!).ToArray();
-            if (string.IsNullOrWhiteSpace(name) || lines.Length == 0 || lines.Any(string.IsNullOrWhiteSpace))
-                throw new InvalidDataException("Empty numeric detail entry: " + skill);
-            var detail = new NumericDetail(skill, name, string.Join("\n", lines));
-            _skills.Add(skill, detail);
-            _terms.Add(row.GetProperty("term").GetString()!, detail);
+            if (kind is not ("skill" or "injury" or "purchase" or "status") ||
+                (kind == "injury" ? severity is < 1 or > 3 : severity != 0) ||
+                string.IsNullOrWhiteSpace(name) || lines.Length == 0 || lines.Any(string.IsNullOrWhiteSpace))
+                throw new InvalidDataException("Invalid numeric detail entry: " + kind + "/" + id);
+            var detail = new NumericDetail(kind, id, severity, name, string.Join("\n", lines));
+            _entries.Add((kind, id, severity), detail);
+            foreach (var term in row.GetProperty("terms").EnumerateArray())
+            {
+                var key = term.GetString();
+                if (string.IsNullOrWhiteSpace(key)) throw new InvalidDataException("Empty description key");
+                _terms.Add(key!, detail);
+            }
         }
     }
-    internal bool TryGet(int skill, out NumericDetail detail) => _skills.TryGetValue(skill, out detail!);
+    internal int Count => _entries.Count;
+    internal bool TryGet(int skill, out NumericDetail detail) => TryGet("skill", skill, 0, out detail);
+    internal bool TryGet(string kind, int id, int severity, out NumericDetail detail) =>
+        _entries.TryGetValue((kind, id, severity), out detail!);
     internal bool TryGetTerm(string? term, out NumericDetail detail)
     {
         detail = null!;

@@ -11,9 +11,9 @@ internal static class TooltipBindings
     internal static void Install(Harmony harmony)
     {
         Patch(harmony, typeof(UIPlayerInfoTooltip), "Initialise", new[] { typeof(SkillType), typeof(bool) }, nameof(Skill));
-        Patch(harmony, typeof(UIPlayerInfoTooltip), "Initialise", new[] { typeof(InjuryType), typeof(int), typeof(bool) }, nameof(Clear));
-        Patch(harmony, typeof(UIPlayerInfoTooltip), "Initialise", new[] { typeof(PurchaseType), typeof(bool) }, nameof(Clear));
-        Patch(harmony, typeof(UIPlayerInfoTooltip), "Initialise", new[] { typeof(StatusTooltipType) }, nameof(Clear));
+        Patch(harmony, typeof(UIPlayerInfoTooltip), "Initialise", new[] { typeof(InjuryType), typeof(int), typeof(bool) }, nameof(Injury));
+        Patch(harmony, typeof(UIPlayerInfoTooltip), "Initialise", new[] { typeof(PurchaseType), typeof(bool) }, nameof(Purchase));
+        Patch(harmony, typeof(UIPlayerInfoTooltip), "Initialise", new[] { typeof(StatusTooltipType) }, nameof(Status));
         Patch(harmony, typeof(UILobbyTrainerUpgradePage), "SetSkill", new[] { typeof(SkillType), typeof(bool) }, nameof(Trainer));
         Patch(harmony, typeof(UIGameLevelLobbyCharacterSkillInfo), "Initialise", new[] { typeof(SkillType), typeof(int) }, nameof(CharacterSkill));
         Patch(harmony, typeof(UIGameServerLobbyPage), "Refresh", new[] { typeof(GameServerLobby.UIState), typeof(int) }, nameof(CharacterSelect));
@@ -38,7 +38,9 @@ internal static class TooltipBindings
     }
     // Positional Harmony arguments avoid reliance on generated parameter names.
     private static void Skill(UIPlayerInfoTooltip __instance, SkillType __0) => Controller?.Bind(__instance, (int)__0);
-    private static void Clear(UIPlayerInfoTooltip __instance) => Controller?.Unbind(__instance);
+    private static void Injury(UIPlayerInfoTooltip __instance, InjuryType __0, int __1) => Controller?.Bind(__instance, "injury", (int)__0, __1);
+    private static void Purchase(UIPlayerInfoTooltip __instance, PurchaseType __0) => Controller?.Bind(__instance, "purchase", (int)__0, 0);
+    private static void Status(UIPlayerInfoTooltip __instance, StatusTooltipType __0) => Controller?.Bind(__instance, "status", (int)__0, 0);
     private static void Trainer(UILobbyTrainerUpgradePage __instance, SkillType __0) => Controller?.Bind(__instance, (int)__0);
     private static void CharacterSkill(UIGameLevelLobbyCharacterSkillInfo __instance, SkillType __0) => Controller?.Bind(__instance, (int)__0);
     private static void CharacterSelect(UIGameServerLobbyPage __instance) => Controller?.Bind(__instance);

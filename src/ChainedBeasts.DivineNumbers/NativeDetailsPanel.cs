@@ -83,8 +83,13 @@ internal sealed class NativeDetailsPanel : IDisposable
         var scale = Mathf.Clamp(Screen.height / 1080f, .5f, 3f);
         _canvas.scaleFactor = scale;
         var width = Math.Min(430f, Screen.width / scale - 48);
+        // The audited native getter selects 2x or 1.5x for the current game
+        // setting. Read it so the card never assumes a particular setting.
+        var body = detail.Body;
+        if (body.Contains("{backstab}")) body = body.Replace("{backstab}",
+            GladiatorConsts.BackstabMultiplierBase.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture));
         var content = "<b>Divine Numbers</b>  <size=75%>[Ctrl]</size>\n" +
-            "<size=90%><color=#FFE29A>" + detail.Name + "</color></size>\n" + detail.Body;
+            "<size=90%><color=#FFE29A>" + detail.Name + "</color></size>\n" + body;
         var maxHeight = Screen.height / scale - 48;
         if (content != _lastText || width != _lastWidth || maxHeight != _lastAvailableHeight)
         {

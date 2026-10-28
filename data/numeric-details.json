@@ -1,0 +1,3644 @@
+{
+  "schema": 2,
+  "version": "0.2.0",
+  "steamBuildId": "26231777",
+  "language": "en",
+  "entries": [
+    {
+      "kind": "skill",
+      "id": 0,
+      "severity": 0,
+      "name": "Proud Lion",
+      "terms": [
+        "Skills/Beast_Lion_Lv1_Desc"
+      ],
+      "details": [
+        "Damage: +40%.",
+        "Movement speed: +20%.",
+        "Duration: 10 seconds.",
+        "Applies to you and all allies.",
+        "Trigger: Pose after kills while your crowd is wild."
+      ],
+      "evidence": [
+        "first-pass-evidence.json"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 3,
+      "severity": 0,
+      "name": "Lethal Eagle",
+      "terms": [
+        "Skills/Beast_Eagle_Lv1_Desc"
+      ],
+      "details": [
+        "Next throw: double direct-impact damage.",
+        "Ready window: 8 seconds after a melee kill.",
+        "Consumed when the projectile launches, even if it misses.",
+        "The bonus is not established for explosion damage."
+      ],
+      "evidence": [
+        "first-pass-evidence.json"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 7,
+      "severity": 0,
+      "name": "Mighty Bear",
+      "terms": [
+        "Skills/Beast_Bear_Lv2_Desc"
+      ],
+      "details": [
+        "Base health: +25% (60 becomes 75 before other modifiers).",
+        "Movement speed: -20%.",
+        "Blunt weapons: +20% damage.",
+        "Blunt melee hits: minimum 0.3-second base stun.",
+        "Longer existing stuns are preserved; other stun modifiers still apply."
+      ],
+      "evidence": [
+        "first-pass-evidence.json"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 1,
+      "severity": 0,
+      "name": "Regal Lion",
+      "terms": [
+        "Skills/Beast_Lion_Lv2_Desc"
+      ],
+      "details": [
+        "Each successful pose adds 2 coins to your crowd-money queue.",
+        "The queue is metered using a 10-second boost timer; a small queue can empty sooner."
+      ],
+      "evidence": [
+        "Player.OnExecute",
+        "Player.ApplyMoneyBoostRpc",
+        "Player.Update:157-177"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 2,
+      "severity": 0,
+      "name": "Hoarding Lion",
+      "terms": [
+        "Skills/Beast_Lion_Lv3_Desc"
+      ],
+      "details": [
+        "One weapon-assistance request per successful pose.",
+        "The weapon is chosen randomly."
+      ],
+      "evidence": [
+        "PlayerCrowdData.UpdateCrowd:225-288"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 4,
+      "severity": 0,
+      "name": "Silent Eagle",
+      "terms": [
+        "Skills/Beast_Eagle_Lv2_Desc"
+      ],
+      "details": [
+        "Next throw: double direct-impact damage.",
+        "Ready window: 8 seconds after a backstab.",
+        "Consumed when the projectile launches, even if it misses.",
+        "Explosion damage has no confirmed bonus from this effect."
+      ],
+      "evidence": [
+        "Player.OnBattleEventActor:1310-1337",
+        "Projectile.Launch"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 5,
+      "severity": 0,
+      "name": "Patient Eagle",
+      "terms": [
+        "Skills/Beast_Eagle_Lv3_Desc"
+      ],
+      "details": [
+        "Next throw: double direct-impact damage.",
+        "Ready window: 8 seconds after a successful block.",
+        "Consumed when the projectile launches, even if it misses.",
+        "Explosion damage has no confirmed bonus from this effect."
+      ],
+      "evidence": [
+        "Player.OnBlock:267-278",
+        "Projectile.Launch"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 6,
+      "severity": 0,
+      "name": "Hulking Bear",
+      "terms": [
+        "Skills/Beast_Bear_Lv1_Desc"
+      ],
+      "details": [
+        "Base health: +25% (60 becomes 75 before other modifiers).",
+        "Movement speed: -20%.",
+        "Taking damage grants 1.75 seconds of invulnerability and base Fury.",
+        "Fury duration bonuses can extend the Fury."
+      ],
+      "evidence": [
+        "PlayerData.get_MaxHealth",
+        "Player.GetModifiedPlayerVelocity",
+        "Player.OnDamageTakenInstantFeedback:173-190"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 8,
+      "severity": 0,
+      "name": "Vengeful Bear",
+      "terms": [
+        "Skills/Beast_Bear_Lv3_Desc"
+      ],
+      "details": [
+        "Base health: +25% (60 becomes 75 before other modifiers).",
+        "Movement speed: -20%.",
+        "The revival restores 10% health and grants permanent Fury."
+      ],
+      "evidence": [
+        "PlayerData.get_MaxHealth",
+        "Player.GetModifiedPlayerVelocity",
+        "Player.ReviveRpc"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 9,
+      "severity": 0,
+      "name": "Deadly Panther",
+      "terms": [
+        "Skills/Beast_Panther_Lv1_Desc"
+      ],
+      "details": [
+        "Attack damage: +25%.",
+        "Base health: -25% (60 becomes 45 before other modifiers).",
+        "Special attacks multiply damage by another 1.5x."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:927-948",
+        "PlayerData.get_MaxHealth"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 10,
+      "severity": 0,
+      "name": "Pouncing Panther",
+      "terms": [
+        "Skills/Beast_Panther_Lv2_Desc"
+      ],
+      "details": [
+        "Attack damage: +25%.",
+        "Base health: -25% (60 becomes 45 before other modifiers).",
+        "Base pounce duration: 0.55 seconds (ordinary roll: 0.75 seconds)."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:927-948",
+        "PlayerData.get_MaxHealth",
+        "Player.get_AdjustedDashDuration",
+        "Player prefab:pantherPounceDuration,dashDuration"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 11,
+      "severity": 0,
+      "name": "Unrelenting Panther",
+      "terms": [
+        "Skills/Beast_Panther_Lv3_Desc"
+      ],
+      "details": [
+        "Attack damage: +25%.",
+        "Base health: -25% (60 becomes 45 before other modifiers).",
+        "Repeat-hit bonus: +12.5% per consecutive hit after the first, up to +50%.",
+        "Changing targets resets this bonus."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:77-140,927-948",
+        "PlayerData.get_MaxHealth"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 13,
+      "severity": 0,
+      "name": "Bone Collector Wolf",
+      "terms": [
+        "Skills/Beast_Wolf_Lv2_Desc"
+      ],
+      "details": [
+        "Body-part pickup: +4 coins.",
+        "Eligible fatal hits can receive an extra dismemberment roll, up to 20%.",
+        "The extra chance decreases in later waves; normal dismemberment rules still apply."
+      ],
+      "evidence": [
+        "Player.ReceivePickup:59-105",
+        "Enemy.HandleDismemberment:105-117,582-630"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 14,
+      "severity": 0,
+      "name": "Ravenous Wolf",
+      "terms": [
+        "Skills/Beast_Wolf_Lv3_Desc"
+      ],
+      "details": [
+        "Body-part pickup heals 3% of maximum health, rounded up.",
+        "For example, 60 maximum health gives 2 HP. Healing is capped at your health limit.",
+        "Eligible fatal hits can receive an extra dismemberment roll, up to 20%.",
+        "The extra chance decreases in later waves; normal dismemberment rules still apply."
+      ],
+      "evidence": [
+        "Player.ReceivePickup:59-93",
+        "NetworkHealthObject.HealRpc",
+        "Enemy.HandleDismemberment:105-117,582-630"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 15,
+      "severity": 0,
+      "name": "Agile Ibex",
+      "terms": [
+        "Skills/Beast_Stag_Lv1_Desc"
+      ],
+      "details": [
+        "Base movement speed: +20%.",
+        "Dodge stamina cost: x0.5 before other modifiers."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:259-284",
+        "Player.get_StaminaCostDash"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 16,
+      "severity": 0,
+      "name": "Desperate Ibex",
+      "terms": [
+        "Skills/Beast_Stag_Lv2_Desc"
+      ],
+      "details": [
+        "Base movement speed: +20%.",
+        "Low-health Vigor adds +40% movement and an extra 6 stamina/second.",
+        "These movement multipliers combine: 1.2 x 1.4 = 1.68x before other modifiers."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:259-340",
+        "Player.UpdateStagLowHealthHaste",
+        "Player.UpdateStamina",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 17,
+      "severity": 0,
+      "name": "Binding Ibex",
+      "terms": [
+        "Skills/Beast_Stag_Lv3_Desc"
+      ],
+      "details": [
+        "Base movement speed: +20%.",
+        "Chain length: +25% per Stag III end; two such ends give +56.25%.",
+        "Chain trip/squeeze: +5 base damage per Stag III end.",
+        "Day scaling and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Chain.RecalculateRope:591-680",
+        "Chain.LateUpdate:154-265",
+        "Player.GetModifiedPlayerVelocity"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 282,
+      "severity": 0,
+      "name": "Draw Fire",
+      "terms": [
+        "Skills/BlockingIncreasesAggro_Desc"
+      ],
+      "details": [
+        "Blocking multiplies your aggro-distance modifier by 4x at rank 1.",
+        "This changes enemy targeting; it is not a fixed chance to be targeted.",
+        "Incoming damage: -10%."
+      ],
+      "evidence": [
+        "NetworkAgent.get_AggroDistanceModifier",
+        "Player.DamageEventDamageMultipliers:147-158"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 2003,
+      "severity": 0,
+      "name": "Stunning Looks",
+      "terms": [
+        "Skills/StunningLooks_Desc"
+      ],
+      "details": [
+        "Crowd excitement modifier: +15 percentage points.",
+        "Nearby enemies are stunned for 2 base seconds on their first approach."
+      ],
+      "evidence": [
+        "PlayerCrowdData.ProcessBattleEvent:175-186",
+        "Enemy.Update"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 4014,
+      "severity": 0,
+      "name": "Fan Favorite",
+      "terms": [
+        "Skills/CrowdWildLastsLonger_Desc"
+      ],
+      "details": [
+        "Battle events contribute 30% more time to your Wild timer.",
+        "Timer caps still apply, so this does not guarantee a 30% longer Wild period."
+      ],
+      "evidence": [
+        "PlayerCrowdData.ProcessBattleEvent:106-119,267-318"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 42,
+      "severity": 0,
+      "name": "Precision Zone",
+      "terms": [
+        "Skills/ThrowKillGivesForceCrit_Desc"
+      ],
+      "details": [
+        "The guaranteed-crit effect has a 10-second ready window.",
+        "A normal critical hit multiplies damage by 2x before other modifiers."
+      ],
+      "evidence": [
+        "GladiatorConsts..cctor:forceCritDuration,critMultiplier",
+        "Player.ApplyForceCrit",
+        "Player.PerformCritActions"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 44,
+      "severity": 0,
+      "name": "A Taste for Revenge",
+      "terms": [
+        "Skills/OnDamageTakenForceCrit_Desc"
+      ],
+      "details": [
+        "The guaranteed-crit effect has a 10-second ready window.",
+        "A normal critical hit multiplies damage by 2x before other modifiers."
+      ],
+      "evidence": [
+        "GladiatorConsts..cctor:forceCritDuration,critMultiplier",
+        "Player.ApplyForceCrit",
+        "Player.PerformCritActions"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 45,
+      "severity": 0,
+      "name": "One-upmanship",
+      "terms": [
+        "Skills/OnAllyKillForceCrit_Desc"
+      ],
+      "details": [
+        "The guaranteed-crit effect has a 10-second ready window.",
+        "A normal critical hit multiplies damage by 2x before other modifiers."
+      ],
+      "evidence": [
+        "GladiatorConsts..cctor:forceCritDuration,critMultiplier",
+        "Player.ApplyForceCrit",
+        "Player.PerformCritActions"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 220,
+      "severity": 0,
+      "name": "Turn the Tides",
+      "terms": [
+        "Skills/BlockedProjectilesAppearAtFeet_Desc"
+      ],
+      "details": [
+        "The guaranteed-crit effect has a 10-second ready window.",
+        "A normal critical hit multiplies damage by 2x before other modifiers."
+      ],
+      "evidence": [
+        "GladiatorConsts..cctor:forceCritDuration,critMultiplier",
+        "Player.ApplyForceCrit",
+        "Player.PerformCritActions"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 40,
+      "severity": 0,
+      "name": "Moments of Brilliance",
+      "terms": [
+        "Skills/BaseCritChance_Desc"
+      ],
+      "details": [
+        "Crit chance: +20 percentage points per rank (20 / 40 / 60 / 80%).",
+        "Chance bonuses add together; total chance at or above 100% guarantees a crit."
+      ],
+      "evidence": [
+        "Player.DoesThisAttackCrit:105-170"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 41,
+      "severity": 0,
+      "name": "Ice Cold Rage",
+      "terms": [
+        "Skills/RageGivesCritChance_Desc"
+      ],
+      "details": [
+        "During Fury: +35 percentage points of crit chance per rank (35 / 70 / 105%).",
+        "Chance bonuses add together; 100% or more guarantees a crit."
+      ],
+      "evidence": [
+        "Player.DoesThisAttackCrit:118-170"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 43,
+      "severity": 0,
+      "name": "Soak up the Roar",
+      "terms": [
+        "Skills/WildGivesCritChance_Desc"
+      ],
+      "details": [
+        "While your crowd is Wild: +30 percentage points per rank.",
+        "Ranks 1-5: 30 / 60 / 90 / 120 / 150%. Chance caps effectively at 100%."
+      ],
+      "evidence": [
+        "Player.DoesThisAttackCrit:133-170"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 102,
+      "severity": 0,
+      "name": "Deep Rage",
+      "terms": [
+        "Skills/RageDamageUp_Desc"
+      ],
+      "details": [
+        "Fury damage multiplier: 1.5 + 0.5 per rank.",
+        "Ranks 1-5: 2x / 2.5x / 3x / 3.5x / 4x damage during Fury."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:459-480",
+        "GladiatorConsts..cctor"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 10005,
+      "severity": 0,
+      "name": "Heavy Weapons Training",
+      "terms": [
+        "Skills/FasterSpecial_Desc"
+      ],
+      "details": [
+        "Special-attack charge-up delay: -65% per rank.",
+        "At rank 1 the delay is 35% of the weapon's usual delay.",
+        "This does not shorten every phase of the attack."
+      ],
+      "evidence": [
+        "Weapon.get_ChargeUpDelay:28-48"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 10007,
+      "severity": 0,
+      "name": "Follow Through",
+      "terms": [
+        "Skills/MeleeStun_Desc"
+      ],
+      "details": [
+        "Implemented melee-stun roll: 20% per rank.",
+        "A successful roll adds 1 base second to the attack's stun.",
+        "The original description says 15%; the current combat code uses 20%."
+      ],
+      "evidence": [
+        "Weapon.AttackEffect:1232-1255",
+        "Weapon.AttackEffect:xmm12=1"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 10020,
+      "severity": 0,
+      "name": "Alacrity",
+      "terms": [
+        "Skills/BetterHaste_Desc"
+      ],
+      "details": [
+        "Vigor movement: +40% base, plus 20 percentage points per rank.",
+        "Extra Vigor recovery: 6 x (1 + 1.5 per rank) stamina/second.",
+        "Rank 1: +60% movement and 15 extra stamina/second."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHasteMultiplier,staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 0,
+      "severity": 1,
+      "name": "Broken Foot{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/WalkWithALimp_Desc_1"
+      ],
+      "details": [
+        "Limp movement varies through a 0.6-second cycle.",
+        "Peak movement penalty: 11.2%.",
+        "The penalty changes during the cycle; it is not a constant slowdown."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:67-105",
+        "GameLibrary.limpSpeedCurve"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 0,
+      "severity": 2,
+      "name": "Broken Foot{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/WalkWithALimp_Desc_2"
+      ],
+      "details": [
+        "Limp movement varies through a 0.6-second cycle.",
+        "Peak movement penalty: 27.2%.",
+        "The penalty changes during the cycle; it is not a constant slowdown."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:67-105",
+        "GameLibrary.limpSpeedCurve"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 0,
+      "severity": 3,
+      "name": "Broken Foot{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/WalkWithALimp_Desc_3"
+      ],
+      "details": [
+        "Limp movement varies through a 0.6-second cycle.",
+        "Peak movement penalty: 43.2%.",
+        "The penalty changes during the cycle; it is not a constant slowdown."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:67-105",
+        "GameLibrary.limpSpeedCurve"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1,
+      "severity": 1,
+      "name": "Intoxication{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/CantWalkStraight_Desc_1"
+      ],
+      "details": [
+        "Walking direction sways through a 3-second cycle.",
+        "Angular offset scale: 9.5 degrees, multiplied by the sway curve."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerInput:355-395",
+        "GameLibrary walking-direction curve"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1,
+      "severity": 2,
+      "name": "Intoxication{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/CantWalkStraight_Desc_2"
+      ],
+      "details": [
+        "Walking direction sways through a 3-second cycle.",
+        "Angular offset scale: 19.0 degrees, multiplied by the sway curve."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerInput:355-395",
+        "GameLibrary walking-direction curve"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1,
+      "severity": 3,
+      "name": "Intoxication{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/CantWalkStraight_Desc_3"
+      ],
+      "details": [
+        "Walking direction sways through a 3-second cycle.",
+        "Angular offset scale: 28.5 degrees, multiplied by the sway curve."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerInput:355-395",
+        "GameLibrary walking-direction curve"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 2,
+      "severity": 1,
+      "name": "Fatigue{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/RunOutOfBreath_Desc_1"
+      ],
+      "details": [
+        "Exhaustion limit: 12 seconds of accumulated movement.",
+        "Movement recovery removes 6 seconds of exhaustion per second while stopped.",
+        "Movement speed follows the exhaustion curve; near the limit you stop to catch your breath."
+      ],
+      "evidence": [
+        "Player.get_ExhaustionMax",
+        "Player.FixedUpdate:1523-1587",
+        "GameLibrary.exhaustionCurve"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 2,
+      "severity": 2,
+      "name": "Fatigue{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/RunOutOfBreath_Desc_2"
+      ],
+      "details": [
+        "Exhaustion limit: 9 seconds of accumulated movement.",
+        "Movement recovery removes 6 seconds of exhaustion per second while stopped.",
+        "Movement speed follows the exhaustion curve; near the limit you stop to catch your breath."
+      ],
+      "evidence": [
+        "Player.get_ExhaustionMax",
+        "Player.FixedUpdate:1523-1587",
+        "GameLibrary.exhaustionCurve"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 2,
+      "severity": 3,
+      "name": "Fatigue{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/RunOutOfBreath_Desc_3"
+      ],
+      "details": [
+        "Exhaustion limit: 6 seconds of accumulated movement.",
+        "Movement recovery removes 6 seconds of exhaustion per second while stopped.",
+        "Movement speed follows the exhaustion curve; near the limit you stop to catch your breath."
+      ],
+      "evidence": [
+        "Player.get_ExhaustionMax",
+        "Player.FixedUpdate:1523-1587",
+        "GameLibrary.exhaustionCurve"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 3,
+      "severity": 1,
+      "name": "Missing Toe{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/TripWhenMoving_Desc_1"
+      ],
+      "details": [
+        "Trip threshold: more than 36 world units of continuous movement.",
+        "Stopping or dodging resets the distance counter."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryTripWhenMoving",
+        "Player.FixedUpdate:1576-1587"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 3,
+      "severity": 2,
+      "name": "Missing Toe{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/TripWhenMoving_Desc_2"
+      ],
+      "details": [
+        "Trip threshold: more than 27 world units of continuous movement.",
+        "Stopping or dodging resets the distance counter."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryTripWhenMoving",
+        "Player.FixedUpdate:1576-1587"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 3,
+      "severity": 3,
+      "name": "Missing Toe{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/TripWhenMoving_Desc_3"
+      ],
+      "details": [
+        "Trip threshold: more than 18 world units of continuous movement.",
+        "Stopping or dodging resets the distance counter."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryTripWhenMoving",
+        "Player.FixedUpdate:1576-1587"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 5,
+      "severity": 1,
+      "name": "Open Leg Wound{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/TakeDamageWhenMoving_Desc_1"
+      ],
+      "details": [
+        "Initial distance allowance: 600 world units after spawning.",
+        "After that, a damage check every 100 world units while in battle.",
+        "Raw damage range per check: 1-3.33% of max health.",
+        "Minimum raw damage is 1; rounding and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Player.OnNetworkSpawn:1019-1024",
+        "Player.UpdateInjuryTakeDamageWhenMoving",
+        "Player.TakeDamageScaledByPlayerHealth"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 5,
+      "severity": 2,
+      "name": "Open Leg Wound{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/TakeDamageWhenMoving_Desc_2"
+      ],
+      "details": [
+        "Initial distance allowance: 600 world units after spawning.",
+        "After that, a damage check every 100 world units while in battle.",
+        "Raw damage range per check: 2-6.67% of max health.",
+        "Minimum raw damage is 1; rounding and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Player.OnNetworkSpawn:1019-1024",
+        "Player.UpdateInjuryTakeDamageWhenMoving",
+        "Player.TakeDamageScaledByPlayerHealth"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 5,
+      "severity": 3,
+      "name": "Open Leg Wound{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/TakeDamageWhenMoving_Desc_3"
+      ],
+      "details": [
+        "Initial distance allowance: 600 world units after spawning.",
+        "After that, a damage check every 100 world units while in battle.",
+        "Raw damage range per check: 3-10.00% of max health.",
+        "Minimum raw damage is 1; rounding and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Player.OnNetworkSpawn:1019-1024",
+        "Player.UpdateInjuryTakeDamageWhenMoving",
+        "Player.TakeDamageScaledByPlayerHealth"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 7,
+      "severity": 1,
+      "name": "Open Chest Wound{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/TakeDamageOverTime_Desc_1"
+      ],
+      "details": [
+        "First check: just over 190 gameplay seconds after spawning.",
+        "Following checks: just over 10 seconds apart; damage requires battle.",
+        "Raw damage range: 0.67-2.67% of max health per check.",
+        "Minimum raw damage is 1; rounding and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Player.OnNetworkSpawn:1019-1021",
+        "Player.UpdateInjuryTakeDamageOverTime:1-65",
+        "Player.TakeDamageScaledByPlayerHealth"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 7,
+      "severity": 2,
+      "name": "Open Chest Wound{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/TakeDamageOverTime_Desc_2"
+      ],
+      "details": [
+        "First check: just over 190 gameplay seconds after spawning.",
+        "Following checks: just over 10 seconds apart; damage requires battle.",
+        "Raw damage range: 1.33-5.33% of max health per check.",
+        "Minimum raw damage is 1; rounding and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Player.OnNetworkSpawn:1019-1021",
+        "Player.UpdateInjuryTakeDamageOverTime:1-65",
+        "Player.TakeDamageScaledByPlayerHealth"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 7,
+      "severity": 3,
+      "name": "Open Chest Wound{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/TakeDamageOverTime_Desc_3"
+      ],
+      "details": [
+        "First check: just over 190 gameplay seconds after spawning.",
+        "Following checks: just over 10 seconds apart; damage requires battle.",
+        "Raw damage range: 2.00-8.00% of max health per check.",
+        "Minimum raw damage is 1; rounding and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Player.OnNetworkSpawn:1019-1021",
+        "Player.UpdateInjuryTakeDamageOverTime:1-65",
+        "Player.TakeDamageScaledByPlayerHealth"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 507,
+      "severity": 1,
+      "name": "Stiff Shoulder{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/TakeDamageAfterNotAttacking_Desc_1"
+      ],
+      "details": [
+        "Damage check after more than 16 seconds without dealing damage.",
+        "Raw damage range: 6.67-13.33% of maximum health.",
+        "Minimum raw damage is 1; rounding and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryTakeDamageOverTime:67-119",
+        "Player.TakeDamageScaledByPlayerHealth"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 507,
+      "severity": 2,
+      "name": "Stiff Shoulder{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/TakeDamageAfterNotAttacking_Desc_2"
+      ],
+      "details": [
+        "Damage check after more than 12 seconds without dealing damage.",
+        "Raw damage range: 6.67-13.33% of maximum health.",
+        "Minimum raw damage is 1; rounding and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryTakeDamageOverTime:67-119",
+        "Player.TakeDamageScaledByPlayerHealth"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 507,
+      "severity": 3,
+      "name": "Stiff Shoulder{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/TakeDamageAfterNotAttacking_Desc_3"
+      ],
+      "details": [
+        "Damage check after more than 8 seconds without dealing damage.",
+        "Raw damage range: 6.67-13.33% of maximum health.",
+        "Minimum raw damage is 1; rounding and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryTakeDamageOverTime:67-119",
+        "Player.TakeDamageScaledByPlayerHealth"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 9,
+      "severity": 1,
+      "name": "Weak Shoulder{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/TinyThrows_Desc_1"
+      ],
+      "details": [
+        "Non-arrow projectile launch force: x0.666.",
+        "This changes launch speed; range does not fall by the same percentage."
+      ],
+      "evidence": [
+        "Projectile.Launch:382-442"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 9,
+      "severity": 2,
+      "name": "Weak Shoulder{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/TinyThrows_Desc_2"
+      ],
+      "details": [
+        "Non-arrow projectile launch force: x0.444.",
+        "This changes launch speed; range does not fall by the same percentage."
+      ],
+      "evidence": [
+        "Projectile.Launch:382-442"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 11,
+      "severity": 1,
+      "name": "Dislocated Shoulder{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/InconsistentThrows_Desc_1"
+      ],
+      "details": [
+        "Flub chance: 25% per eligible throw.",
+        "A flub rotates the throw direction by about 25-50 degrees to either side."
+      ],
+      "evidence": [
+        "NetworkAgent.CalculateThrowDirection:121-187",
+        "NetworkAgent.ExecuteGrappledRelease:308-369"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 11,
+      "severity": 2,
+      "name": "Dislocated Shoulder{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/InconsistentThrows_Desc_2"
+      ],
+      "details": [
+        "Flub chance: 50% per eligible throw.",
+        "A flub rotates the throw direction by about 25-50 degrees to either side."
+      ],
+      "evidence": [
+        "NetworkAgent.CalculateThrowDirection:121-187",
+        "NetworkAgent.ExecuteGrappledRelease:308-369"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 13,
+      "severity": 1,
+      "name": "Stiff Back{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/TinyDash_Desc_1"
+      ],
+      "details": [
+        "Roll duration: 0.6 seconds.",
+        "Ordinary roll duration is 0.75 seconds; duration is not the same as travel distance."
+      ],
+      "evidence": [
+        "Player.get_AdjustedDashDuration",
+        "Player.StartDash:318-326",
+        "Player prefab:dashDuration"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 13,
+      "severity": 2,
+      "name": "Stiff Back{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/TinyDash_Desc_2"
+      ],
+      "details": [
+        "Roll duration: 0.45 seconds.",
+        "Ordinary roll duration is 0.75 seconds; duration is not the same as travel distance."
+      ],
+      "evidence": [
+        "Player.get_AdjustedDashDuration",
+        "Player.StartDash:318-326",
+        "Player prefab:dashDuration"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 13,
+      "severity": 3,
+      "name": "Stiff Back{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/TinyDash_Desc_3"
+      ],
+      "details": [
+        "Short-lunge duration: 0.225 seconds.",
+        "Ordinary roll duration is 0.75 seconds; duration is not the same as travel distance."
+      ],
+      "evidence": [
+        "Player.get_AdjustedDashDuration",
+        "Player.StartDash:318-326",
+        "Player prefab:dashDuration"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 16,
+      "severity": 1,
+      "name": "Panic{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/InvoluntaryDash_Desc_1"
+      ],
+      "details": [
+        "After triggering, the next eligible dodge waits 15-30 seconds.",
+        "Requires a threatening enemy less than 4 world units away and the ability to dodge."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryInvoluntaryDash:16-115"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 16,
+      "severity": 2,
+      "name": "Panic{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/InvoluntaryDash_Desc_2"
+      ],
+      "details": [
+        "After triggering, the next eligible dodge waits 7.5-15 seconds.",
+        "Requires a threatening enemy less than 4 world units away and the ability to dodge."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryInvoluntaryDash:16-115"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 104,
+      "severity": 1,
+      "name": "Arm Fatigue{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/WeaponsSlowOverTime_Desc_1"
+      ],
+      "details": [
+        "Slowing starts after holding a weapon for 12 seconds.",
+        "Movement falls to 35% over the next 10 seconds.",
+        "Changing the held weapon restarts its timer."
+      ],
+      "evidence": [
+        "Player.get_FinalMovementSpeed:315-398",
+        "Player.EquipWeapon"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 104,
+      "severity": 2,
+      "name": "Arm Fatigue{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/WeaponsSlowOverTime_Desc_2"
+      ],
+      "details": [
+        "Slowing starts after holding a weapon for 8 seconds.",
+        "Movement falls to 35% over the next 10 seconds.",
+        "Changing the held weapon restarts its timer."
+      ],
+      "evidence": [
+        "Player.get_FinalMovementSpeed:315-398",
+        "Player.EquipWeapon"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 104,
+      "severity": 3,
+      "name": "Arm Fatigue{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/WeaponsSlowOverTime_Desc_3"
+      ],
+      "details": [
+        "Slowing starts after holding a weapon for 4 seconds.",
+        "Movement falls to 35% over the next 10 seconds.",
+        "Changing the held weapon restarts its timer."
+      ],
+      "evidence": [
+        "Player.get_FinalMovementSpeed:315-398",
+        "Player.EquipWeapon"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 506,
+      "severity": 1,
+      "name": "Sweaty Palms{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/DropWeaponOnMiss_Desc_1"
+      ],
+      "details": [
+        "Disarm chance after an eligible melee miss: 50%."
+      ],
+      "evidence": [
+        "Weapon.AttackEffect:2089-2110"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 506,
+      "severity": 2,
+      "name": "Sweaty Palms{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/DropWeaponOnMiss_Desc_2"
+      ],
+      "details": [
+        "Disarm chance after an eligible melee miss: 100%."
+      ],
+      "evidence": [
+        "Weapon.AttackEffect:2089-2110"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 700,
+      "severity": 1,
+      "name": "Grip Fatigue{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/DropShieldOnRoll_Desc_1"
+      ],
+      "details": [
+        "Chance to drop your shield on an eligible dodge: 50%."
+      ],
+      "evidence": [
+        "Player.StartDash:126-160"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 700,
+      "severity": 2,
+      "name": "Grip Fatigue{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/DropShieldOnRoll_Desc_2"
+      ],
+      "details": [
+        "Chance to drop your shield on an eligible dodge: 100%."
+      ],
+      "evidence": [
+        "Player.StartDash:126-160"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 702,
+      "severity": 1,
+      "name": "Poor Balance{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/TripChanceOnDefensiveAction_Desc_1"
+      ],
+      "details": [
+        "Trip roll on an eligible dodge/block: 3.3%.",
+        "The same base chance is used by the dodge checks and block check."
+      ],
+      "evidence": [
+        "Player.Update:487-516",
+        "Player.OnDashComplete:33-61",
+        "Player.OnBlock:328-346"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 702,
+      "severity": 2,
+      "name": "Poor Balance{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/TripChanceOnDefensiveAction_Desc_2"
+      ],
+      "details": [
+        "Trip roll on an eligible dodge/block: 6.6%.",
+        "The same base chance is used by the dodge checks and block check."
+      ],
+      "evidence": [
+        "Player.Update:487-516",
+        "Player.OnDashComplete:33-61",
+        "Player.OnBlock:328-346"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 702,
+      "severity": 3,
+      "name": "Poor Balance{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/TripChanceOnDefensiveAction_Desc_3"
+      ],
+      "details": [
+        "Trip roll on an eligible dodge/block: 9.9%.",
+        "The same base chance is used by the dodge checks and block check."
+      ],
+      "evidence": [
+        "Player.Update:487-516",
+        "Player.OnDashComplete:33-61",
+        "Player.OnBlock:328-346"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 901,
+      "severity": 1,
+      "name": "Butterfingers{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/DropOnPickup_Desc_1"
+      ],
+      "details": [
+        "Disarm chance when equipping an eligible weapon: 16%."
+      ],
+      "evidence": [
+        "Player.EquipWeapon:105-149"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 901,
+      "severity": 2,
+      "name": "Butterfingers{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/DropOnPickup_Desc_2"
+      ],
+      "details": [
+        "Disarm chance when equipping an eligible weapon: 32%."
+      ],
+      "evidence": [
+        "Player.EquipWeapon:105-149"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 902,
+      "severity": 1,
+      "name": "Bad Knees{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/StaminaLostOnPickup_Desc_1"
+      ],
+      "details": [
+        "Pickup stamina cost: 15% of maximum stamina.",
+        "With 30 maximum stamina: 4.5 stamina per pickup."
+      ],
+      "evidence": [
+        "Player.ReceivePickup:624-654",
+        "Player prefab:staminaMax"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 902,
+      "severity": 2,
+      "name": "Bad Knees{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/StaminaLostOnPickup_Desc_2"
+      ],
+      "details": [
+        "Pickup stamina cost: 30% of maximum stamina.",
+        "With 30 maximum stamina: 9.0 stamina per pickup."
+      ],
+      "evidence": [
+        "Player.ReceivePickup:624-654",
+        "Player prefab:staminaMax"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1000,
+      "severity": 1,
+      "name": "Irritability{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/AttackTeammate_Desc_1"
+      ],
+      "details": [
+        "After an involuntary ally attack, cooldown: 12-24 seconds.",
+        "Checks nearby allies within 3 world units when you can attack."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryAttackTeammate:66-220"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1000,
+      "severity": 2,
+      "name": "Irritability{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/AttackTeammate_Desc_2"
+      ],
+      "details": [
+        "After an involuntary ally attack, cooldown: 6-12 seconds.",
+        "Checks nearby allies within 3 world units when you can attack."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryAttackTeammate:66-220"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1001,
+      "severity": 1,
+      "name": "Recklessness{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/AttackEnemy_Desc_1"
+      ],
+      "details": [
+        "After an involuntary enemy attack, cooldown: 6-12 seconds.",
+        "Requires an enemy within 3 world units."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryAttackEnemy:93-134"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1001,
+      "severity": 2,
+      "name": "Recklessness{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/AttackEnemy_Desc_2"
+      ],
+      "details": [
+        "After an involuntary enemy attack, cooldown: 3-6 seconds.",
+        "Requires an enemy within 3 world units."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryAttackEnemy:93-134"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1002,
+      "severity": 1,
+      "name": "Annoying{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/AlliesAttackYou_Desc_1"
+      ],
+      "details": [
+        "Cooldown after forcing an ally to attack: 22 seconds.",
+        "The ally must be within 3 world units and able to attack."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryAlliesAttackYou:78-184"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1002,
+      "severity": 2,
+      "name": "Annoying{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/AlliesAttackYou_Desc_2"
+      ],
+      "details": [
+        "Cooldown after forcing an ally to attack: 14 seconds.",
+        "The ally must be within 3 world units and able to attack."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryAlliesAttackYou:78-184"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1002,
+      "severity": 3,
+      "name": "Annoying{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/AlliesAttackYou_Desc_3"
+      ],
+      "details": [
+        "Cooldown after forcing an ally to attack: 6 seconds.",
+        "The ally must be within 3 world units and able to attack."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryAlliesAttackYou:78-184"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1003,
+      "severity": 1,
+      "name": "Too Strong{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/WeaponsGetDurability_Desc_1"
+      ],
+      "details": [
+        "Held-weapon melee damage: +15% at every severity.",
+        "Weapon durability limit: 12.",
+        "The damage bonus excludes your default unarmed attack."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:852-875",
+        "NetworkAgent.GetMaxWeaponInjuryDurability"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1003,
+      "severity": 2,
+      "name": "Too Strong{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/WeaponsGetDurability_Desc_2"
+      ],
+      "details": [
+        "Held-weapon melee damage: +15% at every severity.",
+        "Weapon durability limit: 9.",
+        "The damage bonus excludes your default unarmed attack."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:852-875",
+        "NetworkAgent.GetMaxWeaponInjuryDurability"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1003,
+      "severity": 3,
+      "name": "Too Strong{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/WeaponsGetDurability_Desc_3"
+      ],
+      "details": [
+        "Held-weapon melee damage: +15% at every severity.",
+        "Weapon durability limit: 6.",
+        "The damage bonus excludes your default unarmed attack."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:852-875",
+        "NetworkAgent.GetMaxWeaponInjuryDurability"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1004,
+      "severity": 1,
+      "name": "Girthy{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/ShorterChains_Desc_1"
+      ],
+      "details": [
+        "Chain length contribution from your end: -15%.",
+        "Both ends apply multiplicatively: two 1-skull penalties give 27.75% shorter chains."
+      ],
+      "evidence": [
+        "Chain.RecalculateRope:591-680"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1004,
+      "severity": 2,
+      "name": "Girthy{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/ShorterChains_Desc_2"
+      ],
+      "details": [
+        "Chain length contribution from your end: -30%.",
+        "Both ends apply multiplicatively: two 2-skull penalties give 51.0% shorter chains."
+      ],
+      "evidence": [
+        "Chain.RecalculateRope:591-680"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1005,
+      "severity": 1,
+      "name": "Separation Anxiety{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/SlowAwayFromAllies_Desc_1"
+      ],
+      "details": [
+        "No distance penalty within 8 world units of the closest ally.",
+        "Penalty grows to -20% movement at 20 world units.",
+        "Between 8 and 20 units, the penalty scales linearly."
+      ],
+      "evidence": [
+        "Player.get_FinalMovementSpeed:399-550"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1005,
+      "severity": 2,
+      "name": "Separation Anxiety{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/SlowAwayFromAllies_Desc_2"
+      ],
+      "details": [
+        "No distance penalty within 8 world units of the closest ally.",
+        "Penalty grows to -40% movement at 20 world units.",
+        "Between 8 and 20 units, the penalty scales linearly."
+      ],
+      "evidence": [
+        "Player.get_FinalMovementSpeed:399-550"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1005,
+      "severity": 3,
+      "name": "Separation Anxiety{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/SlowAwayFromAllies_Desc_3"
+      ],
+      "details": [
+        "No distance penalty within 8 world units of the closest ally.",
+        "Penalty grows to -60% movement at 20 world units.",
+        "Between 8 and 20 units, the penalty scales linearly."
+      ],
+      "evidence": [
+        "Player.get_FinalMovementSpeed:399-550"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1006,
+      "severity": 1,
+      "name": "Stage Fright{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/EnfeebledWhenWatched_Desc_1"
+      ],
+      "details": [
+        "Watcher distance: up to 8 world units. Facing-angle threshold: 20 degrees.",
+        "Applies Weak for 0.5 seconds, refreshed while watched.",
+        "Weak: -25% damage, movement speed and normal stamina recovery."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryEnfeebledWhenWatched",
+        "Player.IsFacedBy",
+        "GladiatorConsts..cctor"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1006,
+      "severity": 2,
+      "name": "Stage Fright{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/EnfeebledWhenWatched_Desc_2"
+      ],
+      "details": [
+        "Watcher distance: up to 8 world units. Facing-angle threshold: 40 degrees.",
+        "Applies Weak for 0.5 seconds, refreshed while watched.",
+        "Weak: -25% damage, movement speed and normal stamina recovery."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryEnfeebledWhenWatched",
+        "Player.IsFacedBy",
+        "GladiatorConsts..cctor"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1302,
+      "severity": 1,
+      "name": "Punctured Lung{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/PuncturedLung_Desc_1"
+      ],
+      "details": [
+        "Movement penalty = missing stamina fraction / 4.199999999999999.",
+        "At empty stamina: about 23.81% slower.",
+        "The penalty cannot exceed 70%."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:166-208"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1302,
+      "severity": 2,
+      "name": "Punctured Lung{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/PuncturedLung_Desc_2"
+      ],
+      "details": [
+        "Movement penalty = missing stamina fraction / 2.8.",
+        "At empty stamina: about 35.71% slower.",
+        "The penalty cannot exceed 70%."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:166-208"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1302,
+      "severity": 3,
+      "name": "Punctured Lung{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/PuncturedLung_Desc_3"
+      ],
+      "details": [
+        "Movement penalty = missing stamina fraction / 1.4.",
+        "At empty stamina: about 70.00% slower.",
+        "The penalty cannot exceed 70%."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:166-208"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1401,
+      "severity": 1,
+      "name": "Bestial Fury{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/DropWeaponAndPunchOnRage_Desc_1"
+      ],
+      "details": [
+        "Disarm chance when Fury is applied: 50%.",
+        "Unarmed damage while furious: +100% at either severity.",
+        "Weapon pickups are blocked during Fury."
+      ],
+      "evidence": [
+        "Player.ApplyRage:72-88",
+        "Player.ModifyAttackDamage:305-345"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1401,
+      "severity": 2,
+      "name": "Bestial Fury{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/DropWeaponAndPunchOnRage_Desc_2"
+      ],
+      "details": [
+        "Disarm chance when Fury is applied: 100%.",
+        "Unarmed damage while furious: +100% at either severity.",
+        "Weapon pickups are blocked during Fury."
+      ],
+      "evidence": [
+        "Player.ApplyRage:72-88",
+        "Player.ModifyAttackDamage:305-345"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1600,
+      "severity": 1,
+      "name": "Overzealous{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/CritsDrainStam_Desc_1"
+      ],
+      "details": [
+        "Adds +0.3 to the crit damage multiplier.",
+        "With no other crit modifiers: 2.3x damage.",
+        "Each crit drains half your current stamina."
+      ],
+      "evidence": [
+        "NetworkAgent.ModifyAttackDamage:44-58",
+        "Player.PerformCritActions:67-96"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1600,
+      "severity": 2,
+      "name": "Overzealous{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/CritsDrainStam_Desc_2"
+      ],
+      "details": [
+        "Adds +0.6 to the crit damage multiplier.",
+        "With no other crit modifiers: 2.6x damage.",
+        "Each crit drains all your current stamina."
+      ],
+      "evidence": [
+        "NetworkAgent.ModifyAttackDamage:44-58",
+        "Player.PerformCritActions:67-96"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1200,
+      "severity": 1,
+      "name": "On Fire{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/CatchFireWhenWild_Desc_1"
+      ],
+      "details": [
+        "Chance when your crowd becomes Wild: 34%.",
+        "Fire: a damage tick about every 0.75 seconds.",
+        "Base tick damage: 0.75 against players, 2 against other agents.",
+        "Day scaling and enemy fire resistance apply; raw tick damage has a minimum of 1."
+      ],
+      "evidence": [
+        "PlayerCrowdData.GetCurrentCrowdState:273-299",
+        "NetworkAgent.UpdateInjuryBurning",
+        "NetworkAgent..ctor:600",
+        "GladiatorConsts.get_FireDamage",
+        "GladiatorConsts.get_FireDamageToPlayer"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1200,
+      "severity": 2,
+      "name": "On Fire{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/CatchFireWhenWild_Desc_2"
+      ],
+      "details": [
+        "Chance when your crowd becomes Wild: 68%.",
+        "Fire: a damage tick about every 0.75 seconds.",
+        "Base tick damage: 0.75 against players, 2 against other agents.",
+        "Day scaling and enemy fire resistance apply; raw tick damage has a minimum of 1."
+      ],
+      "evidence": [
+        "PlayerCrowdData.GetCurrentCrowdState:273-299",
+        "NetworkAgent.UpdateInjuryBurning",
+        "NetworkAgent..ctor:600",
+        "GladiatorConsts.get_FireDamage",
+        "GladiatorConsts.get_FireDamageToPlayer"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1200,
+      "severity": 3,
+      "name": "On Fire{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/CatchFireWhenWild_Desc_3"
+      ],
+      "details": [
+        "Chance when your crowd becomes Wild: 100%.",
+        "Fire: a damage tick about every 0.75 seconds.",
+        "Base tick damage: 0.75 against players, 2 against other agents.",
+        "Day scaling and enemy fire resistance apply; raw tick damage has a minimum of 1."
+      ],
+      "evidence": [
+        "PlayerCrowdData.GetCurrentCrowdState:273-299",
+        "NetworkAgent.UpdateInjuryBurning",
+        "NetworkAgent..ctor:600",
+        "GladiatorConsts.get_FireDamage",
+        "GladiatorConsts.get_FireDamageToPlayer"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 603,
+      "severity": 1,
+      "name": "Bullet Throws{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/ThrowMissesBreakWeapon_Desc_1"
+      ],
+      "details": [
+        "Non-arrow throw damage: +15% at either severity.",
+        "Weapon-breaking roll on a missed throw: 50%."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:346-375",
+        "Projectile.OnCollisionEnter:308-323"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 603,
+      "severity": 2,
+      "name": "Bullet Throws{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/ThrowMissesBreakWeapon_Desc_2"
+      ],
+      "details": [
+        "Non-arrow throw damage: +15% at either severity.",
+        "Weapon-breaking roll on a missed throw: 100%."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:346-375",
+        "Projectile.OnCollisionEnter:308-323"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 510,
+      "severity": 1,
+      "name": "Heavier Swings{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/AttacksTakeMoreStamina_Desc_1"
+      ],
+      "details": [
+        "Melee damage: +15% at every severity.",
+        "Melee stamina cost: +25%, including special melee attacks.",
+        "Weapon stamina multipliers also apply."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:206-215",
+        "Player.ConsumeMeleeStamina:95-120"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 510,
+      "severity": 2,
+      "name": "Heavier Swings{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/AttacksTakeMoreStamina_Desc_2"
+      ],
+      "details": [
+        "Melee damage: +15% at every severity.",
+        "Melee stamina cost: +50%, including special melee attacks.",
+        "Weapon stamina multipliers also apply."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:206-215",
+        "Player.ConsumeMeleeStamina:95-120"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 510,
+      "severity": 3,
+      "name": "Heavier Swings{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/AttacksTakeMoreStamina_Desc_3"
+      ],
+      "details": [
+        "Melee damage: +15% at every severity.",
+        "Melee stamina cost: +75%, including special melee attacks.",
+        "Weapon stamina multipliers also apply."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:206-215",
+        "Player.ConsumeMeleeStamina:95-120"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 220,
+      "severity": 1,
+      "name": "Self-Obsessed{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/CameraZoomedIn_Desc_1"
+      ],
+      "details": [
+        "Camera distance: 85% of its normal value.",
+        "The visual transition follows the effect blend."
+      ],
+      "evidence": [
+        "CameraZoomedIn.Update"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 220,
+      "severity": 2,
+      "name": "Self-Obsessed{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/CameraZoomedIn_Desc_2"
+      ],
+      "details": [
+        "Camera distance: 70% of its normal value.",
+        "The visual transition follows the effect blend."
+      ],
+      "evidence": [
+        "CameraZoomedIn.Update"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1108,
+      "severity": 1,
+      "name": "Food Poisoning{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/EnfeebledForDay_Desc_1"
+      ],
+      "details": [
+        "Weak: -25% attack damage.",
+        "Movement speed: -25%. Normal stamina recovery: -25%.",
+        "Maximum stamina is not reduced by Weak itself."
+      ],
+      "evidence": [
+        "GladiatorConsts..cctor",
+        "Player.get_StaminaRecoveryRate",
+        "Player.get_FinalMovementSpeed",
+        "Player.ModifyAttackDamage"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 2100,
+      "severity": 0,
+      "name": "Shield Spikes",
+      "terms": [
+        "Purchases/SpikedShield_Desc"
+      ],
+      "details": [
+        "Blocking reflects 4 base damage to the attacker.",
+        "Day scaling and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Player.OnBlock:143-197"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 1001,
+      "severity": 0,
+      "name": "Chain Upgrade",
+      "terms": [
+        "Purchases/ChainUpgrade_Desc"
+      ],
+      "details": [
+        "Chain length: +20%.",
+        "Chain trip/squeeze: +5 base damage, added to any Stag III bonuses.",
+        "Day scaling and damage modifiers still apply."
+      ],
+      "evidence": [
+        "Chain.RecalculateRope",
+        "Chain.LateUpdate:140-265"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 1011,
+      "severity": 0,
+      "name": "Poisoned Apples",
+      "terms": [
+        "Purchases/EnemiesLowerHealth_Desc"
+      ],
+      "details": [
+        "Each eligible enemy has a 50% roll to start hurt.",
+        "Selected enemies start at about two-thirds maximum health (rounded up).",
+        "Boss-tier enemies at tier 4 or above are excluded."
+      ],
+      "evidence": [
+        "Enemy.OnNetworkSpawn:289-329"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 1508,
+      "severity": 0,
+      "name": "Soap for the Surgeon",
+      "terms": [
+        "Purchases/SurgeriesHeal_Desc"
+      ],
+      "details": [
+        "Healing from surgery: 7 HP in Act I, 10 HP in Act II, 15 HP in Act III+.",
+        "Uses the act of the last completed arena; capped at your healing limit."
+      ],
+      "evidence": [
+        "GladiatorConsts.SurgeriesHealAmount",
+        "GladiatorConsts..cctor:84-92",
+        "RunDataManager.PerformSurgeryRpc:188-218"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 20,
+      "severity": 0,
+      "name": "Reckless Rhino",
+      "terms": [
+        "Skills/Beast_Rhino_Lv3_Desc"
+      ],
+      "details": [
+        "Shield projectile base impact damage: 12.",
+        "Base trip duration: 2.5 seconds, plus 1 second against enemies.",
+        "These are projectile base values; throw charge and combat modifiers affect the result."
+      ],
+      "evidence": [
+        "weapon-prefabs.json:Shield.projectilePrefab",
+        "NetworkAgent.ExecuteThrow"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 12,
+      "severity": 0,
+      "name": "Ferocious Wolf",
+      "terms": [
+        "Skills/Beast_Wolf_Lv1_Desc"
+      ],
+      "details": [
+        "Eligible fatal hits can receive an extra dismemberment roll, up to 20%.",
+        "The extra chance decreases in later waves; normal dismemberment rules still apply.",
+        "Enemy body-part attack damage: x3 (+200%)."
+      ],
+      "evidence": [
+        "Enemy.HandleDismemberment:105-117,582-630",
+        "Player.ModifyAttackDamage"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 22,
+      "severity": 0,
+      "name": "Vicious Monkey",
+      "terms": [
+        "Skills/Beast_Monkey_Lv2_Desc"
+      ],
+      "details": [
+        "Unarmed damage: +50%.",
+        "The special launches eligible enemies with a 0.6-second toss duration.",
+        "Blocked or immune targets can prevent the launch; travel distance depends on the toss."
+      ],
+      "evidence": [
+        "Player.ModifyAttackDamage:229-238,305-345",
+        "WeaponPunch.WeaponSpecialEffects:30-174"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 4009,
+      "severity": 0,
+      "name": "Iron Stance",
+      "terms": [
+        "Skills/BlockingTrips_Desc"
+      ],
+      "details": [
+        "A successful melee block trips the enemy for 3 base seconds.",
+        "Other trip-duration modifiers and immunities still apply."
+      ],
+      "evidence": [
+        "Player.OnBlock:214-243"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 100,
+      "severity": 1,
+      "name": "Restless Legs{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/CantStopMoving_Desc_1"
+      ],
+      "details": [
+        "Minimum movement-input strength: about 33.33% of full input.",
+        "The last movement direction is reused when you try to stop."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerInput:221-355"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 100,
+      "severity": 2,
+      "name": "Restless Legs{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/CantStopMoving_Desc_2"
+      ],
+      "details": [
+        "Minimum movement-input strength: about 66.67% of full input.",
+        "The last movement direction is reused when you try to stop."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerInput:221-355"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 100,
+      "severity": 3,
+      "name": "Restless Legs{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/CantStopMoving_Desc_3"
+      ],
+      "details": [
+        "Minimum movement-input strength: about 100.00% of full input.",
+        "The last movement direction is reused when you try to stop."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerInput:221-355"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 103,
+      "severity": 1,
+      "name": "Brain Fog{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/MovementInputDelay_Desc_1"
+      ],
+      "details": [
+        "Once its input history is filled, movement reads input from 3 physics updates earlier.",
+        "The delay in seconds depends on the physics timestep."
+      ],
+      "evidence": [
+        "Player.CreateInputCache",
+        "Player.FixedUpdate:178-206",
+        "Player.GetModifiedPlayerInput:38-78",
+        "Player..ctor:2184"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 103,
+      "severity": 2,
+      "name": "Brain Fog{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/MovementInputDelay_Desc_2"
+      ],
+      "details": [
+        "Once its input history is filled, movement reads input from 7 physics updates earlier.",
+        "The delay in seconds depends on the physics timestep."
+      ],
+      "evidence": [
+        "Player.CreateInputCache",
+        "Player.FixedUpdate:178-206",
+        "Player.GetModifiedPlayerInput:38-78",
+        "Player..ctor:2184"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 103,
+      "severity": 3,
+      "name": "Brain Fog{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/MovementInputDelay_Desc_3"
+      ],
+      "details": [
+        "Once its input history is filled, movement reads input from 11 physics updates earlier.",
+        "The delay in seconds depends on the physics timestep."
+      ],
+      "evidence": [
+        "Player.CreateInputCache",
+        "Player.FixedUpdate:178-206",
+        "Player.GetModifiedPlayerInput:38-78",
+        "Player..ctor:2184"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 10,
+      "severity": 1,
+      "name": "Broken Finger{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/SlightlyOffThrows_Desc_1"
+      ],
+      "details": [
+        "Non-arrow projectiles rotate 10 degrees to the left at launch."
+      ],
+      "evidence": [
+        "Projectile.Launch:394-400,642-664"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 704,
+      "severity": 1,
+      "name": "Twisted Ankle{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/InaccurateDashes_Desc_1"
+      ],
+      "details": [
+        "The chosen dodge direction is rotated by a random angle from -55 to +55 degrees."
+      ],
+      "evidence": [
+        "Player.OnDash:118-156"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 500,
+      "severity": 1,
+      "name": "Bad Vibrations{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/DropWeaponOnShieldHit_Desc_1"
+      ],
+      "details": [
+        "Disarm roll when your melee attack is blocked: 50%.",
+        "The successful disarm includes a 0.1-second base stun."
+      ],
+      "evidence": [
+        "NetworkAgent.OnBlock:692-726"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 500,
+      "severity": 2,
+      "name": "Bad Vibrations{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/DropWeaponOnShieldHit_Desc_2"
+      ],
+      "details": [
+        "Disarm roll when your melee attack is blocked: 100%.",
+        "The successful disarm includes a 0.1-second base stun."
+      ],
+      "evidence": [
+        "NetworkAgent.OnBlock:692-726"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 500,
+      "severity": 3,
+      "name": "Bad Vibrations{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/DropWeaponOnShieldHit_Desc_3"
+      ],
+      "details": [
+        "Disarm roll when your melee attack is blocked: 100%.",
+        "The successful disarm includes a 1-second base stun."
+      ],
+      "evidence": [
+        "NetworkAgent.OnBlock:692-726"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 803,
+      "severity": 1,
+      "name": "Hesitancy{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/SlowerWhileBlocking_Desc_1"
+      ],
+      "details": [
+        "While strafing, movement is multiplied by 0.2 after the usual strafe penalty.",
+        "This is an additional 80% slowdown."
+      ],
+      "evidence": [
+        "Player.get_FinalMovementSpeed:151-190"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 800,
+      "severity": 1,
+      "name": "Easily Startled{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/OnShieldBreakStunned_Desc_1"
+      ],
+      "details": [
+        "Shield breaking triggers a 2-second base stun on you.",
+        "Other stun modifiers still apply."
+      ],
+      "evidence": [
+        "NetworkAgent.OnBlock:587-601 (native literal at 0x183BA2CD8)"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1105,
+      "severity": 1,
+      "name": "Overconfident{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/TrainingGreaterRandomness_Desc_1"
+      ],
+      "details": [
+        "Each training increment is randomly chosen from 1-4 weight units.",
+        "Without this affliction the range is 1-3."
+      ],
+      "evidence": [
+        "UIGameLobbyTrainerRpc.ExecuteTraining:63-117"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1101,
+      "severity": 1,
+      "name": "Potion Addiction{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/AlwaysDrinkPotion_Desc_1"
+      ],
+      "details": [
+        "The forced-potion selection has a 50% activation roll.",
+        "Selects the largest eligible potion that does not fully heal you."
+      ],
+      "evidence": [
+        "UIGameLobbyDoctorRpc.HandleAutoPick:250-518"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1101,
+      "severity": 2,
+      "name": "Potion Addiction{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/AlwaysDrinkPotion_Desc_2"
+      ],
+      "details": [
+        "The forced-potion selection activates without a random chance roll.",
+        "Selects the largest eligible potion that does not fully heal you."
+      ],
+      "evidence": [
+        "UIGameLobbyDoctorRpc.HandleAutoPick:250-518"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1101,
+      "severity": 3,
+      "name": "Potion Addiction{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/AlwaysDrinkPotion_Desc_3"
+      ],
+      "details": [
+        "The forced-potion selection activates without a random chance roll.",
+        "Selects the smallest eligible potion that fully heals you."
+      ],
+      "evidence": [
+        "UIGameLobbyDoctorRpc.HandleAutoPick:250-518"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1109,
+      "severity": 1,
+      "name": "Gambling Problem{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/GamblingProblem_Desc_1"
+      ],
+      "details": [
+        "Each daily roll: 1% to gain 100 coins; 99% to lose 5.",
+        "Average result over many rolls: -3.95 coins per roll."
+      ],
+      "evidence": [
+        "RunDataManager.StartLevel:77-101"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1109,
+      "severity": 2,
+      "name": "Gambling Problem{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/GamblingProblem_Desc_2"
+      ],
+      "details": [
+        "Each daily roll: 1% to gain 100 coins; 99% to lose 10.",
+        "Average result over many rolls: -8.9 coins per roll."
+      ],
+      "evidence": [
+        "RunDataManager.StartLevel:77-101"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 215,
+      "severity": 1,
+      "name": "Infatuated{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/CameraFocusOnAlly_Desc_1"
+      ],
+      "details": [
+        "Camera-target weights: you 0.66, selected ally 0.33.",
+        "These are camera weights, not percentages of screen area.",
+        "The +10% damage condition checks the ally within 8 units and a 20-degree facing threshold."
+      ],
+      "evidence": [
+        "GameLevel.OnAllPlayersSpawned:269-364",
+        "Player.ModifyAttackDamage:1009-1018",
+        "Player.IsFacedBy"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 215,
+      "severity": 2,
+      "name": "Infatuated{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/CameraFocusOnAlly_Desc_2"
+      ],
+      "details": [
+        "Camera-target weights: you 0.33, selected ally 0.66.",
+        "These are camera weights, not percentages of screen area.",
+        "The +10% damage condition checks the ally within 8 units and a 20-degree facing threshold."
+      ],
+      "evidence": [
+        "GameLevel.OnAllPlayersSpawned:269-364",
+        "Player.ModifyAttackDamage:1009-1018",
+        "Player.IsFacedBy"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 215,
+      "severity": 3,
+      "name": "Infatuated{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/CameraFocusOnAlly_Desc_3"
+      ],
+      "details": [
+        "Camera-target weights: you 0.1, selected ally 0.9.",
+        "These are camera weights, not percentages of screen area.",
+        "The +10% damage condition checks the ally within 8 units and a 20-degree facing threshold."
+      ],
+      "evidence": [
+        "GameLevel.OnAllPlayersSpawned:269-364",
+        "Player.ModifyAttackDamage:1009-1018",
+        "Player.IsFacedBy"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 10004,
+      "severity": 3,
+      "name": "Guilty Conscience{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/Amputation_Behavioural_Desc_3"
+      ],
+      "details": [
+        "After a kill, forced running lasts 1.95 seconds."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerInput:97-115",
+        "Player.OnBattleEventActor"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 207,
+      "severity": 1,
+      "name": "Double Vision{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/DoubleVision_Desc_1"
+      ],
+      "details": [
+        "A hit resets the double-vision effect timer to 4 seconds.",
+        "The intensity fades along a curve; another hit restarts the timer."
+      ],
+      "evidence": [
+        "DoubleVision.Trigger:14-18",
+        "DoubleVision.Update:16-48",
+        "level1:RenderEffectManager/DoubleVision.effectTimerMax"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 207,
+      "severity": 2,
+      "name": "Double Vision{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/DoubleVision_Desc_2"
+      ],
+      "details": [
+        "A hit resets the double-vision effect timer to 8 seconds.",
+        "The intensity fades along a curve; another hit restarts the timer."
+      ],
+      "evidence": [
+        "DoubleVision.Trigger:14-18",
+        "DoubleVision.Update:16-48",
+        "level1:RenderEffectManager/DoubleVision.effectTimerMax"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 213,
+      "severity": 1,
+      "name": "Near Sighted{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/NearsightedVision_Desc_1"
+      ],
+      "details": [
+        "Blur strength: 1x the 1-skull setting.",
+        "The blur mask fluctuates through a 2-second cycle.",
+        "This is a visual blur, without a fixed world-distance cutoff."
+      ],
+      "evidence": [
+        "NearsightedVision.Update",
+        "level1:RenderEffectManager/NearsightedVision"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 213,
+      "severity": 2,
+      "name": "Near Sighted{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/NearsightedVision_Desc_2"
+      ],
+      "details": [
+        "Blur strength: 2x the 1-skull setting.",
+        "The blur mask fluctuates through a 2-second cycle.",
+        "This is a visual blur, without a fixed world-distance cutoff."
+      ],
+      "evidence": [
+        "NearsightedVision.Update",
+        "level1:RenderEffectManager/NearsightedVision"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 213,
+      "severity": 3,
+      "name": "Near Sighted{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/NearsightedVision_Desc_3"
+      ],
+      "details": [
+        "Blur strength: 3x the 1-skull setting.",
+        "The blur mask fluctuates through a 2-second cycle.",
+        "This is a visual blur, without a fixed world-distance cutoff."
+      ],
+      "evidence": [
+        "NearsightedVision.Update",
+        "level1:RenderEffectManager/NearsightedVision"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 212,
+      "severity": 1,
+      "name": "Far Sighted{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/FarsightedVision_Desc_1"
+      ],
+      "details": [
+        "Blur strength: 1.00x the 1-skull setting.",
+        "The blur mask fluctuates through a 12-second cycle.",
+        "This is a visual blur, without a fixed world-distance cutoff."
+      ],
+      "evidence": [
+        "FarsightedVision.Update:43-48",
+        "level1:RenderEffectManager/FarsightedVision"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 212,
+      "severity": 2,
+      "name": "Far Sighted{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/FarsightedVision_Desc_2"
+      ],
+      "details": [
+        "Blur strength: 2.33x the 1-skull setting.",
+        "The blur mask fluctuates through a 12-second cycle.",
+        "This is a visual blur, without a fixed world-distance cutoff."
+      ],
+      "evidence": [
+        "FarsightedVision.Update:43-48",
+        "level1:RenderEffectManager/FarsightedVision"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 212,
+      "severity": 3,
+      "name": "Far Sighted{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/FarsightedVision_Desc_3"
+      ],
+      "details": [
+        "Blur strength: 3.67x the 1-skull setting.",
+        "The blur mask fluctuates through a 12-second cycle.",
+        "This is a visual blur, without a fixed world-distance cutoff."
+      ],
+      "evidence": [
+        "FarsightedVision.Update:43-48",
+        "level1:RenderEffectManager/FarsightedVision"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 214,
+      "severity": 1,
+      "name": "Migraine{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/Glare_Desc_1"
+      ],
+      "details": [
+        "Glare strength: 1x the 1-skull setting.",
+        "Brightness fluctuates through an 8-second curve.",
+        "The strength is a visual-effect scale, not a damage or sight-distance penalty."
+      ],
+      "evidence": [
+        "Glare.Update",
+        "level1:RenderEffectManager/Glare"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 214,
+      "severity": 2,
+      "name": "Migraine{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/Glare_Desc_2"
+      ],
+      "details": [
+        "Glare strength: 2x the 1-skull setting.",
+        "Brightness fluctuates through an 8-second curve.",
+        "The strength is a visual-effect scale, not a damage or sight-distance penalty."
+      ],
+      "evidence": [
+        "Glare.Update",
+        "level1:RenderEffectManager/Glare"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 210,
+      "severity": 1,
+      "name": "Concussion{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/BlackOutVision_Desc_1"
+      ],
+      "details": [
+        "The blackout blend animates through a 2-second cycle while active.",
+        "This animation period is not a guaranteed duration of total blindness."
+      ],
+      "evidence": [
+        "BlackOutVision.Update:16-38",
+        "level1:RenderEffectManager/BlackOutVision.blendDuration"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 210,
+      "severity": 2,
+      "name": "Concussion{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/BlackOutVision_Desc_2"
+      ],
+      "details": [
+        "The blackout blend animates through a 2-second cycle while active.",
+        "This animation period is not a guaranteed duration of total blindness."
+      ],
+      "evidence": [
+        "BlackOutVision.Update:16-38",
+        "level1:RenderEffectManager/BlackOutVision.blendDuration"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 208,
+      "severity": 1,
+      "name": "Hemophobia{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/BlackSpotsVision_Desc_1"
+      ],
+      "details": [
+        "Nearby-corpse influence fades with distance, reaching zero at about 3 world units.",
+        "The obscuring effect builds while near a corpse and recovers when you move away."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryBlackSpotsVision:147-184"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 208,
+      "severity": 2,
+      "name": "Hemophobia{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/BlackSpotsVision_Desc_2"
+      ],
+      "details": [
+        "Nearby-corpse influence fades with distance, reaching zero at about 3 world units.",
+        "The obscuring effect builds while near a corpse and recovers when you move away."
+      ],
+      "evidence": [
+        "Player.UpdateInjuryBlackSpotsVision:147-184"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 3005,
+      "severity": 0,
+      "name": "Chain Breaker",
+      "terms": [
+        "Purchases/WirecuttersUpgrade_Desc"
+      ],
+      "details": [
+        "Cutting checks for the nearest chain segment within 1 world unit of the attack point.",
+        "There is no random success roll in this check.",
+        "A successful cut consumes the tool."
+      ],
+      "evidence": [
+        "WeaponWirecutters.AttackEffect:63-117",
+        "ChainManager.BreakNearbyChain:35-183"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 3002,
+      "severity": 0,
+      "name": "Obsidian Pilum",
+      "terms": [
+        "Purchases/PiercingSpearUpgrade_Desc"
+      ],
+      "details": [
+        "Spear projectile base impact damage: 25.",
+        "Held-weapon base melee damage: 7.",
+        "These are prefab base values; charge, variation and other damage modifiers still apply."
+      ],
+      "evidence": [
+        "weapon-prefabs.json:PiercingSpear.weaponPrefab,projectilePrefab",
+        "Player.ModifyAttackDamage",
+        "Projectile.Launch"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 3003,
+      "severity": 0,
+      "name": "Obsidian Hammer",
+      "terms": [
+        "Purchases/KnockbackMaceUpgrade_Desc"
+      ],
+      "details": [
+        "Held-weapon base damage: 7.",
+        "Toss landing base damage: 2.",
+        "Thrown-weapon base damage: 7, with 2.5 seconds of trip and 4 units of knockback.",
+        "Final damage and actual travel can change with combat modifiers or obstacles."
+      ],
+      "evidence": [
+        "weapon-prefabs.json:KnockbackClub.weaponPrefab,projectilePrefab",
+        "WeaponKnockback.AttackEffect"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 3008,
+      "severity": 0,
+      "name": "Bow And Quiver",
+      "terms": [
+        "Purchases/BowUpgrade_Desc"
+      ],
+      "details": [
+        "Quiver capacity: 8 shots before durability modifiers.",
+        "Ordinary fired arrow base damage: 12.",
+        "Throwing the bow itself uses a different projectile with 5 base damage.",
+        "Final damage changes with charge, variation and other modifiers."
+      ],
+      "evidence": [
+        "GameLibrary.allPickups:BowQuiver",
+        "weapon-prefabs.json:Arrow.projectilePrefab,BowQuiver.projectilePrefab",
+        "WeaponBow.get_AmmoPickupTypes"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 3009,
+      "severity": 0,
+      "name": "Poison Bow",
+      "terms": [
+        "Purchases/PoisonBowUpgrade_Desc"
+      ],
+      "details": [
+        "Poison-arrow base impact damage: 10.",
+        "Weak duration from the arrow: 15 seconds.",
+        "Weak: -25% damage, movement speed and normal stamina recovery.",
+        "Final damage can change with charge and other modifiers.",
+        "Weak itself does not reduce maximum stamina."
+      ],
+      "evidence": [
+        "weapon-prefabs.json:ArrowPoison.projectilePrefab",
+        "WeaponBow",
+        "GladiatorConsts..cctor",
+        "GladiatorConsts..cctor:100-108",
+        "Player.ModifyAttackDamage",
+        "Player.get_FinalMovementSpeed",
+        "Player.get_StaminaRecoveryRate"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 3010,
+      "severity": 0,
+      "name": "Explosive Bow",
+      "terms": [
+        "Purchases/BombBowUpgrade_Desc"
+      ],
+      "details": [
+        "Explosive-arrow base impact damage: 5.",
+        "Explosion base damage: 9; radius: 4 world units.",
+        "These are separate damage sources, not a guaranteed 14 HP per hit.",
+        "Combat modifiers, positioning and defenses affect the result."
+      ],
+      "evidence": [
+        "weapon-prefabs.json:ArrowBomb.projectilePrefab",
+        "Projectile.TriggerImpactGameplayEffects"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 3000,
+      "severity": 0,
+      "name": "Wooden Club",
+      "terms": [
+        "Purchases/ClubUpgrade_Desc"
+      ],
+      "details": [
+        "Club base melee damage: 10.",
+        "Thrown club base impact damage: 15.",
+        "Shield smashing is a separate weapon flag; durability is 2 before modifiers.",
+        "Final damage can change with charge and other modifiers."
+      ],
+      "evidence": [
+        "weapon-prefabs.json:Club_2H.weaponPrefab,projectilePrefab",
+        "GameLibrary.allPickups:Club_2H"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 101,
+      "severity": 1,
+      "name": "Unsteady{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/ChainTripsTripYou_Desc_1"
+      ],
+      "details": [
+        "Chain trips stun you for 1 base second.",
+        "Other stun/trip modifiers still apply."
+      ],
+      "evidence": [
+        "Chain.LateUpdate:95-97,301-341"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 101,
+      "severity": 2,
+      "name": "Unsteady{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/ChainTripsTripYou_Desc_2"
+      ],
+      "details": [
+        "Chain trips trip you for 2 base seconds.",
+        "Other stun/trip modifiers still apply."
+      ],
+      "evidence": [
+        "Chain.LateUpdate:95-97,301-341"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 17,
+      "severity": 1,
+      "name": "Paranoia{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/HallucinateEnemies_Desc_1"
+      ],
+      "details": [
+        "Active enemy-hallucination cap: 2 per affected player.",
+        "Further hallucinations are suppressed while that cap is reached."
+      ],
+      "evidence": [
+        "EnemyManager.Update:1218-1279"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 17,
+      "severity": 2,
+      "name": "Paranoia{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/HallucinateEnemies_Desc_2"
+      ],
+      "details": [
+        "Active enemy-hallucination cap: 2 per affected player.",
+        "Further hallucinations are suppressed while that cap is reached."
+      ],
+      "evidence": [
+        "EnemyManager.Update:1218-1279"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 17,
+      "severity": 3,
+      "name": "Paranoia{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/HallucinateEnemies_Desc_3"
+      ],
+      "details": [
+        "Active enemy-hallucination cap: 3 per affected player.",
+        "Further hallucinations are suppressed while that cap is reached."
+      ],
+      "evidence": [
+        "EnemyManager.Update:1218-1279"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 18,
+      "severity": 1,
+      "name": "Psychosis{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/HallucinatePickups_Desc_1"
+      ],
+      "details": [
+        "A pickup-hallucination spawn is checked after more than 20 seconds.",
+        "Active pickup-hallucination cap: 12 per affected player.",
+        "Spawns need an available location and stop while the cap is reached."
+      ],
+      "evidence": [
+        "PickupManager.Update:168-227,285-304",
+        "PickupManager..ctor:200"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 18,
+      "severity": 2,
+      "name": "Psychosis{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/HallucinatePickups_Desc_2"
+      ],
+      "details": [
+        "A pickup-hallucination spawn is checked after more than 20 seconds.",
+        "Active pickup-hallucination cap: 12 per affected player.",
+        "Spawns need an available location and stop while the cap is reached."
+      ],
+      "evidence": [
+        "PickupManager.Update:168-227,285-304",
+        "PickupManager..ctor:200"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 18,
+      "severity": 3,
+      "name": "Psychosis{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/HallucinatePickups_Desc_3"
+      ],
+      "details": [
+        "A pickup-hallucination spawn is checked after more than 20 seconds.",
+        "Active pickup-hallucination cap: 12 per affected player.",
+        "Spawns need an available location and stop while the cap is reached."
+      ],
+      "evidence": [
+        "PickupManager.Update:168-227,285-304",
+        "PickupManager..ctor:200"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 204,
+      "severity": 1,
+      "name": "Color Blindness{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/ColourBlindness_Desc_1"
+      ],
+      "details": [
+        "Grayscale blend strength: 66%.",
+        "This changes rendered color, without a fixed gameplay-stat penalty."
+      ],
+      "evidence": [
+        "ColourBlindness.Apply:35-76"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 204,
+      "severity": 2,
+      "name": "Color Blindness{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/ColourBlindness_Desc_2"
+      ],
+      "details": [
+        "Grayscale blend strength: 100%.",
+        "This changes rendered color, without a fixed gameplay-stat penalty."
+      ],
+      "evidence": [
+        "ColourBlindness.Apply:35-76"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 10000,
+      "severity": 3,
+      "name": "Peg Leg{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/Amputation_Leg_Desc_3"
+      ],
+      "details": [
+        "The amputation's own speed penalty varies from 0% to 60% in a 0.6-second cycle.",
+        "With a separate Limp affliction, its curve changes this to 0-48%; the separate Limp penalty also applies."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:106-165",
+        "GameLibrary.limpSpeedCurve_Amputation,limpSpeedCurve"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 3006,
+      "severity": 0,
+      "name": "Obsidian Harpoon",
+      "terms": [
+        "Purchases/HookSpearUpgrade_Desc"
+      ],
+      "details": [
+        "Held-spear base melee damage: 4.",
+        "Spear projectile base impact damage: 10.",
+        "Final damage varies with charge and other combat modifiers."
+      ],
+      "evidence": [
+        "weapon-prefabs.json:HookSpear.weaponPrefab,projectilePrefab"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 218,
+      "severity": 1,
+      "name": "Tunnel Vision{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/ConeOfVision_Desc_1"
+      ],
+      "details": [
+        "The peripheral-vision effect uses a texture mask rather than a fixed degree cutoff.",
+        "The additional narrowed mask is blended at 0% strength.",
+        "Blend strength is not a percentage of screen area lost."
+      ],
+      "evidence": [
+        "ConeOfVision.Update:18-25",
+        "ConeOfVisionPass.Execute"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 218,
+      "severity": 2,
+      "name": "Tunnel Vision{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/ConeOfVision_Desc_2"
+      ],
+      "details": [
+        "The peripheral-vision effect uses a texture mask rather than a fixed degree cutoff.",
+        "The additional narrowed mask is blended at 50% strength.",
+        "Blend strength is not a percentage of screen area lost."
+      ],
+      "evidence": [
+        "ConeOfVision.Update:18-25",
+        "ConeOfVisionPass.Execute"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 218,
+      "severity": 3,
+      "name": "Tunnel Vision{[lvl]} (3 skulls)",
+      "terms": [
+        "Injuries/ConeOfVision_Desc_3"
+      ],
+      "details": [
+        "The peripheral-vision effect uses a texture mask rather than a fixed degree cutoff.",
+        "The additional narrowed mask is blended at 100% strength.",
+        "Blend strength is not a percentage of screen area lost."
+      ],
+      "evidence": [
+        "ConeOfVision.Update:18-25",
+        "ConeOfVisionPass.Execute"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 221,
+      "severity": 1,
+      "name": "Myopic{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/CantSeeFarAwayPickups_Desc_1"
+      ],
+      "details": [
+        "Pickup-visibility shader radius: 10 world units around you.",
+        "The clipping shader controls the edge; this does not change pickup reach."
+      ],
+      "evidence": [
+        "Player.Update:90-154",
+        "Pickup.SetProximity"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 221,
+      "severity": 2,
+      "name": "Myopic{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/CantSeeFarAwayPickups_Desc_2"
+      ],
+      "details": [
+        "Pickup-visibility shader radius: 5 world units around you.",
+        "The clipping shader controls the edge; this does not change pickup reach."
+      ],
+      "evidence": [
+        "Player.Update:90-154",
+        "Pickup.SetProximity"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 1007,
+      "severity": 0,
+      "name": "A Gift for the Laborers",
+      "terms": [
+        "Purchases/PassiveMorePots_Desc"
+      ],
+      "details": [
+        "Enables extra pot and barrel spawn points designated by the arena layout.",
+        "The additional count depends on the arena; there is no fixed percentage or universal number."
+      ],
+      "evidence": [
+        "NetworkPrefabSpawner.ShouldSpawn",
+        "NetworkPrefabSpawnerList.ShouldSpawn"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 1008,
+      "severity": 0,
+      "name": "A Gift for the Quartermaster",
+      "terms": [
+        "Purchases/PassiveMoreWeapons_Desc"
+      ],
+      "details": [
+        "Enables extra weapon spawn points designated by the arena layout.",
+        "The additional count depends on the arena; there is no fixed percentage or universal number."
+      ],
+      "evidence": [
+        "NetworkPrefabSpawner.ShouldSpawn",
+        "NetworkPrefabSpawnerList.ShouldSpawn"
+      ]
+    },
+    {
+      "kind": "status",
+      "id": 1,
+      "severity": 0,
+      "name": "Vigor",
+      "terms": [
+        "UI/HasteTooltipDesc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "status",
+      "id": 8,
+      "severity": 0,
+      "name": "Backstab",
+      "terms": [
+        "UI/BackstabTooltipDesc"
+      ],
+      "details": [
+        "Base backstab damage multiplier: {backstab}x.",
+        "The target's backstab resistance can reduce the bonus; other attack modifiers also apply."
+      ],
+      "evidence": [
+        "GladiatorConsts.get_BackstabMultiplierBase",
+        "NetworkAgent.ModifyAttackDamage:60-80"
+      ]
+    },
+    {
+      "kind": "status",
+      "id": 16,
+      "severity": 0,
+      "name": "Fire",
+      "terms": [
+        "UI/FireTooltipDesc"
+      ],
+      "details": [
+        "Fire: a damage tick about every 0.75 seconds.",
+        "Base tick damage: 0.75 against players, 2 against other agents.",
+        "Day scaling and enemy fire resistance apply; raw tick damage has a minimum of 1."
+      ],
+      "evidence": [
+        "NetworkAgent.UpdateInjuryBurning",
+        "NetworkAgent..ctor:600",
+        "GladiatorConsts.get_FireDamage",
+        "GladiatorConsts.get_FireDamageToPlayer"
+      ]
+    },
+    {
+      "kind": "status",
+      "id": 512,
+      "severity": 0,
+      "name": "Weak",
+      "terms": [
+        "UI/WeakenedTooltipDesc"
+      ],
+      "details": [
+        "Weak: -25% damage, movement speed and normal stamina recovery.",
+        "Weak itself does not reduce maximum stamina."
+      ],
+      "evidence": [
+        "GladiatorConsts..cctor:100-108",
+        "Player.ModifyAttackDamage",
+        "Player.get_FinalMovementSpeed",
+        "Player.get_StaminaRecoveryRate"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 61,
+      "severity": 0,
+      "name": "Satisfaction",
+      "terms": [
+        "Skills/CritsCauseHaste_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 84,
+      "severity": 0,
+      "name": "Slam the Chains",
+      "terms": [
+        "Skills/HasteTripGivesRage_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 121,
+      "severity": 0,
+      "name": "Staying Limber",
+      "terms": [
+        "Skills/OnThrowHaste_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 122,
+      "severity": 0,
+      "name": "Blood Rush",
+      "terms": [
+        "Skills/OnBackstabHaste_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay.",
+        "Base backstab damage multiplier: {backstab}x.",
+        "The target's backstab resistance can reduce the bonus; other attack modifiers also apply."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste",
+        "GladiatorConsts.get_BackstabMultiplierBase",
+        "NetworkAgent.ModifyAttackDamage:60-80"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 123,
+      "severity": 0,
+      "name": "Jealousy",
+      "terms": [
+        "Skills/OnAllyCrowdWildHaste_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 124,
+      "severity": 0,
+      "name": "Prankster",
+      "terms": [
+        "Skills/FriendlyFireGivesHasteAndRage_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 140,
+      "severity": 0,
+      "name": "Endless Energy",
+      "terms": [
+        "Skills/HasteDuration_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 4015,
+      "severity": 0,
+      "name": "Push through the Pain",
+      "terms": [
+        "Skills/IgnoreInjuriesDuringHaste_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 400,
+      "severity": 0,
+      "name": "No Mercy",
+      "terms": [
+        "Skills/AttacksAgainstTrippedEnemiesAreBackstabs_Desc"
+      ],
+      "details": [
+        "Base backstab damage multiplier: {backstab}x.",
+        "The target's backstab resistance can reduce the bonus; other attack modifiers also apply."
+      ],
+      "evidence": [
+        "GladiatorConsts.get_BackstabMultiplierBase",
+        "NetworkAgent.ModifyAttackDamage:60-80"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 423,
+      "severity": 0,
+      "name": "Sneaky",
+      "terms": [
+        "Skills/BackstabDamageUp_Desc"
+      ],
+      "details": [
+        "Base backstab damage multiplier: {backstab}x.",
+        "The target's backstab resistance can reduce the bonus; other attack modifiers also apply."
+      ],
+      "evidence": [
+        "GladiatorConsts.get_BackstabMultiplierBase",
+        "NetworkAgent.ModifyAttackDamage:60-80"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 422,
+      "severity": 0,
+      "name": "Surprise Factor",
+      "terms": [
+        "Skills/FirstBackstabStuns_Desc"
+      ],
+      "details": [
+        "Base backstab damage multiplier: {backstab}x.",
+        "The target's backstab resistance can reduce the bonus; other attack modifiers also apply."
+      ],
+      "evidence": [
+        "GladiatorConsts.get_BackstabMultiplierBase",
+        "NetworkAgent.ModifyAttackDamage:60-80"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 4005,
+      "severity": 0,
+      "name": "Momentum",
+      "terms": [
+        "Skills/OnTripHaste_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 4006,
+      "severity": 0,
+      "name": "Ride The Wave",
+      "terms": [
+        "Skills/HasteDoesntEndWhileWild_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1500,
+      "severity": 1,
+      "name": "High Inertia{[lvl]} (1 skull)",
+      "terms": [
+        "Injuries/TripOnHasteEnd_Desc_1"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "injury",
+      "id": 1500,
+      "severity": 2,
+      "name": "High Inertia{[lvl]} (2 skulls)",
+      "terms": [
+        "Injuries/TripOnHasteEnd_Desc_2"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 2202,
+      "severity": 0,
+      "name": "Oil Flask",
+      "terms": [
+        "Purchases/ThrownEnemiesLightOnFire_Desc"
+      ],
+      "details": [
+        "Fire: a damage tick about every 0.75 seconds.",
+        "Base tick damage: 0.75 against players, 2 against other agents.",
+        "Day scaling and enemy fire resistance apply; raw tick damage has a minimum of 1."
+      ],
+      "evidence": [
+        "NetworkAgent.UpdateInjuryBurning",
+        "NetworkAgent..ctor:600",
+        "GladiatorConsts.get_FireDamage",
+        "GladiatorConsts.get_FireDamageToPlayer"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 2403,
+      "severity": 0,
+      "name": "Emerald Necklace",
+      "terms": [
+        "Purchases/AvoidAttacksWhileHasted_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 3001,
+      "severity": 0,
+      "name": "Flaming Obsidian Sword",
+      "terms": [
+        "Purchases/FlamingSwordUpgrade_Desc"
+      ],
+      "details": [
+        "Fire: a damage tick about every 0.75 seconds.",
+        "Base tick damage: 0.75 against players, 2 against other agents.",
+        "Day scaling and enemy fire resistance apply; raw tick damage has a minimum of 1."
+      ],
+      "evidence": [
+        "NetworkAgent.UpdateInjuryBurning",
+        "NetworkAgent..ctor:600",
+        "GladiatorConsts.get_FireDamage",
+        "GladiatorConsts.get_FireDamageToPlayer"
+      ]
+    },
+    {
+      "kind": "purchase",
+      "id": 1009,
+      "severity": 0,
+      "name": "Horns for the Crowd",
+      "terms": [
+        "Purchases/EnemiesWeakWhenCrowdWild_Desc"
+      ],
+      "details": [
+        "Weak: -25% damage, movement speed and normal stamina recovery.",
+        "Weak itself does not reduce maximum stamina."
+      ],
+      "evidence": [
+        "GladiatorConsts..cctor:100-108",
+        "Player.ModifyAttackDamage",
+        "Player.get_FinalMovementSpeed",
+        "Player.get_StaminaRecoveryRate"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 10016,
+      "severity": 0,
+      "name": "Flight Reflex",
+      "terms": [
+        "Skills/HasteOnHurt_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    },
+    {
+      "kind": "skill",
+      "id": 10019,
+      "severity": 0,
+      "name": "Team Sports",
+      "terms": [
+        "Skills/HasteTeammate_Desc"
+      ],
+      "details": [
+        "Vigor (base): +40% movement and an extra 6 stamina/second.",
+        "The extra recovery also runs during the normal recovery delay."
+      ],
+      "evidence": [
+        "Player.GetModifiedPlayerVelocity:265-340",
+        "Player.UpdateStamina:57-81",
+        "Player prefab:staminaRecoveryRateHaste"
+      ]
+    }
+  ]
+}

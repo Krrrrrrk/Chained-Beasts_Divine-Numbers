@@ -1,0 +1,3922 @@
+{
+  "steamBuildId": "26231777",
+  "registeredDefinitions": {
+    "skills": 113,
+    "afflictions": 101,
+    "purchases": 63
+  },
+  "cardCounts": {
+    "skill": 50,
+    "injury": 134,
+    "purchase": 18,
+    "status": 4
+  },
+  "descriptions": [
+    {
+      "kind": "skill",
+      "id": 0,
+      "severity": 0,
+      "internalName": "Beast_Lion_Lv1",
+      "term": "Skills/Beast_Lion_Lv1_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 1,
+      "severity": 0,
+      "internalName": "Beast_Lion_Lv2",
+      "term": "Skills/Beast_Lion_Lv2_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 2,
+      "severity": 0,
+      "internalName": "Beast_Lion_Lv3",
+      "term": "Skills/Beast_Lion_Lv3_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 3,
+      "severity": 0,
+      "internalName": "Beast_Eagle_Lv1",
+      "term": "Skills/Beast_Eagle_Lv1_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 4,
+      "severity": 0,
+      "internalName": "Beast_Eagle_Lv2",
+      "term": "Skills/Beast_Eagle_Lv2_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 5,
+      "severity": 0,
+      "internalName": "Beast_Eagle_Lv3",
+      "term": "Skills/Beast_Eagle_Lv3_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 6,
+      "severity": 0,
+      "internalName": "Beast_Bear_Lv1",
+      "term": "Skills/Beast_Bear_Lv1_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 7,
+      "severity": 0,
+      "internalName": "Beast_Bear_Lv2",
+      "term": "Skills/Beast_Bear_Lv2_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 8,
+      "severity": 0,
+      "internalName": "Beast_Bear_Lv3",
+      "term": "Skills/Beast_Bear_Lv3_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 9,
+      "severity": 0,
+      "internalName": "Beast_Panther_Lv1",
+      "term": "Skills/Beast_Panther_Lv1_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 10,
+      "severity": 0,
+      "internalName": "Beast_Panther_Lv2",
+      "term": "Skills/Beast_Panther_Lv2_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 11,
+      "severity": 0,
+      "internalName": "Beast_Panther_Lv3",
+      "term": "Skills/Beast_Panther_Lv3_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 12,
+      "severity": 0,
+      "internalName": "Beast_Wolf_Lv1",
+      "term": "Skills/Beast_Wolf_Lv1_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 13,
+      "severity": 0,
+      "internalName": "Beast_Wolf_Lv2",
+      "term": "Skills/Beast_Wolf_Lv2_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 14,
+      "severity": 0,
+      "internalName": "Beast_Wolf_Lv3",
+      "term": "Skills/Beast_Wolf_Lv3_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 15,
+      "severity": 0,
+      "internalName": "Beast_Stag_Lv1",
+      "term": "Skills/Beast_Stag_Lv1_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 16,
+      "severity": 0,
+      "internalName": "Beast_Stag_Lv2",
+      "term": "Skills/Beast_Stag_Lv2_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 17,
+      "severity": 0,
+      "internalName": "Beast_Stag_Lv3",
+      "term": "Skills/Beast_Stag_Lv3_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 18,
+      "severity": 0,
+      "internalName": "Beast_Rhino_Lv1",
+      "term": "Skills/Beast_Rhino_Lv1_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 19,
+      "severity": 0,
+      "internalName": "Beast_Rhino_Lv2",
+      "term": "Skills/Beast_Rhino_Lv2_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 20,
+      "severity": 0,
+      "internalName": "Beast_Rhino_Lv3",
+      "term": "Skills/Beast_Rhino_Lv3_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 21,
+      "severity": 0,
+      "internalName": "Beast_Monkey_Lv1",
+      "term": "Skills/Beast_Monkey_Lv1_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 22,
+      "severity": 0,
+      "internalName": "Beast_Monkey_Lv2",
+      "term": "Skills/Beast_Monkey_Lv2_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 23,
+      "severity": 0,
+      "internalName": "Beast_Monkey_Lv3",
+      "term": "Skills/Beast_Monkey_Lv3_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 40,
+      "severity": 0,
+      "internalName": "BaseCritChance",
+      "term": "Skills/BaseCritChance_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 41,
+      "severity": 0,
+      "internalName": "RageGivesCritChance",
+      "term": "Skills/RageGivesCritChance_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 43,
+      "severity": 0,
+      "internalName": "WildGivesCritChance",
+      "term": "Skills/WildGivesCritChance_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 42,
+      "severity": 0,
+      "internalName": "ThrowKillGivesForceCrit",
+      "term": "Skills/ThrowKillGivesForceCrit_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 44,
+      "severity": 0,
+      "internalName": "OnDamageTakenForceCrit",
+      "term": "Skills/OnDamageTakenForceCrit_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 45,
+      "severity": 0,
+      "internalName": "OnAllyKillForceCrit",
+      "term": "Skills/OnAllyKillForceCrit_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 61,
+      "severity": 0,
+      "internalName": "CritsCauseHaste",
+      "term": "Skills/CritsCauseHaste_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 62,
+      "severity": 0,
+      "internalName": "CritsHaveChanceToTrip",
+      "term": "Skills/CritsHaveChanceToTrip_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 81,
+      "severity": 0,
+      "internalName": "AOEGivesRage",
+      "term": "Skills/AOEGivesRage_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 82,
+      "severity": 0,
+      "internalName": "RageOnBlock",
+      "term": "Skills/RageOnBlock_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 83,
+      "severity": 0,
+      "internalName": "RageOnDash",
+      "term": "Skills/RageOnDash_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 84,
+      "severity": 0,
+      "internalName": "HasteTripGivesRage",
+      "term": "Skills/HasteTripGivesRage_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 100,
+      "severity": 0,
+      "internalName": "RageDuration",
+      "term": "Skills/RageDuration_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 102,
+      "severity": 0,
+      "internalName": "RageDamageUp",
+      "term": "Skills/RageDamageUp_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 121,
+      "severity": 0,
+      "internalName": "OnThrowHaste",
+      "term": "Skills/OnThrowHaste_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 122,
+      "severity": 0,
+      "internalName": "OnBackstabHaste",
+      "term": "Skills/OnBackstabHaste_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 123,
+      "severity": 0,
+      "internalName": "OnAllyCrowdWildHaste",
+      "term": "Skills/OnAllyCrowdWildHaste_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 124,
+      "severity": 0,
+      "internalName": "FriendlyFireGivesHasteAndRage",
+      "term": "Skills/FriendlyFireGivesHasteAndRage_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 140,
+      "severity": 0,
+      "internalName": "HasteDuration",
+      "term": "Skills/HasteDuration_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 4015,
+      "severity": 0,
+      "internalName": "IgnoreInjuriesDuringHaste",
+      "term": "Skills/IgnoreInjuriesDuringHaste_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 60,
+      "severity": 0,
+      "internalName": "CritDamageUp   [Abandoned]",
+      "term": "Skills/CritDamageUp   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 80,
+      "severity": 0,
+      "internalName": "HasteKillGivesRage   [Abandoned]",
+      "term": "Skills/HasteKillGivesRage   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 101,
+      "severity": 0,
+      "internalName": "RageTeammate   [Abandoned]",
+      "term": "Skills/RageTeammate   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 120,
+      "severity": 0,
+      "internalName": "OnKillHaste   [Abandoned]",
+      "term": "Skills/OnKillHaste   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 160,
+      "severity": 0,
+      "internalName": "PunchCritChanceAndPunchCritsStun",
+      "term": "Skills/PunchCritChanceAndPunchCritsStun_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 162,
+      "severity": 0,
+      "internalName": "PunchTripChance",
+      "term": "Skills/PunchTripChance_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 164,
+      "severity": 0,
+      "internalName": "UnarmedDislodges",
+      "term": "Skills/UnarmedDislodges_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 200,
+      "severity": 0,
+      "internalName": "DamageUpBasedOnDifferentEnemiesHit",
+      "term": "Skills/DamageUpBasedOnDifferentEnemiesHit_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 220,
+      "severity": 0,
+      "internalName": "BlockedProjectilesAppearAtFeet",
+      "term": "Skills/BlockedProjectilesAppearAtFeet_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 221,
+      "severity": 0,
+      "internalName": "IgnoreInjuriesWhileAiming",
+      "term": "Skills/IgnoreInjuriesWhileAiming_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 240,
+      "severity": 0,
+      "internalName": "ThrowDamage",
+      "term": "Skills/ThrowDamage_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 241,
+      "severity": 0,
+      "internalName": "ThrowDamageToTrippedEnemies",
+      "term": "Skills/ThrowDamageToTrippedEnemies_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 260,
+      "severity": 0,
+      "internalName": "ShieldDurability",
+      "term": "Skills/ShieldDurability_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 280,
+      "severity": 0,
+      "internalName": "StunsLastLonger",
+      "term": "Skills/StunsLastLonger_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 282,
+      "severity": 0,
+      "internalName": "BlockingIncreasesAggro",
+      "term": "Skills/BlockingIncreasesAggro_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 300,
+      "severity": 0,
+      "internalName": "StrongerCarry",
+      "term": "Skills/StrongerCarry_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 301,
+      "severity": 0,
+      "internalName": "CanGrappleStunnedEnemies",
+      "term": "Skills/CanGrappleStunnedEnemies_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 340,
+      "severity": 0,
+      "internalName": "IgnoreInjuriesWildCrowd   [WIP]",
+      "term": "Skills/IgnoreInjuriesWildCrowd   [WIP]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 341,
+      "severity": 0,
+      "internalName": "DamageUpIfCrowdFavourite",
+      "term": "Skills/DamageUpIfCrowdFavourite_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 380,
+      "severity": 0,
+      "internalName": "SkullCountDamageUp",
+      "term": "Skills/SkullCountDamageUp_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 400,
+      "severity": 0,
+      "internalName": "AttacksAgainstTrippedEnemiesAreBackstabs",
+      "term": "Skills/AttacksAgainstTrippedEnemiesAreBackstabs_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 423,
+      "severity": 0,
+      "internalName": "BackstabDamageUp",
+      "term": "Skills/BackstabDamageUp_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 422,
+      "severity": 0,
+      "internalName": "FirstBackstabStuns",
+      "term": "Skills/FirstBackstabStuns_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 1000,
+      "severity": 0,
+      "internalName": "MoveSpeed",
+      "term": "Skills/MoveSpeed_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 1001,
+      "severity": 0,
+      "internalName": "MoreStamina",
+      "term": "Skills/MoreStamina_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 163,
+      "severity": 0,
+      "internalName": "CrowdLovesUnarmed   [Abandoned]",
+      "term": "Skills/CrowdLovesUnarmed   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 360,
+      "severity": 0,
+      "internalName": "IgnoreInjuriesAtBattleStart   [Abandoned]",
+      "term": "Skills/IgnoreInjuriesAtBattleStart   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 421,
+      "severity": 0,
+      "internalName": "CrowdLovesBackstab   [Abandoned]",
+      "term": "Skills/CrowdLovesBackstab   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 420,
+      "severity": 0,
+      "internalName": "SkullCountBackstabDamageUp   [Abandoned]",
+      "term": "Skills/SkullCountBackstabDamageUp   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 1002,
+      "severity": 0,
+      "internalName": "GlassCannon   [Abandoned]",
+      "term": "Skills/GlassCannon   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 161,
+      "severity": 0,
+      "internalName": "PunchDamageIncreased",
+      "term": "Skills/PunchDamageIncreased_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 1003,
+      "severity": 0,
+      "internalName": "LessFriendlyFire",
+      "term": "Skills/LessFriendlyFire_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 1004,
+      "severity": 0,
+      "internalName": "StayCloseBuff",
+      "term": "Skills/StayCloseBuff_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 1005,
+      "severity": 0,
+      "internalName": "BigStaminaRegularAttacks   [WIP]",
+      "term": "Skills/BigStaminaRegularAttacks   [WIP]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 2000,
+      "severity": 0,
+      "internalName": "MetalPlate",
+      "term": "Skills/MetalPlate_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 2001,
+      "severity": 0,
+      "internalName": "ThirdKidney",
+      "term": "Skills/ThirdKidney_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 2004,
+      "severity": 0,
+      "internalName": "ThirdLung",
+      "term": "Skills/ThirdLung_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 2002,
+      "severity": 0,
+      "internalName": "ArmSurgicalRod",
+      "term": "Skills/ArmSurgicalRod_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 2003,
+      "severity": 0,
+      "internalName": "StunningLooks",
+      "term": "Skills/StunningLooks_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 4023,
+      "severity": 0,
+      "internalName": "NearbyAlliesDealMoreDamage",
+      "term": "Skills/NearbyAlliesDealMoreDamage_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 3000,
+      "severity": 0,
+      "internalName": "RemoveInjury3Skull",
+      "term": "Skills/RemoveInjury3Skull_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 3001,
+      "severity": 0,
+      "internalName": "RemoveInjury2Skull",
+      "term": "Skills/RemoveInjury2Skull_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 3002,
+      "severity": 0,
+      "internalName": "RemoveInjury1Skull",
+      "term": "Skills/RemoveInjury1Skull_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4000,
+      "severity": 0,
+      "internalName": "ExecutionsGiveImmune",
+      "term": "Skills/ExecutionsGiveImmune_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4001,
+      "severity": 0,
+      "internalName": "ExecutionsGiveMoney",
+      "term": "Skills/ExecutionsGiveMoney_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4002,
+      "severity": 0,
+      "internalName": "GetTwoRandomSkills",
+      "term": "Skills/GetTwoRandomSkills_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4004,
+      "severity": 0,
+      "internalName": "AttackingTrippedGivesRage",
+      "term": "Skills/AttackingTrippedGivesRage_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4003,
+      "severity": 0,
+      "internalName": "ThreePunchesGiveRage",
+      "term": "Skills/ThreePunchesGiveRage_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4005,
+      "severity": 0,
+      "internalName": "OnTripHaste",
+      "term": "Skills/OnTripHaste_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 4006,
+      "severity": 0,
+      "internalName": "HasteDoesntEndWhileWild",
+      "term": "Skills/HasteDoesntEndWhileWild_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 4007,
+      "severity": 0,
+      "internalName": "PunchingEmbeddedWeapons",
+      "term": "Skills/PunchingEmbeddedWeapons_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4008,
+      "severity": 0,
+      "internalName": "RagedThrowsDealMoreDamage",
+      "term": "Skills/RagedThrowsDealMoreDamage_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4009,
+      "severity": 0,
+      "internalName": "BlockingTrips",
+      "term": "Skills/BlockingTrips_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 4010,
+      "severity": 0,
+      "internalName": "StunWhenTakingMeleeDamage",
+      "term": "Skills/StunWhenTakingMeleeDamage_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4011,
+      "severity": 0,
+      "internalName": "CrowdAlwaysLovesThrows",
+      "term": "Skills/CrowdAlwaysLovesThrows_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4012,
+      "severity": 0,
+      "internalName": "CrowdGoesWildWhenGrapple",
+      "term": "Skills/CrowdGoesWildWhenGrapple_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4013,
+      "severity": 0,
+      "internalName": "MoreCoinsFromCrowd",
+      "term": "Skills/MoreCoinsFromCrowd_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4014,
+      "severity": 0,
+      "internalName": "CrowdWildLastsLonger",
+      "term": "Skills/CrowdWildLastsLonger_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 4016,
+      "severity": 0,
+      "internalName": "IgnoreInjuriesAfterHit",
+      "term": "Skills/IgnoreInjuriesAfterHit_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4017,
+      "severity": 0,
+      "internalName": "IgnoreInjuriesOnLowHealth",
+      "term": "Skills/IgnoreInjuriesOnLowHealth_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4018,
+      "severity": 0,
+      "internalName": "ShadowstepWhenHit   [WIP]   [Sprite Missing]",
+      "term": "Skills/ShadowstepWhenHit   [WIP]   [Sprite Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 4019,
+      "severity": 0,
+      "internalName": "ShadowstepAfterDashing   [WIP]   [Sprite Missing]",
+      "term": "Skills/ShadowstepAfterDashing   [WIP]   [Sprite Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 4020,
+      "severity": 0,
+      "internalName": "TakeHalfDamageWhenRaged",
+      "term": "Skills/TakeHalfDamageWhenRaged_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4021,
+      "severity": 0,
+      "internalName": "CrowdWildKillsGiveImmune",
+      "term": "Skills/CrowdWildKillsGiveImmune_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4022,
+      "severity": 0,
+      "internalName": "ImmuneAfterFirstDamageTaken",
+      "term": "Skills/ImmuneAfterFirstDamageTaken_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4024,
+      "severity": 0,
+      "internalName": "XPAtNextTrainer",
+      "term": "Skills/XPAtNextTrainer_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4025,
+      "severity": 0,
+      "internalName": "XPFromKillingBoss   [Abandoned]   [Sprite Missing]",
+      "term": "Skills/XPFromKillingBoss   [Abandoned]   [Sprite Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "skill",
+      "id": 4026,
+      "severity": 0,
+      "internalName": "XPFromTrainingInjuries",
+      "term": "Skills/XPFromTrainingInjuries_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 4027,
+      "severity": 0,
+      "internalName": "LowHealthHeal",
+      "term": "Skills/LowHealthHeal_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": -30,
+      "severity": 1,
+      "internalName": "RandomSeriousInjury",
+      "term": "Injuries/RandomSeriousInjury_Desc_1",
+      "state": "concealed",
+      "reason": "Random-affliction placeholder; outcome intentionally unknown."
+    },
+    {
+      "kind": "injury",
+      "id": -30,
+      "severity": 2,
+      "internalName": "RandomSeriousInjury",
+      "term": "Injuries/RandomSeriousInjury_Desc_2",
+      "state": "concealed",
+      "reason": "Random-affliction placeholder; outcome intentionally unknown."
+    },
+    {
+      "kind": "injury",
+      "id": -30,
+      "severity": 3,
+      "internalName": "RandomSeriousInjury",
+      "term": "Injuries/RandomSeriousInjury_Desc_3",
+      "state": "concealed",
+      "reason": "Random-affliction placeholder; outcome intentionally unknown."
+    },
+    {
+      "kind": "injury",
+      "id": -20,
+      "severity": 1,
+      "internalName": "RandomModerateInjury",
+      "term": "Injuries/RandomModerateInjury_Desc_1",
+      "state": "concealed",
+      "reason": "Random-affliction placeholder; outcome intentionally unknown."
+    },
+    {
+      "kind": "injury",
+      "id": -20,
+      "severity": 2,
+      "internalName": "RandomModerateInjury",
+      "term": "Injuries/RandomModerateInjury_Desc_2",
+      "state": "concealed",
+      "reason": "Random-affliction placeholder; outcome intentionally unknown."
+    },
+    {
+      "kind": "injury",
+      "id": -10,
+      "severity": 1,
+      "internalName": "RandomMinorInjury",
+      "term": "Injuries/RandomMinorInjury_Desc_1",
+      "state": "concealed",
+      "reason": "Random-affliction placeholder; outcome intentionally unknown."
+    },
+    {
+      "kind": "injury",
+      "id": 0,
+      "severity": 1,
+      "internalName": "WalkWithALimp",
+      "term": "Injuries/WalkWithALimp_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 0,
+      "severity": 2,
+      "internalName": "WalkWithALimp",
+      "term": "Injuries/WalkWithALimp_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 0,
+      "severity": 3,
+      "internalName": "WalkWithALimp",
+      "term": "Injuries/WalkWithALimp_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1,
+      "severity": 1,
+      "internalName": "CantWalkStraight",
+      "term": "Injuries/CantWalkStraight_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1,
+      "severity": 2,
+      "internalName": "CantWalkStraight",
+      "term": "Injuries/CantWalkStraight_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1,
+      "severity": 3,
+      "internalName": "CantWalkStraight",
+      "term": "Injuries/CantWalkStraight_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 2,
+      "severity": 1,
+      "internalName": "RunOutOfBreath",
+      "term": "Injuries/RunOutOfBreath_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 2,
+      "severity": 2,
+      "internalName": "RunOutOfBreath",
+      "term": "Injuries/RunOutOfBreath_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 2,
+      "severity": 3,
+      "internalName": "RunOutOfBreath",
+      "term": "Injuries/RunOutOfBreath_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 3,
+      "severity": 1,
+      "internalName": "TripWhenMoving",
+      "term": "Injuries/TripWhenMoving_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 3,
+      "severity": 2,
+      "internalName": "TripWhenMoving",
+      "term": "Injuries/TripWhenMoving_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 3,
+      "severity": 3,
+      "internalName": "TripWhenMoving",
+      "term": "Injuries/TripWhenMoving_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 5,
+      "severity": 1,
+      "internalName": "TakeDamageWhenMoving",
+      "term": "Injuries/TakeDamageWhenMoving_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 5,
+      "severity": 2,
+      "internalName": "TakeDamageWhenMoving",
+      "term": "Injuries/TakeDamageWhenMoving_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 5,
+      "severity": 3,
+      "internalName": "TakeDamageWhenMoving",
+      "term": "Injuries/TakeDamageWhenMoving_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 100,
+      "severity": 1,
+      "internalName": "CantStopMoving",
+      "term": "Injuries/CantStopMoving_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 100,
+      "severity": 2,
+      "internalName": "CantStopMoving",
+      "term": "Injuries/CantStopMoving_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 100,
+      "severity": 3,
+      "internalName": "CantStopMoving",
+      "term": "Injuries/CantStopMoving_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 101,
+      "severity": 1,
+      "internalName": "ChainTripsTripYou",
+      "term": "Injuries/ChainTripsTripYou_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 101,
+      "severity": 2,
+      "internalName": "ChainTripsTripYou",
+      "term": "Injuries/ChainTripsTripYou_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 103,
+      "severity": 1,
+      "internalName": "MovementInputDelay",
+      "term": "Injuries/MovementInputDelay_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 103,
+      "severity": 2,
+      "internalName": "MovementInputDelay",
+      "term": "Injuries/MovementInputDelay_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 103,
+      "severity": 3,
+      "internalName": "MovementInputDelay",
+      "term": "Injuries/MovementInputDelay_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 104,
+      "severity": 1,
+      "internalName": "WeaponsSlowOverTime",
+      "term": "Injuries/WeaponsSlowOverTime_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 104,
+      "severity": 2,
+      "internalName": "WeaponsSlowOverTime",
+      "term": "Injuries/WeaponsSlowOverTime_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 104,
+      "severity": 3,
+      "internalName": "WeaponsSlowOverTime",
+      "term": "Injuries/WeaponsSlowOverTime_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 400,
+      "severity": 1,
+      "internalName": "LessHealth   [Abandoned]",
+      "term": "Injuries/LessHealth   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 400,
+      "severity": 2,
+      "internalName": "LessHealth   [Abandoned]",
+      "term": "Injuries/LessHealth   [Abandoned]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 400,
+      "severity": 3,
+      "internalName": "LessHealth   [Abandoned]",
+      "term": "Injuries/LessHealth   [Abandoned]_Desc_3",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 7,
+      "severity": 1,
+      "internalName": "TakeDamageOverTime",
+      "term": "Injuries/TakeDamageOverTime_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 7,
+      "severity": 2,
+      "internalName": "TakeDamageOverTime",
+      "term": "Injuries/TakeDamageOverTime_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 7,
+      "severity": 3,
+      "internalName": "TakeDamageOverTime",
+      "term": "Injuries/TakeDamageOverTime_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 507,
+      "severity": 1,
+      "internalName": "TakeDamageAfterNotAttacking",
+      "term": "Injuries/TakeDamageAfterNotAttacking_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 507,
+      "severity": 2,
+      "internalName": "TakeDamageAfterNotAttacking",
+      "term": "Injuries/TakeDamageAfterNotAttacking_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 507,
+      "severity": 3,
+      "internalName": "TakeDamageAfterNotAttacking",
+      "term": "Injuries/TakeDamageAfterNotAttacking_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 401,
+      "severity": 1,
+      "internalName": "CantHealAboveX",
+      "term": "Injuries/CantHealAboveX_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 401,
+      "severity": 2,
+      "internalName": "CantHealAboveX",
+      "term": "Injuries/CantHealAboveX_Desc_2",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 401,
+      "severity": 3,
+      "internalName": "CantHealAboveX",
+      "term": "Injuries/CantHealAboveX_Desc_3",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 9,
+      "severity": 1,
+      "internalName": "TinyThrows",
+      "term": "Injuries/TinyThrows_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 9,
+      "severity": 2,
+      "internalName": "TinyThrows",
+      "term": "Injuries/TinyThrows_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 10,
+      "severity": 1,
+      "internalName": "SlightlyOffThrows",
+      "term": "Injuries/SlightlyOffThrows_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 11,
+      "severity": 1,
+      "internalName": "InconsistentThrows",
+      "term": "Injuries/InconsistentThrows_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 11,
+      "severity": 2,
+      "internalName": "InconsistentThrows",
+      "term": "Injuries/InconsistentThrows_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 601,
+      "severity": 1,
+      "internalName": "TakeDamageOnThrow   [Abandoned]",
+      "term": "Injuries/TakeDamageOnThrow   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 601,
+      "severity": 2,
+      "internalName": "TakeDamageOnThrow   [Abandoned]",
+      "term": "Injuries/TakeDamageOnThrow   [Abandoned]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 600,
+      "severity": 1,
+      "internalName": "NoAimUI",
+      "term": "Injuries/NoAimUI_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 603,
+      "severity": 1,
+      "internalName": "ThrowMissesBreakWeapon",
+      "term": "Injuries/ThrowMissesBreakWeapon_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 603,
+      "severity": 2,
+      "internalName": "ThrowMissesBreakWeapon",
+      "term": "Injuries/ThrowMissesBreakWeapon_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 13,
+      "severity": 1,
+      "internalName": "TinyDash",
+      "term": "Injuries/TinyDash_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 13,
+      "severity": 2,
+      "internalName": "TinyDash",
+      "term": "Injuries/TinyDash_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 13,
+      "severity": 3,
+      "internalName": "TinyDash",
+      "term": "Injuries/TinyDash_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 701,
+      "severity": 1,
+      "internalName": "TakeDamageOnDash   [Abandoned]",
+      "term": "Injuries/TakeDamageOnDash   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 701,
+      "severity": 2,
+      "internalName": "TakeDamageOnDash   [Abandoned]",
+      "term": "Injuries/TakeDamageOnDash   [Abandoned]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 702,
+      "severity": 1,
+      "internalName": "TripChanceOnDefensiveAction",
+      "term": "Injuries/TripChanceOnDefensiveAction_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 702,
+      "severity": 2,
+      "internalName": "TripChanceOnDefensiveAction",
+      "term": "Injuries/TripChanceOnDefensiveAction_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 702,
+      "severity": 3,
+      "internalName": "TripChanceOnDefensiveAction",
+      "term": "Injuries/TripChanceOnDefensiveAction_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 16,
+      "severity": 1,
+      "internalName": "InvoluntaryDash",
+      "term": "Injuries/InvoluntaryDash_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 16,
+      "severity": 2,
+      "internalName": "InvoluntaryDash",
+      "term": "Injuries/InvoluntaryDash_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 703,
+      "severity": 1,
+      "internalName": "DropWeaponChanceOnDefensiveAction   [Abandoned]",
+      "term": "Injuries/DropWeaponChanceOnDefensiveAction   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 703,
+      "severity": 2,
+      "internalName": "DropWeaponChanceOnDefensiveAction   [Abandoned]",
+      "term": "Injuries/DropWeaponChanceOnDefensiveAction   [Abandoned]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 703,
+      "severity": 3,
+      "internalName": "DropWeaponChanceOnDefensiveAction   [Abandoned]",
+      "term": "Injuries/DropWeaponChanceOnDefensiveAction   [Abandoned]_Desc_3",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 704,
+      "severity": 1,
+      "internalName": "InaccurateDashes",
+      "term": "Injuries/InaccurateDashes_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 705,
+      "severity": 1,
+      "internalName": "DashUsesMoreStamina",
+      "term": "Injuries/DashUsesMoreStamina_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 705,
+      "severity": 2,
+      "internalName": "DashUsesMoreStamina",
+      "term": "Injuries/DashUsesMoreStamina_Desc_2",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 500,
+      "severity": 1,
+      "internalName": "DropWeaponOnShieldHit",
+      "term": "Injuries/DropWeaponOnShieldHit_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 500,
+      "severity": 2,
+      "internalName": "DropWeaponOnShieldHit",
+      "term": "Injuries/DropWeaponOnShieldHit_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 500,
+      "severity": 3,
+      "internalName": "DropWeaponOnShieldHit",
+      "term": "Injuries/DropWeaponOnShieldHit_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 502,
+      "severity": 1,
+      "internalName": "TakeDamageOnAttack   [Abandoned]",
+      "term": "Injuries/TakeDamageOnAttack   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 502,
+      "severity": 2,
+      "internalName": "TakeDamageOnAttack   [Abandoned]",
+      "term": "Injuries/TakeDamageOnAttack   [Abandoned]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 502,
+      "severity": 3,
+      "internalName": "TakeDamageOnAttack   [Abandoned]",
+      "term": "Injuries/TakeDamageOnAttack   [Abandoned]_Desc_3",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 503,
+      "severity": 1,
+      "internalName": "TripChanceOnDamageAction   [Abandoned]",
+      "term": "Injuries/TripChanceOnDamageAction   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 503,
+      "severity": 2,
+      "internalName": "TripChanceOnDamageAction   [Abandoned]",
+      "term": "Injuries/TripChanceOnDamageAction   [Abandoned]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 503,
+      "severity": 3,
+      "internalName": "TripChanceOnDamageAction   [Abandoned]",
+      "term": "Injuries/TripChanceOnDamageAction   [Abandoned]_Desc_3",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 504,
+      "severity": 1,
+      "internalName": "DropWeaponChanceOnDamageAction   [Abandoned]",
+      "term": "Injuries/DropWeaponChanceOnDamageAction   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 504,
+      "severity": 2,
+      "internalName": "DropWeaponChanceOnDamageAction   [Abandoned]",
+      "term": "Injuries/DropWeaponChanceOnDamageAction   [Abandoned]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 504,
+      "severity": 3,
+      "internalName": "DropWeaponChanceOnDamageAction   [Abandoned]",
+      "term": "Injuries/DropWeaponChanceOnDamageAction   [Abandoned]_Desc_3",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 506,
+      "severity": 1,
+      "internalName": "DropWeaponOnMiss",
+      "term": "Injuries/DropWeaponOnMiss_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 506,
+      "severity": 2,
+      "internalName": "DropWeaponOnMiss",
+      "term": "Injuries/DropWeaponOnMiss_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 508,
+      "severity": 1,
+      "internalName": "WeakerAttack   [Abandoned]",
+      "term": "Injuries/WeakerAttack   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 508,
+      "severity": 2,
+      "internalName": "WeakerAttack   [Abandoned]",
+      "term": "Injuries/WeakerAttack   [Abandoned]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 508,
+      "severity": 3,
+      "internalName": "WeakerAttack   [Abandoned]",
+      "term": "Injuries/WeakerAttack   [Abandoned]_Desc_3",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 801,
+      "severity": 1,
+      "internalName": "TakeDamageOnBlock   [Abandoned]",
+      "term": "Injuries/TakeDamageOnBlock   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 803,
+      "severity": 1,
+      "internalName": "SlowerWhileBlocking",
+      "term": "Injuries/SlowerWhileBlocking_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 700,
+      "severity": 1,
+      "internalName": "DropShieldOnRoll",
+      "term": "Injuries/DropShieldOnRoll_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 700,
+      "severity": 2,
+      "internalName": "DropShieldOnRoll",
+      "term": "Injuries/DropShieldOnRoll_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 800,
+      "severity": 1,
+      "internalName": "OnShieldBreakStunned",
+      "term": "Injuries/OnShieldBreakStunned_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 15,
+      "severity": 1,
+      "internalName": "CantPickUpHeavy",
+      "term": "Injuries/CantPickUpHeavy_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 15,
+      "severity": 2,
+      "internalName": "CantPickUpHeavy",
+      "term": "Injuries/CantPickUpHeavy_Desc_2",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 901,
+      "severity": 1,
+      "internalName": "DropOnPickup",
+      "term": "Injuries/DropOnPickup_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 901,
+      "severity": 2,
+      "internalName": "DropOnPickup",
+      "term": "Injuries/DropOnPickup_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 8,
+      "severity": 1,
+      "internalName": "MessWithControls",
+      "term": "Injuries/MessWithControls_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 8,
+      "severity": 2,
+      "internalName": "MessWithControls",
+      "term": "Injuries/MessWithControls_Desc_2",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1000,
+      "severity": 1,
+      "internalName": "AttackTeammate",
+      "term": "Injuries/AttackTeammate_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1000,
+      "severity": 2,
+      "internalName": "AttackTeammate",
+      "term": "Injuries/AttackTeammate_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1001,
+      "severity": 1,
+      "internalName": "AttackEnemy",
+      "term": "Injuries/AttackEnemy_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1001,
+      "severity": 2,
+      "internalName": "AttackEnemy",
+      "term": "Injuries/AttackEnemy_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1003,
+      "severity": 1,
+      "internalName": "WeaponsGetDurability",
+      "term": "Injuries/WeaponsGetDurability_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1003,
+      "severity": 2,
+      "internalName": "WeaponsGetDurability",
+      "term": "Injuries/WeaponsGetDurability_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1003,
+      "severity": 3,
+      "internalName": "WeaponsGetDurability",
+      "term": "Injuries/WeaponsGetDurability_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1004,
+      "severity": 1,
+      "internalName": "ShorterChains",
+      "term": "Injuries/ShorterChains_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1004,
+      "severity": 2,
+      "internalName": "ShorterChains",
+      "term": "Injuries/ShorterChains_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 17,
+      "severity": 1,
+      "internalName": "HallucinateEnemies",
+      "term": "Injuries/HallucinateEnemies_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 17,
+      "severity": 2,
+      "internalName": "HallucinateEnemies",
+      "term": "Injuries/HallucinateEnemies_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 17,
+      "severity": 3,
+      "internalName": "HallucinateEnemies",
+      "term": "Injuries/HallucinateEnemies_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 18,
+      "severity": 1,
+      "internalName": "HallucinatePickups",
+      "term": "Injuries/HallucinatePickups_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 18,
+      "severity": 2,
+      "internalName": "HallucinatePickups",
+      "term": "Injuries/HallucinatePickups_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 18,
+      "severity": 3,
+      "internalName": "HallucinatePickups",
+      "term": "Injuries/HallucinatePickups_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 203,
+      "severity": 1,
+      "internalName": "BlurredVision   [Abandoned]",
+      "term": "Injuries/BlurredVision   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 203,
+      "severity": 2,
+      "internalName": "BlurredVision   [Abandoned]",
+      "term": "Injuries/BlurredVision   [Abandoned]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 203,
+      "severity": 3,
+      "internalName": "BlurredVision   [Abandoned]",
+      "term": "Injuries/BlurredVision   [Abandoned]_Desc_3",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 204,
+      "severity": 1,
+      "internalName": "ColourBlindness",
+      "term": "Injuries/ColourBlindness_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 204,
+      "severity": 2,
+      "internalName": "ColourBlindness",
+      "term": "Injuries/ColourBlindness_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 207,
+      "severity": 1,
+      "internalName": "DoubleVision",
+      "term": "Injuries/DoubleVision_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 207,
+      "severity": 2,
+      "internalName": "DoubleVision",
+      "term": "Injuries/DoubleVision_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 200,
+      "severity": 1,
+      "internalName": "LeftEyeDamage   [Testing]",
+      "term": "Injuries/LeftEyeDamage   [Testing]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 200,
+      "severity": 2,
+      "internalName": "LeftEyeDamage   [Testing]",
+      "term": "Injuries/LeftEyeDamage   [Testing]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 213,
+      "severity": 1,
+      "internalName": "NearsightedVision",
+      "term": "Injuries/NearsightedVision_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 213,
+      "severity": 2,
+      "internalName": "NearsightedVision",
+      "term": "Injuries/NearsightedVision_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 213,
+      "severity": 3,
+      "internalName": "NearsightedVision",
+      "term": "Injuries/NearsightedVision_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 212,
+      "severity": 1,
+      "internalName": "FarsightedVision",
+      "term": "Injuries/FarsightedVision_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 212,
+      "severity": 2,
+      "internalName": "FarsightedVision",
+      "term": "Injuries/FarsightedVision_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 212,
+      "severity": 3,
+      "internalName": "FarsightedVision",
+      "term": "Injuries/FarsightedVision_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 214,
+      "severity": 1,
+      "internalName": "Glare",
+      "term": "Injuries/Glare_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 214,
+      "severity": 2,
+      "internalName": "Glare",
+      "term": "Injuries/Glare_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 210,
+      "severity": 1,
+      "internalName": "BlackOutVision",
+      "term": "Injuries/BlackOutVision_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 210,
+      "severity": 2,
+      "internalName": "BlackOutVision",
+      "term": "Injuries/BlackOutVision_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 208,
+      "severity": 1,
+      "internalName": "BlackSpotsVision",
+      "term": "Injuries/BlackSpotsVision_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 208,
+      "severity": 2,
+      "internalName": "BlackSpotsVision",
+      "term": "Injuries/BlackSpotsVision_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 221,
+      "severity": 1,
+      "internalName": "CantSeeFarAwayPickups",
+      "term": "Injuries/CantSeeFarAwayPickups_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 221,
+      "severity": 2,
+      "internalName": "CantSeeFarAwayPickups",
+      "term": "Injuries/CantSeeFarAwayPickups_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1302,
+      "severity": 1,
+      "internalName": "PuncturedLung",
+      "term": "Injuries/PuncturedLung_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1302,
+      "severity": 2,
+      "internalName": "PuncturedLung",
+      "term": "Injuries/PuncturedLung_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1302,
+      "severity": 3,
+      "internalName": "PuncturedLung",
+      "term": "Injuries/PuncturedLung_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1104,
+      "severity": 1,
+      "internalName": "CantSeeTrainingStrain",
+      "term": "Injuries/CantSeeTrainingStrain_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1104,
+      "severity": 2,
+      "internalName": "CantSeeTrainingStrain",
+      "term": "Injuries/CantSeeTrainingStrain_Desc_2",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1102,
+      "severity": 1,
+      "internalName": "StartTrainingWithPips",
+      "term": "Injuries/StartTrainingWithPips_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1102,
+      "severity": 2,
+      "internalName": "StartTrainingWithPips",
+      "term": "Injuries/StartTrainingWithPips_Desc_2",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1105,
+      "severity": 1,
+      "internalName": "TrainingGreaterRandomness",
+      "term": "Injuries/TrainingGreaterRandomness_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1106,
+      "severity": 1,
+      "internalName": "MustTrainMoreThanAllies",
+      "term": "Injuries/MustTrainMoreThanAllies_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1106,
+      "severity": 2,
+      "internalName": "MustTrainMoreThanAllies",
+      "term": "Injuries/MustTrainMoreThanAllies_Desc_2",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1107,
+      "severity": 1,
+      "internalName": "AutoPickMetaChoices",
+      "term": "Injuries/AutoPickMetaChoices_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1107,
+      "severity": 2,
+      "internalName": "AutoPickMetaChoices",
+      "term": "Injuries/AutoPickMetaChoices_Desc_2",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1100,
+      "severity": 1,
+      "internalName": "WontDrinkCertainPotions",
+      "term": "Injuries/WontDrinkCertainPotions_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1100,
+      "severity": 2,
+      "internalName": "WontDrinkCertainPotions",
+      "term": "Injuries/WontDrinkCertainPotions_Desc_2",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1101,
+      "severity": 1,
+      "internalName": "AlwaysDrinkPotion",
+      "term": "Injuries/AlwaysDrinkPotion_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1101,
+      "severity": 2,
+      "internalName": "AlwaysDrinkPotion",
+      "term": "Injuries/AlwaysDrinkPotion_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1101,
+      "severity": 3,
+      "internalName": "AlwaysDrinkPotion",
+      "term": "Injuries/AlwaysDrinkPotion_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1103,
+      "severity": 1,
+      "internalName": "KidneyFailure",
+      "term": "Injuries/KidneyFailure_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1103,
+      "severity": 2,
+      "internalName": "KidneyFailure",
+      "term": "Injuries/KidneyFailure_Desc_2",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1103,
+      "severity": 3,
+      "internalName": "KidneyFailure",
+      "term": "Injuries/KidneyFailure_Desc_3",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1109,
+      "severity": 1,
+      "internalName": "GamblingProblem",
+      "term": "Injuries/GamblingProblem_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1109,
+      "severity": 2,
+      "internalName": "GamblingProblem",
+      "term": "Injuries/GamblingProblem_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1401,
+      "severity": 1,
+      "internalName": "DropWeaponAndPunchOnRage",
+      "term": "Injuries/DropWeaponAndPunchOnRage_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1401,
+      "severity": 2,
+      "internalName": "DropWeaponAndPunchOnRage",
+      "term": "Injuries/DropWeaponAndPunchOnRage_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1500,
+      "severity": 1,
+      "internalName": "TripOnHasteEnd",
+      "term": "Injuries/TripOnHasteEnd_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1500,
+      "severity": 2,
+      "internalName": "TripOnHasteEnd",
+      "term": "Injuries/TripOnHasteEnd_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1600,
+      "severity": 1,
+      "internalName": "CritsDrainStam",
+      "term": "Injuries/CritsDrainStam_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1600,
+      "severity": 2,
+      "internalName": "CritsDrainStam",
+      "term": "Injuries/CritsDrainStam_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1200,
+      "severity": 1,
+      "internalName": "CatchFireWhenWild",
+      "term": "Injuries/CatchFireWhenWild_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1200,
+      "severity": 2,
+      "internalName": "CatchFireWhenWild",
+      "term": "Injuries/CatchFireWhenWild_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1200,
+      "severity": 3,
+      "internalName": "CatchFireWhenWild",
+      "term": "Injuries/CatchFireWhenWild_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1201,
+      "severity": 1,
+      "internalName": "CrowdAlwaysThrowsRocks",
+      "term": "Injuries/CrowdAlwaysThrowsRocks_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 10000,
+      "severity": 1,
+      "internalName": "Amputation_Leg",
+      "term": "Injuries/Amputation_Leg_Desc_1",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10000,
+      "severity": 2,
+      "internalName": "Amputation_Leg",
+      "term": "Injuries/Amputation_Leg_Desc_2",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10000,
+      "severity": 3,
+      "internalName": "Amputation_Leg",
+      "term": "Injuries/Amputation_Leg_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 10001,
+      "severity": 1,
+      "internalName": "Amputation_Arm",
+      "term": "Injuries/Amputation_Arm_Desc_1",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10001,
+      "severity": 2,
+      "internalName": "Amputation_Arm",
+      "term": "Injuries/Amputation_Arm_Desc_2",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10001,
+      "severity": 3,
+      "internalName": "Amputation_Arm",
+      "term": "Injuries/Amputation_Arm_Desc_3",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 10002,
+      "severity": 1,
+      "internalName": "Amputation_Eye",
+      "term": "Injuries/Amputation_Eye_Desc_1",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10002,
+      "severity": 2,
+      "internalName": "Amputation_Eye",
+      "term": "Injuries/Amputation_Eye_Desc_2",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10002,
+      "severity": 3,
+      "internalName": "Amputation_Eye",
+      "term": "Injuries/Amputation_Eye_Desc_3",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 10003,
+      "severity": 1,
+      "internalName": "Amputation_Brain",
+      "term": "Injuries/Amputation_Brain_Desc_1",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10003,
+      "severity": 2,
+      "internalName": "Amputation_Brain",
+      "term": "Injuries/Amputation_Brain_Desc_2",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10003,
+      "severity": 3,
+      "internalName": "Amputation_Brain",
+      "term": "Injuries/Amputation_Brain_Desc_3",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 10004,
+      "severity": 1,
+      "internalName": "Amputation_Behavioural",
+      "term": "Injuries/Amputation_Behavioural_Desc_1",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10004,
+      "severity": 2,
+      "internalName": "Amputation_Behavioural",
+      "term": "Injuries/Amputation_Behavioural_Desc_2",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10004,
+      "severity": 3,
+      "internalName": "Amputation_Behavioural",
+      "term": "Injuries/Amputation_Behavioural_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 10006,
+      "severity": 1,
+      "internalName": "Amputation_Lung",
+      "term": "Injuries/Amputation_Lung_Desc_1",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10006,
+      "severity": 2,
+      "internalName": "Amputation_Lung",
+      "term": "Injuries/Amputation_Lung_Desc_2",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10006,
+      "severity": 3,
+      "internalName": "Amputation_Lung",
+      "term": "Injuries/Amputation_Lung_Desc_3",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 10005,
+      "severity": 1,
+      "internalName": "Amputation_Kidney",
+      "term": "Injuries/Amputation_Kidney_Desc_1",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10005,
+      "severity": 2,
+      "internalName": "Amputation_Kidney",
+      "term": "Injuries/Amputation_Kidney_Desc_2",
+      "state": "no-description",
+      "reason": "No active English description key for this severity."
+    },
+    {
+      "kind": "injury",
+      "id": 10005,
+      "severity": 3,
+      "internalName": "Amputation_Kidney",
+      "term": "Injuries/Amputation_Kidney_Desc_3",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1108,
+      "severity": 1,
+      "internalName": "EnfeebledForDay",
+      "term": "Injuries/EnfeebledForDay_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 510,
+      "severity": 1,
+      "internalName": "AttacksTakeMoreStamina",
+      "term": "Injuries/AttacksTakeMoreStamina_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 510,
+      "severity": 2,
+      "internalName": "AttacksTakeMoreStamina",
+      "term": "Injuries/AttacksTakeMoreStamina_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 510,
+      "severity": 3,
+      "internalName": "AttacksTakeMoreStamina",
+      "term": "Injuries/AttacksTakeMoreStamina_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 509,
+      "severity": 1,
+      "internalName": "SpecialAttacksDrainStamina   [Abandoned]",
+      "term": "Injuries/SpecialAttacksDrainStamina   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 509,
+      "severity": 2,
+      "internalName": "SpecialAttacksDrainStamina   [Abandoned]",
+      "term": "Injuries/SpecialAttacksDrainStamina   [Abandoned]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 509,
+      "severity": 3,
+      "internalName": "SpecialAttacksDrainStamina   [Abandoned]",
+      "term": "Injuries/SpecialAttacksDrainStamina   [Abandoned]_Desc_3",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 900,
+      "severity": 1,
+      "internalName": "SlowPickup   [Abandoned]",
+      "term": "Injuries/SlowPickup   [Abandoned]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 902,
+      "severity": 1,
+      "internalName": "StaminaLostOnPickup",
+      "term": "Injuries/StaminaLostOnPickup_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 902,
+      "severity": 2,
+      "internalName": "StaminaLostOnPickup",
+      "term": "Injuries/StaminaLostOnPickup_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1002,
+      "severity": 1,
+      "internalName": "AlliesAttackYou",
+      "term": "Injuries/AlliesAttackYou_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1002,
+      "severity": 2,
+      "internalName": "AlliesAttackYou",
+      "term": "Injuries/AlliesAttackYou_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1002,
+      "severity": 3,
+      "internalName": "AlliesAttackYou",
+      "term": "Injuries/AlliesAttackYou_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1005,
+      "severity": 1,
+      "internalName": "SlowAwayFromAllies",
+      "term": "Injuries/SlowAwayFromAllies_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1005,
+      "severity": 2,
+      "internalName": "SlowAwayFromAllies",
+      "term": "Injuries/SlowAwayFromAllies_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1005,
+      "severity": 3,
+      "internalName": "SlowAwayFromAllies",
+      "term": "Injuries/SlowAwayFromAllies_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1006,
+      "severity": 1,
+      "internalName": "EnfeebledWhenWatched",
+      "term": "Injuries/EnfeebledWhenWatched_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1006,
+      "severity": 2,
+      "internalName": "EnfeebledWhenWatched",
+      "term": "Injuries/EnfeebledWhenWatched_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 217,
+      "severity": 1,
+      "internalName": "CantSeeChains",
+      "term": "Injuries/CantSeeChains_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 205,
+      "severity": 1,
+      "internalName": "TrippyVision",
+      "term": "Injuries/TrippyVision_Desc_1",
+      "state": "visual-qualitative",
+      "reason": "Color and distortion use visual curves with no fixed damage, movement, radius or timing threshold."
+    },
+    {
+      "kind": "injury",
+      "id": 205,
+      "severity": 2,
+      "internalName": "TrippyVision",
+      "term": "Injuries/TrippyVision_Desc_2",
+      "state": "visual-qualitative",
+      "reason": "Color and distortion use visual curves with no fixed damage, movement, radius or timing threshold."
+    },
+    {
+      "kind": "injury",
+      "id": 218,
+      "severity": 1,
+      "internalName": "ConeOfVision",
+      "term": "Injuries/ConeOfVision_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 218,
+      "severity": 2,
+      "internalName": "ConeOfVision",
+      "term": "Injuries/ConeOfVision_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 218,
+      "severity": 3,
+      "internalName": "ConeOfVision",
+      "term": "Injuries/ConeOfVision_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 219,
+      "severity": 1,
+      "internalName": "FoggyVision   [Abandoned]   [Sprite Missing]",
+      "term": "Injuries/FoggyVision   [Abandoned]   [Sprite Missing]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 219,
+      "severity": 2,
+      "internalName": "FoggyVision   [Abandoned]   [Sprite Missing]",
+      "term": "Injuries/FoggyVision   [Abandoned]   [Sprite Missing]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 1902,
+      "severity": 1,
+      "internalName": "CantSeeMissions   [WIP]",
+      "term": "Injuries/CantSeeMissions   [WIP]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 1902,
+      "severity": 2,
+      "internalName": "CantSeeMissions   [WIP]",
+      "term": "Injuries/CantSeeMissions   [WIP]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 1007,
+      "severity": 1,
+      "internalName": "AlliesLookLikeEnemies",
+      "term": "Injuries/AlliesLookLikeEnemies_Desc_1",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 1007,
+      "severity": 2,
+      "internalName": "AlliesLookLikeEnemies",
+      "term": "Injuries/AlliesLookLikeEnemies_Desc_2",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "injury",
+      "id": 220,
+      "severity": 1,
+      "internalName": "CameraZoomedIn",
+      "term": "Injuries/CameraZoomedIn_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 220,
+      "severity": 2,
+      "internalName": "CameraZoomedIn",
+      "term": "Injuries/CameraZoomedIn_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 1400,
+      "severity": 1,
+      "internalName": "RageVisionEffect",
+      "term": "Injuries/RageVisionEffect_Desc_1",
+      "state": "visual-qualitative",
+      "reason": "Red vision while furious is a specific visual change; shader pulse strength is not a gameplay statistic."
+    },
+    {
+      "kind": "injury",
+      "id": 1800,
+      "severity": 1,
+      "internalName": "MoreAggroTakeMoreDamage   [WIP]",
+      "term": "Injuries/MoreAggroTakeMoreDamage   [WIP]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 1800,
+      "severity": 2,
+      "internalName": "MoreAggroTakeMoreDamage   [WIP]",
+      "term": "Injuries/MoreAggroTakeMoreDamage   [WIP]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 1800,
+      "severity": 3,
+      "internalName": "MoreAggroTakeMoreDamage   [WIP]",
+      "term": "Injuries/MoreAggroTakeMoreDamage   [WIP]_Desc_3",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 1801,
+      "severity": 1,
+      "internalName": "LessAggroDealLessDamage   [WIP]",
+      "term": "Injuries/LessAggroDealLessDamage   [WIP]_Desc_1",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 1801,
+      "severity": 2,
+      "internalName": "LessAggroDealLessDamage   [WIP]",
+      "term": "Injuries/LessAggroDealLessDamage   [WIP]_Desc_2",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 1801,
+      "severity": 3,
+      "internalName": "LessAggroDealLessDamage   [WIP]",
+      "term": "Injuries/LessAggroDealLessDamage   [WIP]_Desc_3",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "injury",
+      "id": 215,
+      "severity": 1,
+      "internalName": "CameraFocusOnAlly",
+      "term": "Injuries/CameraFocusOnAlly_Desc_1",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 215,
+      "severity": 2,
+      "internalName": "CameraFocusOnAlly",
+      "term": "Injuries/CameraFocusOnAlly_Desc_2",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "injury",
+      "id": 215,
+      "severity": 3,
+      "internalName": "CameraFocusOnAlly",
+      "term": "Injuries/CameraFocusOnAlly_Desc_3",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 2002,
+      "severity": 0,
+      "internalName": "BlockFirstXHits",
+      "term": "Purchases/BlockFirstXHits_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2000,
+      "severity": 0,
+      "internalName": "ReduceDamage",
+      "term": "Purchases/ReduceDamage_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2005,
+      "severity": 0,
+      "internalName": "NoFriendlyFire",
+      "term": "Purchases/NoFriendlyFire_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2006,
+      "severity": 0,
+      "internalName": "ImmuneToRear",
+      "term": "Purchases/ImmuneToRear_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2003,
+      "severity": 0,
+      "internalName": "BlockFirstXHitsPlus   [Abandoned]   [Sprite Missing]",
+      "term": "Purchases/BlockFirstXHitsPlus   [Abandoned]   [Sprite Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 2001,
+      "severity": 0,
+      "internalName": "ReduceDamagePlus   [Abandoned]   [Sprite Missing]",
+      "term": "Purchases/ReduceDamagePlus   [Abandoned]   [Sprite Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 2004,
+      "severity": 0,
+      "internalName": "ReducedFriendlyFire   [Abandoned]   [Sprite Missing]",
+      "term": "Purchases/ReducedFriendlyFire   [Abandoned]   [Sprite Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 2201,
+      "severity": 0,
+      "internalName": "KnuckleDustersPlus   [Abandoned]   [Model Missing]   [Sprite Missing]",
+      "term": "Purchases/KnuckleDustersPlus   [Abandoned]   [Model Missing]   [Sprite Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 2100,
+      "severity": 0,
+      "internalName": "SpikedShield",
+      "term": "Purchases/SpikedShield_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 2301,
+      "severity": 0,
+      "internalName": "IgnoreSkullPerInjury",
+      "term": "Purchases/IgnoreSkullPerInjury_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2500,
+      "severity": 0,
+      "internalName": "RunningShoes",
+      "term": "Purchases/RunningShoes_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2302,
+      "severity": 0,
+      "internalName": "ThreeSkullInjuriesBecomeTwoSkull",
+      "term": "Purchases/ThreeSkullInjuriesBecomeTwoSkull_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2303,
+      "severity": 0,
+      "internalName": "Elixir",
+      "term": "Purchases/Elixir_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2602,
+      "severity": 0,
+      "internalName": "PricelessVase",
+      "term": "Purchases/PricelessVase_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2601,
+      "severity": 0,
+      "internalName": "TrainingWeights",
+      "term": "Purchases/TrainingWeights_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2200,
+      "severity": 0,
+      "internalName": "KnuckleDusters",
+      "term": "Purchases/KnuckleDusters_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2204,
+      "severity": 0,
+      "internalName": "GlassCannon",
+      "term": "Purchases/GlassCannon_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2202,
+      "severity": 0,
+      "internalName": "ThrownEnemiesLightOnFire",
+      "term": "Purchases/ThrownEnemiesLightOnFire_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 2600,
+      "severity": 0,
+      "internalName": "DamageUpIfCrowdWild",
+      "term": "Purchases/DamageUpIfCrowdWild_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2400,
+      "severity": 0,
+      "internalName": "OnRageRageRandomAlly",
+      "term": "Purchases/OnRageRageRandomAlly_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2403,
+      "severity": 0,
+      "internalName": "AvoidAttacksWhileHasted",
+      "term": "Purchases/AvoidAttacksWhileHasted_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 2404,
+      "severity": 0,
+      "internalName": "CritDamageUpPurchase",
+      "term": "Purchases/CritDamageUpPurchase_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 2501,
+      "severity": 0,
+      "internalName": "DoubleDurability",
+      "term": "Purchases/DoubleDurability_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 0,
+      "severity": 0,
+      "internalName": "Heal   [Abandoned]",
+      "term": "Purchases/Heal   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 1,
+      "severity": 0,
+      "internalName": "HealMore   [Abandoned]",
+      "term": "Purchases/HealMore   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 6,
+      "severity": 0,
+      "internalName": "Heal1",
+      "term": "Purchases/Heal1_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 7,
+      "severity": 0,
+      "internalName": "Heal2",
+      "term": "Purchases/Heal2_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 8,
+      "severity": 0,
+      "internalName": "Heal3",
+      "term": "Purchases/Heal3_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 1001,
+      "severity": 0,
+      "internalName": "ChainUpgrade",
+      "term": "Purchases/ChainUpgrade_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 1002,
+      "severity": 0,
+      "internalName": "GroupMaxStamina",
+      "term": "Purchases/GroupMaxStamina_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 1006,
+      "severity": 0,
+      "internalName": "GroupCrit",
+      "term": "Purchases/GroupCrit_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 1005,
+      "severity": 0,
+      "internalName": "GroupMoreDamage",
+      "term": "Purchases/GroupMoreDamage_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 1003,
+      "severity": 0,
+      "internalName": "CrowdThrowsClubsToFavourite",
+      "term": "Purchases/CrowdThrowsClubsToFavourite_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 4,
+      "severity": 0,
+      "internalName": "CureOldestInjuryStackAllPlayers",
+      "term": "Purchases/CureOldestInjuryStackAllPlayers_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 5,
+      "severity": 0,
+      "internalName": "CureNewestInjuryStackAllPlayers",
+      "term": "Purchases/CureNewestInjuryStackAllPlayers_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 1000,
+      "severity": 0,
+      "internalName": "BetterHealing",
+      "term": "Purchases/BetterHealing_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 1500,
+      "severity": 0,
+      "internalName": "ShopDiscount",
+      "term": "Purchases/ShopDiscount_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 1004,
+      "severity": 0,
+      "internalName": "OrangeSlice",
+      "term": "Purchases/OrangeSlice_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 1505,
+      "severity": 0,
+      "internalName": "MoreTraining",
+      "term": "Purchases/MoreTraining_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 3005,
+      "severity": 0,
+      "internalName": "WirecuttersUpgrade",
+      "term": "Purchases/WirecuttersUpgrade_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 3002,
+      "severity": 0,
+      "internalName": "PiercingSpearUpgrade",
+      "term": "Purchases/PiercingSpearUpgrade_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 3006,
+      "severity": 0,
+      "internalName": "HookSpearUpgrade",
+      "term": "Purchases/HookSpearUpgrade_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 3001,
+      "severity": 0,
+      "internalName": "FlamingSwordUpgrade",
+      "term": "Purchases/FlamingSwordUpgrade_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 3007,
+      "severity": 0,
+      "internalName": "CritSwordUpgrade",
+      "term": "Purchases/CritSwordUpgrade_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 3003,
+      "severity": 0,
+      "internalName": "KnockbackMaceUpgrade",
+      "term": "Purchases/KnockbackMaceUpgrade_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 3000,
+      "severity": 0,
+      "internalName": "ClubUpgrade",
+      "term": "Purchases/ClubUpgrade_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 3008,
+      "severity": 0,
+      "internalName": "BowUpgrade",
+      "term": "Purchases/BowUpgrade_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 3009,
+      "severity": 0,
+      "internalName": "PoisonBowUpgrade",
+      "term": "Purchases/PoisonBowUpgrade_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 3010,
+      "severity": 0,
+      "internalName": "BombBowUpgrade",
+      "term": "Purchases/BombBowUpgrade_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 3100,
+      "severity": 0,
+      "internalName": "IgnoreInjuryPotion   [WIP]   [Model Missing]",
+      "term": "Purchases/IgnoreInjuryPotion   [WIP]   [Model Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 2,
+      "severity": 0,
+      "internalName": "CureRandomInjuryRandomPlayer   [Abandoned]   [Model Missing]",
+      "term": "Purchases/CureRandomInjuryRandomPlayer   [Abandoned]   [Model Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 3004,
+      "severity": 0,
+      "internalName": "FlailUpgrade   [Abandoned]   [Model Missing]",
+      "term": "Purchases/FlailUpgrade   [Abandoned]   [Model Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 2402,
+      "severity": 0,
+      "internalName": "HasteMakesAllActionsFree   [Abandoned]",
+      "term": "Purchases/HasteMakesAllActionsFree   [Abandoned]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 2401,
+      "severity": 0,
+      "internalName": "HasteLastsLonger   [Abandoned]   [Model Missing]   [Sprite Missing]",
+      "term": "Purchases/HasteLastsLonger   [Abandoned]   [Model Missing]   [Sprite Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 2101,
+      "severity": 0,
+      "internalName": "WideShield   [Abandoned]   [Model Missing]   [Sprite Missing]",
+      "term": "Purchases/WideShield   [Abandoned]   [Model Missing]   [Sprite Missing]_Desc",
+      "state": "unreleased",
+      "reason": "Not marked for the released game."
+    },
+    {
+      "kind": "purchase",
+      "id": 1007,
+      "severity": 0,
+      "internalName": "PassiveMorePots",
+      "term": "Purchases/PassiveMorePots_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 1008,
+      "severity": 0,
+      "internalName": "PassiveMoreWeapons",
+      "term": "Purchases/PassiveMoreWeapons_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 1009,
+      "severity": 0,
+      "internalName": "EnemiesWeakWhenCrowdWild",
+      "term": "Purchases/EnemiesWeakWhenCrowdWild_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 1010,
+      "severity": 0,
+      "internalName": "EnemiesBadShields",
+      "term": "Purchases/EnemiesBadShields_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 1011,
+      "severity": 0,
+      "internalName": "EnemiesLowerHealth",
+      "term": "Purchases/EnemiesLowerHealth_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "purchase",
+      "id": 1506,
+      "severity": 0,
+      "internalName": "MissionPayIncrease",
+      "term": "Purchases/MissionPayIncrease_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 1507,
+      "severity": 0,
+      "internalName": "NoWastedTraining",
+      "term": "Purchases/NoWastedTraining_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "purchase",
+      "id": 1508,
+      "severity": 0,
+      "internalName": "SurgeriesHeal",
+      "term": "Purchases/SurgeriesHeal_Desc",
+      "state": "card",
+      "reason": "Audited numbers or shared-status supplement; see entry evidence."
+    },
+    {
+      "kind": "skill",
+      "id": 10000,
+      "severity": 0,
+      "internalName": "StrengthTraining",
+      "term": "Skills/StrengthTraining_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 10001,
+      "severity": 0,
+      "internalName": "PsychUp",
+      "term": "Skills/PsychUp_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 10002,
+      "severity": 0,
+      "internalName": "ReducedDashStaminaCost",
+      "term": "Skills/ReducedDashStaminaCost_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 10003,
+      "severity": 0,
+      "internalName": "DanceLesson",
+      "term": "Skills/DanceLesson_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 10004,
+      "severity": 0,
+      "internalName": "PowerLifting",
+      "term": "Skills/PowerLifting_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 10005,
+      "severity": 0,
+      "internalName": "FasterSpecial",
+      "term": "Skills/FasterSpecial_Desc",
+      "state": "card",
+      "reason": "Localized training-only enum; not part of the registered skill pool."
+    },
+    {
+      "kind": "skill",
+      "id": 10006,
+      "severity": 0,
+      "internalName": "BackstabTrip",
+      "term": "Skills/BackstabTrip_Desc",
+      "state": "unresolved",
+      "reason": "Localized training-only Trip From Behind: no confirmed native effect branch was found for this skill ID; no trip duration invented."
+    },
+    {
+      "kind": "skill",
+      "id": 10007,
+      "severity": 0,
+      "internalName": "MeleeStun",
+      "term": "Skills/MeleeStun_Desc",
+      "state": "card",
+      "reason": "Localized training-only enum; not part of the registered skill pool."
+    },
+    {
+      "kind": "skill",
+      "id": 10008,
+      "severity": 0,
+      "internalName": "RageOnKill",
+      "term": "Skills/RageOnKill_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 10009,
+      "severity": 0,
+      "internalName": "StaminaOnKill",
+      "term": "Skills/StaminaOnKill_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 10012,
+      "severity": 0,
+      "internalName": "FasterStamina",
+      "term": "Skills/FasterStamina_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 10014,
+      "severity": 0,
+      "internalName": "LongerParryWindow",
+      "term": "Skills/LongerParryWindow_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 10016,
+      "severity": 0,
+      "internalName": "HasteOnHurt",
+      "term": "Skills/HasteOnHurt_Desc",
+      "state": "card",
+      "reason": "Localized training-only enum; not part of the registered skill pool."
+    },
+    {
+      "kind": "skill",
+      "id": 10017,
+      "severity": 0,
+      "internalName": "RageOnHurt",
+      "term": "Skills/RageOnHurt_Desc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "skill",
+      "id": 10019,
+      "severity": 0,
+      "internalName": "HasteTeammate",
+      "term": "Skills/HasteTeammate_Desc",
+      "state": "card",
+      "reason": "Localized training-only enum; not part of the registered skill pool."
+    },
+    {
+      "kind": "skill",
+      "id": 10020,
+      "severity": 0,
+      "internalName": "BetterHaste",
+      "term": "Skills/BetterHaste_Desc",
+      "state": "card",
+      "reason": "Localized training-only enum; not part of the registered skill pool."
+    },
+    {
+      "kind": "status",
+      "id": 1,
+      "severity": 0,
+      "internalName": "Haste",
+      "term": "UI/HasteTooltipDesc",
+      "state": "card",
+      "reason": "Shared status explanation."
+    },
+    {
+      "kind": "status",
+      "id": 2,
+      "severity": 0,
+      "internalName": "Rage",
+      "term": "UI/RageTooltipDesc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "status",
+      "id": 4,
+      "severity": 0,
+      "internalName": "Crit",
+      "term": "UI/CritTooltipDesc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "status",
+      "id": 8,
+      "severity": 0,
+      "internalName": "Backstab",
+      "term": "UI/BackstabTooltipDesc",
+      "state": "card",
+      "reason": "Shared status explanation."
+    },
+    {
+      "kind": "status",
+      "id": 16,
+      "severity": 0,
+      "internalName": "Fire",
+      "term": "UI/FireTooltipDesc",
+      "state": "card",
+      "reason": "Shared status explanation."
+    },
+    {
+      "kind": "status",
+      "id": 32,
+      "severity": 0,
+      "internalName": "Unarmed",
+      "term": "UI/UnarmedTooltipDesc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "status",
+      "id": 64,
+      "severity": 0,
+      "internalName": "CrowdWild",
+      "term": "UI/CrowdWildTooltipDesc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "status",
+      "id": 128,
+      "severity": 0,
+      "internalName": "Disarmed",
+      "term": "UI/DisarmedTooltipDesc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "status",
+      "id": 256,
+      "severity": 0,
+      "internalName": "Special",
+      "term": "UI/SpecialTooltipDesc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    },
+    {
+      "kind": "status",
+      "id": 512,
+      "severity": 0,
+      "internalName": "Weakened",
+      "term": "UI/WeakenedTooltipDesc",
+      "state": "card",
+      "reason": "Shared status explanation."
+    },
+    {
+      "kind": "status",
+      "id": 1024,
+      "severity": 0,
+      "internalName": "CrowdFavorite",
+      "term": "UI/CrowdFavoriteTooltipDesc",
+      "state": "already-concrete",
+      "reason": "Existing description specifies its quantity or a concrete behavior; no additional numeric claim selected."
+    }
+  ]
+}

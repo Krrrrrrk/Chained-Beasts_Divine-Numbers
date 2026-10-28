@@ -1,27 +1,31 @@
 # Chained Beasts: Divine Numbers
 
-A display-only BepInEx mod that adds a separate numbers box while you hold **Ctrl**.
+A display-only BepInEx mod that shows researched numbers in a separate box while you hold **Ctrl**. Original descriptions stay intact; **Shift keeps its normal status explanations**.
 
-The first build covers **Proud Lion**, **Lethal Eagle**, and **Mighty Bear** on Steam build **26231777**. See [the first-pass findings](docs/first-pass-findings.md) for the researched values and their limits.
+Version **0.2.0** expands the three-card prototype to **206 cards**: 50 skills/beast variants, 134 affliction severity entries, 18 purchases and four statuses. It targets Steam build **26231777**. [Audit findings and limits](docs/audit-report.md) explain coverage and base values.
 
-On **character select**, highlight a supported beast variant and hold either **left or right Ctrl**. This also works in the character-info tooltip, on hovered skill rows in the lobby character-details list, and on selected/hovered trainer skill cards. Release Ctrl to hide the box. **Shift keeps its normal status explanations**; both keys can be held together.
+On **character select**, highlight an unlocked supported variant and hold either Ctrl key. Character-info tooltips, hovered character-detail rows and selected/hovered trainer cards also work. In **shop, surgery and Codex screens**, hover the displayed description text while holding Ctrl. New labels may take up to half a second to register while Ctrl stays held. Release Ctrl to hide the box.
 
-Original names and descriptions are preserved. The extra box copies the game's native status-panel style and uses smaller 22-point text with explicit padding. Unsupported skills, purchases, statuses, locked variants, and afflictions do not receive guessed numbers. Codex pages are not included yet.
+The panel retains the smaller 22-point text and padding confirmed working by the user in 0.1.1. New 0.2.0 screens/mechanics have build, static and offline verification; they still need manual gameplay review. Unknown/locked descriptions receive no guessed card. One training-only description has no confirmed native trip-duration branch and is recorded as unresolved.
 
-Version **0.1.1** adds character-select support and more compact text. The user's screenshot confirms that the 0.1.0 in-game Ctrl box rendered; the new character-select behavior and revised layout still need manual testing. Compilation and offline checks pass. No GitHub release has been published.
+## Build and install
 
-Build with the .NET SDK and the installed game's BepInEx IL2CPP interop files:
+Use the .NET SDK and the installed game's BepInEx IL2CPP interop files:
 
 ```powershell
 dotnet build src/ChainedBeasts.DivineNumbers/ChainedBeasts.DivineNumbers.csproj -c Release
 dotnet run --project tests/LogicChecks/LogicChecks.csproj -c Release
 ```
 
-The output is `src/ChainedBeasts.DivineNumbers/bin/Release/net6.0/ChainedBeasts.DivineNumbers.dll`. With the game closed, place that DLL in `BepInEx/plugins/ChainedBeasts.DivineNumbers/`. Only this mod's DLL is needed; there is no Foundation dependency. Remove the DLL to uninstall. The mod refuses an uninspected game binary after an update until its values are re-audited.
+With the game closed, copy `src/ChainedBeasts.DivineNumbers/bin/Release/net6.0/ChainedBeasts.DivineNumbers.dll` into `BepInEx/plugins/ChainedBeasts.DivineNumbers/`. Only this DLL is needed; there is no Foundation dependency. Remove it to uninstall. `scripts/build.ps1` builds, verifies and packages a test ZIP (Python 3.11+ is required for provenance checks). No GitHub release has been published for this update.
 
-- [Numbers box data](data/first-pass-details.json)
-- [Build fingerprint and evidence index](data/first-pass-evidence.json)
-- [Read-only verification script](scripts/verify-first-pass.py)
-- [UI implementation and manual checks](docs/ctrl-details.md)
+The mod checks the audited binary, metadata and two asset files before enabling UI hooks. A changed build disables it until re-audited. It changes no combat, saves or network traffic.
 
-Original game files, extracted localization catalogs, and decompiler output are excluded from Git. The existing MIT license applies to this project's original work, not the game or its assets.
+- [Card data and source references](data/numeric-details.json)
+- [Coverage of registered definitions and localized training/status entries](data/coverage.json)
+- [Build fingerprints, literals and asset facts](data/expanded-evidence.json)
+- [Read-only verification](scripts/verify-catalog.py)
+- [UI behavior and manual checks](docs/ctrl-details.md)
+- [Original three-card research](docs/first-pass-findings.md)
+
+Original game files, full localization catalogs and decompiler output are excluded from Git. The MIT license applies to this project's original work, not the game or its assets.
