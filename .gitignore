@@ -1,5 +1,6 @@
 # Proprietary inputs and scratch analysis stay local.
 /local/
+/artifacts/
 **/__pycache__/
 **/bin/
 **/obj/

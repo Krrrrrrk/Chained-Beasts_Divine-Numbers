@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Version>0.1.0</Version>
+    <ChainedBeastsGameDir Condition="'$(ChainedBeastsGameDir)' == '' and '$(CHAINED_BEASTS_GAME_DIR)' != ''">$(CHAINED_BEASTS_GAME_DIR)</ChainedBeastsGameDir>
+    <ChainedBeastsGameDir Condition="'$(ChainedBeastsGameDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Chained Beasts</ChainedBeastsGameDir>
+    <BepInExRoot>$(ChainedBeastsGameDir)\BepInEx</BepInExRoot>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(BepInExRoot)\core\BepInEx.Core.dll" Private="false" />
+    <Reference Include="$(BepInExRoot)\core\BepInEx.Unity.IL2CPP.dll" Private="false" />
+    <Reference Include="$(BepInExRoot)\core\0Harmony.dll" Private="false" />
+    <Reference Include="$(BepInExRoot)\core\Il2CppInterop.Runtime.dll" Private="false" />
+    <Reference Include="$(BepInExRoot)\core\Il2CppInterop.Common.dll" Private="false" />
+    <Reference Include="$(BepInExRoot)\interop\Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(BepInExRoot)\interop\Il2Cppmscorlib.dll" Private="false"><Aliases>GameCorlib</Aliases></Reference>
+    <Reference Include="$(BepInExRoot)\interop\UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="$(BepInExRoot)\interop\UnityEngine.UI.dll" Private="false" />
+    <Reference Include="$(BepInExRoot)\interop\UnityEngine.UIModule.dll" Private="false" />
+    <Reference Include="$(BepInExRoot)\interop\UnityEngine.TextRenderingModule.dll" Private="false" />
+    <Reference Include="$(BepInExRoot)\interop\Unity.TextMeshPro.dll" Private="false" />
+    <Reference Include="$(BepInExRoot)\interop\Unity.InputSystem.dll" Private="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\data\first-pass-details.json" LogicalName="NumericDetails.json" />
+  </ItemGroup>
+</Project>

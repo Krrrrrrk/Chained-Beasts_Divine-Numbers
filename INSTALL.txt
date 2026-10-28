@@ -1,0 +1,25 @@
+Divine Numbers 0.1.0 - FIRST TEST BUILD
+
+Requires Chained Beasts Steam build 26231777 and an existing BepInEx IL2CPP installation.
+This mod has no Foundation dependency.
+
+Close the game. Copy the included BepInEx folder into your Chained Beasts game folder.
+The only plugin file added should be:
+BepInEx/plugins/ChainedBeasts.DivineNumbers/ChainedBeasts.DivineNumbers.dll
+
+Inspect a supported skill in the character-info tooltip or hover its row in the
+lobby character-details list. Hold either Ctrl key to show a separate numbers box.
+Release Ctrl to hide it. Shift keeps the game's normal status explanations.
+
+Included entries: Proud Lion, Lethal Eagle, Mighty Bear.
+Other skills/afflictions have no numeric box yet. Beast-selection and Codex pages
+are not supported in this first UI pass.
+
+The original descriptions and combat behavior are preserved.
+Build and offline checks pass. In-game appearance, input, and coexistence with
+other mods have not yet been tested. See MANUAL-CHECKS.md.
+
+To uninstall, close the game and remove only this mod's DLL.
+The mod disables itself if the game binary changes until its data is re-audited.
+
+Source: https://github.com/Krrrrrrk/Chained-Beasts_Divine-Numbers

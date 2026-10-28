@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\ChainedBeasts.DivineNumbers\DetailCatalog.cs" Link="DetailCatalog.cs" />
+    <Compile Include="..\..\src\ChainedBeasts.DivineNumbers\PanelPlacement.cs" Link="PanelPlacement.cs" />
+    <None Include="..\..\data\first-pass-details.json" Link="details.json" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+</Project>

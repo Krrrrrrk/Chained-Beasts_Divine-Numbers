@@ -14,7 +14,7 @@ Investigated 2026-10-28 against installed Steam build **26231777**. Results come
 
 Current description says that posing after kills with a wild crowd gives allies a damage and speed boost, without either percentage or duration.
 
-Proposed description:
+Ctrl detail summary (original description remains unchanged):
 
 > Posing to a wild crowd after kills gives you and all allies +40% damage and +20% movement speed for 10s.
 
@@ -30,7 +30,7 @@ Still to check: repeated poses and multiple Lions, refresh/stacking rules, death
 
 Current description: “Powerful throw after melee kills.”
 
-Proposed description:
+Ctrl detail summary (original description remains unchanged):
 
 > Melee kills ready your next powerful throw for 8s. That throw deals +100% direct-impact damage; launching a projectile consumes the effect.
 
@@ -46,7 +46,7 @@ Still to check: multiple/projectile-producing weapons, refresh rules, shield thr
 
 The current description gives +20% blunt damage, but leaves “More health, less movement speed” and “briefly stun” unquantified.
 
-Proposed description:
+Ctrl detail summary (original description remains unchanged):
 
 > Base health +25%, movement speed -20%. Blunt weapons deal +20% damage; blunt melee hits impose at least 0.3s base stun.
 
@@ -58,11 +58,11 @@ In `Weapon.AttackEffect`, a Bludgeon hit with skill 7 raises the prepared stun d
 
 Still to check: susceptible versus resistant enemies/bosses, hits interrupted or blocked before application, thrown weapons, charged attacks that change damage type, and layout of the expanded text.
 
-## Mod feasibility and next scope
+## Mod implementation and next scope
 
-The game's `StringManager.GetSkillDescTerm` resolves descriptions using `Skills/{SkillType}_Desc`. The three exact keys are included in [the proposed text data](../data/first-pass-descriptions.json). A small BepInEx localization patch can target these descriptions without changing ability calculations. In-game display and compatibility remain untested; no plugin has been built in this first pass.
+The game's `StringManager.GetSkillDescTerm` identifies descriptions using `Skills/{SkillType}_Desc`. Divine Numbers preserves those strings and displays separate [numeric detail cards](../data/first-pass-details.json) while Ctrl is held. The first UI implementation observes skill bindings and copies a native status panel for its own box. See [the implementation and pending manual checks](ctrl-details.md). Compilation and offline checks pass; in-game display remains untested.
 
-The registered catalog contains **113 skill definitions**, including **24 beast variants** and records with different release statuses. Registration alone does not prove an entry is obtainable. A full audit should separate beast variants, ordinary skills, surgeries/purchases, injuries, and shared statuses, and trace each vague phrase to its owning mechanic. Only the three samples above have been investigated here.
+The registered catalog contains **113 skill definitions**, including **24 beast variants** and records with different release statuses. Registration alone does not prove an entry is obtainable. A full audit should separate beast variants, ordinary skills, surgeries/purchases, injuries, and shared statuses, and trace each vague phrase to its owning mechanic. Only the three samples above have been investigated here. Affliction data and additional UI contexts remain follow-up work.
 
 ## Evidence and reproduction
 

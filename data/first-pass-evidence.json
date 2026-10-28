@@ -218,9 +218,9 @@
   },
   "limitations": [
     "No gameplay or multiplayer testing.",
-    "No plugin built, installed, or released.",
     "Fixed native addresses apply only to recorded binary hashes.",
     "Code references document interpretations; fingerprint checks do not independently prove control-flow interpretations.",
-    "Draft descriptions are partial explanations; special-case mechanics and UI layout need follow-up."
+    "Draft descriptions are partial explanations; special-case mechanics and UI layout need follow-up.",
+    "A first Ctrl-panel DLL has been built; installation, live UI validation, and a public release remain pending."
   ]
 }

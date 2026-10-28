@@ -45,7 +45,7 @@ def main():
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     evidence = json.loads((root / "data/first-pass-evidence.json").read_text("utf-8"))
-    descriptions = json.loads((root / "data/first-pass-descriptions.json").read_text("utf-8"))
+    descriptions = json.loads((root / "data/first-pass-details.json").read_text("utf-8"))
 
     # Refuse stale addresses before reading any values from a different build.
     for record in evidence["gameFiles"]:
