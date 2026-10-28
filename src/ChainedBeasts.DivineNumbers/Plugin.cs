@@ -10,7 +10,7 @@ public sealed class Plugin : BasePlugin
 {
     public const string Id = "local.chainedbeasts.divinenumbers";
     public const string Name = "Chained Beasts Divine Numbers";
-    public const string Version = "0.1.0";
+    public const string Version = "0.1.1";
     internal const string GameHash = "ba3ef02fa87da4c41bb27d7610539c9578132204f0fb5713833e2ef93415ce29";
     private Harmony? _harmony;
     private DetailsController? _controller;
@@ -33,7 +33,7 @@ public sealed class Plugin : BasePlugin
             TooltipBindings.Controller = _controller;
             _harmony = new Harmony(Id);
             TooltipBindings.Install(_harmony);
-            Log.LogInfo("Divine Numbers 0.1.0: hold Ctrl for researched numbers. Original descriptions and Shift controls are unchanged. Three beast variants; gameplay/UI verification pending.");
+            Log.LogInfo("Divine Numbers 0.1.1: hold Ctrl for researched numbers, including character select. Compact 22-point cards; updated UI needs manual verification.");
         }
         catch (Exception ex)
         {

@@ -10,6 +10,9 @@ namespace ChainedBeasts.DivineNumbers;
 internal sealed class NativeDetailsPanel : IDisposable
 {
     internal const string PanelName = "Divine Numbers details";
+    private const float FontSize = 22;
+    private const float HorizontalPadding = 24;
+    private const float VerticalPadding = 20;
     private GameObject? _canvasRoot;
     private UIStatusTooltip _view = null!;
     private TMP_Text _text = null!;
@@ -43,6 +46,13 @@ internal sealed class NativeDetailsPanel : IDisposable
             _rect.pivot = new Vector2(0, 1);
             _rect.localScale = Vector3.one;
             _rect.localRotation = Quaternion.identity;
+            var inner = _view.root.transform.Cast<RectTransform>();
+            if (inner != _rect)
+            {
+                inner.anchorMin = Vector2.zero;
+                inner.anchorMax = Vector2.one;
+                inner.offsetMin = inner.offsetMax = Vector2.zero;
+            }
             _text = _view.statusDesc.GetComponent<TMP_Text>();
             if (_text == null) throw new InvalidOperationException("Native status panel has no TMP description");
             // Only the private clone loses localization. Vanilla Localize components stay enabled.
@@ -52,7 +62,16 @@ internal sealed class NativeDetailsPanel : IDisposable
             { group.blocksRaycasts = false; group.interactable = false; }
             _text.richText = true;
             _text.enableAutoSizing = false;
-            _text.fontSize = Math.Min(_text.fontSize, 26);
+            _text.fontSize = FontSize;
+            _text.margin = Vector4.zero;
+            _text.lineSpacing = 0;
+            _text.paragraphSpacing = 4;
+            _text.characterSpacing = 0;
+            var textRect = _text.rectTransform;
+            textRect.anchorMin = Vector2.zero;
+            textRect.anchorMax = Vector2.one;
+            textRect.offsetMin = new Vector2(HorizontalPadding, VerticalPadding);
+            textRect.offsetMax = new Vector2(-HorizontalPadding, -VerticalPadding);
             _text.textWrappingMode = TextWrappingModes.Normal;
             _text.overflowMode = TextOverflowModes.Overflow;
             _text.alignment = TextAlignmentOptions.TopLeft;
@@ -65,19 +84,19 @@ internal sealed class NativeDetailsPanel : IDisposable
         _canvas.scaleFactor = scale;
         var width = Math.Min(430f, Screen.width / scale - 48);
         var content = "<b>Divine Numbers</b>  <size=75%>[Ctrl]</size>\n" +
-            "<color=#FFE29A>" + detail.Name + "</color>\n\n" + detail.Body;
+            "<size=90%><color=#FFE29A>" + detail.Name + "</color></size>\n" + detail.Body;
         var maxHeight = Screen.height / scale - 48;
         if (content != _lastText || width != _lastWidth || maxHeight != _lastAvailableHeight)
         {
             _text.text = content;
-            // Native prefab text has 40px horizontal and 10px vertical inset.
-            // Reduce type size only on small windows so the entire card stays on-screen.
-            _text.fontSize = 26;
-            var height = _text.GetPreferredValues(content, width - 40, 10000).y + 24;
+            // Measure the exact padded text width used by this private clone.
+            _text.fontSize = FontSize;
+            var textWidth = width - 2 * HorizontalPadding;
+            var height = _text.GetPreferredValues(content, textWidth, 10000).y + 2 * VerticalPadding + 8;
             while (height > maxHeight && _text.fontSize > 14)
             {
                 _text.fontSize -= 1;
-                height = _text.GetPreferredValues(content, width - 40, 10000).y + 24;
+                height = _text.GetPreferredValues(content, textWidth, 10000).y + 2 * VerticalPadding + 8;
             }
             _height = height;
             _rect.sizeDelta = new Vector2(width, _height);
@@ -89,6 +108,7 @@ internal sealed class NativeDetailsPanel : IDisposable
             Screen.width, Screen.height, 16 * scale, 18 * scale);
         _rect.anchoredPosition = new Vector2(position.Left / scale, position.Top / scale);
         _view.Show(color);
+        _text.ForceMeshUpdate(true, false);
     }
     internal void Hide() { if (_view != null && _view.root != null) _view.Hide(); }
     internal static Camera? CameraFor(RectTransform rect)

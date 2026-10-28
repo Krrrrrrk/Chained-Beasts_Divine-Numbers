@@ -9,7 +9,8 @@ namespace ChainedBeasts.DivineNumbers;
 public sealed class DetailsController : MonoBehaviour
 {
     private sealed record Binding(Component Owner, RectTransform Anchor, NumericDetail? Detail,
-        UIPlayerInfoTooltip? Tooltip = null, UILobbyTrainerUpgradePage? Trainer = null);
+        UIPlayerInfoTooltip? Tooltip = null, UILobbyTrainerUpgradePage? Trainer = null,
+        UIGameServerLobbyPage? Lobby = null);
     private readonly Dictionary<int, Binding> _bindings = new();
     private DetailCatalog? _catalog;
     private ManualLogSource? _log;
@@ -31,6 +32,21 @@ public sealed class DetailsController : MonoBehaviour
         view, view.transform.TryCast<RectTransform>(), skill));
     [HideFromIl2Cpp]
     internal void Unbind(UIPlayerInfoTooltip owner) => Bind(owner, -1);
+    [HideFromIl2Cpp]
+    internal void Bind(UIGameServerLobbyPage page) => Guard(() =>
+    {
+        var id = page.GetInstanceID();
+        _bindings.Remove(id);
+        var description = page.characterDescription;
+        if (!page.connected || page.uiState == null || page.uiState.isRestoringCheckpoint || description == null) return;
+        var anchor = description.transform.TryCast<RectTransform>();
+        if (anchor == null) return;
+        NumericDetail? detail = null;
+        // Native Refresh assigns the exact skill term for the displayed variant.
+        // Locked variants instead get an unlock-requirement term, which has no entry.
+        _catalog?.TryGetTerm(description.Term, out detail!);
+        _bindings[id] = new Binding(page, anchor, detail, Lobby: page);
+    });
     private void Register(Component owner, RectTransform? anchor, int skill,
         UIPlayerInfoTooltip? tooltip = null, UILobbyTrainerUpgradePage? trainer = null)
     {
@@ -69,10 +85,13 @@ public sealed class DetailsController : MonoBehaviour
         foreach (var binding in _bindings.Values)
         {
             if (!Visible(binding.Owner)) continue;
+            if (binding.Lobby != null && (binding.Lobby.characterDescription == null ||
+                !Visible(binding.Lobby.characterDescription))) continue;
             var hovered = RectTransformUtility.RectangleContainsScreenPoint(binding.Anchor, position,
                 NativeDetailsPanel.CameraFor(binding.Anchor));
             var score = binding.Tooltip != null ? (hovered ? 6 : 3)
                 : binding.Trainer != null ? (binding.Trainer.isHovered ? 6 : binding.Trainer.isSelected ? 2 : 0)
+                : binding.Lobby != null ? (hovered ? 6 : IsLocalLobbyPage(binding.Lobby) ? 4 : 0)
                 : hovered ? 5 : 0;
             if (score > best) { best = score; selected = binding; }
         }
@@ -106,6 +125,12 @@ public sealed class DetailsController : MonoBehaviour
         foreach (var group in owner.GetComponentsInParent<CanvasGroup>(true))
             if (group != null && group.alpha <= .001f) return false;
         return true;
+    }
+    private static bool IsLocalLobbyPage(UIGameServerLobbyPage page)
+    {
+        var session = NetworkSession.Instance;
+        return page.connected && page.playerIndex >= 0 && session != null &&
+            session.IsLocalClient(session.GetClientByPlayerIndex((ulong)page.playerIndex));
     }
     private static UIStatusTooltip? FindTemplate(Binding binding)
     {

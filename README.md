@@ -4,11 +4,11 @@ A display-only BepInEx mod that adds a separate numbers box while you hold **Ctr
 
 The first build covers **Proud Lion**, **Lethal Eagle**, and **Mighty Bear** on Steam build **26231777**. See [the first-pass findings](docs/first-pass-findings.md) for the researched values and their limits.
 
-Inspect a supported skill in the character-info tooltip, hover its row in the lobby character-details list, or select/hover a trainer skill card, then hold either **left or right Ctrl**. A separate box shows the numeric details. Release Ctrl to hide it. **Shift keeps its normal status explanations**; both keys can be held together.
+On **character select**, highlight a supported beast variant and hold either **left or right Ctrl**. This also works in the character-info tooltip, on hovered skill rows in the lobby character-details list, and on selected/hovered trainer skill cards. Release Ctrl to hide the box. **Shift keeps its normal status explanations**; both keys can be held together.
 
-Original names and descriptions are preserved. The extra box copies the game's native status-panel style and font. Unsupported skills, purchases, statuses, and afflictions do not receive guessed numbers. Beast selection and Codex pages are not included in this initial UI pass.
+Original names and descriptions are preserved. The extra box copies the game's native status-panel style and uses smaller 22-point text with explicit padding. Unsupported skills, purchases, statuses, locked variants, and afflictions do not receive guessed numbers. Codex pages are not included yet.
 
-This is a **first test build**: compilation and offline checks pass, but the game has not been launched by the agent. In-game layout, input, and compatibility still require manual testing. No GitHub release has been published.
+Version **0.1.1** adds character-select support and more compact text. The user's screenshot confirms that the 0.1.0 in-game Ctrl box rendered; the new character-select behavior and revised layout still need manual testing. Compilation and offline checks pass. No GitHub release has been published.
 
 Build with the .NET SDK and the installed game's BepInEx IL2CPP interop files:
 

@@ -221,6 +221,6 @@
     "Fixed native addresses apply only to recorded binary hashes.",
     "Code references document interpretations; fingerprint checks do not independently prove control-flow interpretations.",
     "Draft descriptions are partial explanations; special-case mechanics and UI layout need follow-up.",
-    "A first Ctrl-panel DLL has been built; installation, live UI validation, and a public release remain pending."
+    "Divine Numbers 0.1.1 has been built and installed locally; its character-select support and compact layout await manual confirmation. No public release has been published."
   ]
 }

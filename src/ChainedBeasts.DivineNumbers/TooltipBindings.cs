@@ -16,6 +16,7 @@ internal static class TooltipBindings
         Patch(harmony, typeof(UIPlayerInfoTooltip), "Initialise", new[] { typeof(StatusTooltipType) }, nameof(Clear));
         Patch(harmony, typeof(UILobbyTrainerUpgradePage), "SetSkill", new[] { typeof(SkillType), typeof(bool) }, nameof(Trainer));
         Patch(harmony, typeof(UIGameLevelLobbyCharacterSkillInfo), "Initialise", new[] { typeof(SkillType), typeof(int) }, nameof(CharacterSkill));
+        Patch(harmony, typeof(UIGameServerLobbyPage), "Refresh", new[] { typeof(GameServerLobby.UIState), typeof(int) }, nameof(CharacterSelect));
     }
     private static void Patch(Harmony harmony, Type type, string name, Type[] signature, string postfix)
     {
@@ -40,4 +41,5 @@ internal static class TooltipBindings
     private static void Clear(UIPlayerInfoTooltip __instance) => Controller?.Unbind(__instance);
     private static void Trainer(UILobbyTrainerUpgradePage __instance, SkillType __0) => Controller?.Bind(__instance, (int)__0);
     private static void CharacterSkill(UIGameLevelLobbyCharacterSkillInfo __instance, SkillType __0) => Controller?.Bind(__instance, (int)__0);
+    private static void CharacterSelect(UIGameServerLobbyPage __instance) => Controller?.Bind(__instance);
 }

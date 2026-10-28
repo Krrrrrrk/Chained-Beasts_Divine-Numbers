@@ -17,6 +17,7 @@ Copy-Item -LiteralPath (Join-Path $projectRoot 'LICENSE') -Destination $stageDir
 Copy-Item -LiteralPath (Join-Path $projectRoot 'docs\ctrl-details.md') -Destination (Join-Path $stageDir 'MANUAL-CHECKS.md')
 $artifactDir = Join-Path $projectRoot 'artifacts'
 New-Item -ItemType Directory -Path $artifactDir -Force | Out-Null
-$zip = Join-Path $artifactDir 'Divine-Numbers-0.1.0-test-build.zip'
+$version = ([xml](Get-Content -LiteralPath $project -Raw)).Project.PropertyGroup.Version
+$zip = Join-Path $artifactDir "Divine-Numbers-$version-test-build.zip"
 Compress-Archive -Path (Join-Path $stageDir '*') -DestinationPath $zip -Force
 Get-FileHash -LiteralPath $dll, $zip -Algorithm SHA256
