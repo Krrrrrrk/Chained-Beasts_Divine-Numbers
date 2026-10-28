@@ -1,0 +1,226 @@
+{
+  "investigatedDate": "2026-10-28",
+  "steamBuildId": "26231777",
+  "validation": "static-code-and-assets-only",
+  "gameplayTested": false,
+  "catalog": {
+    "registeredSkills": 113,
+    "beastVariants": 24,
+    "sampleSkillsAudited": 3,
+    "registrationProvesObtainable": false
+  },
+  "gameFiles": [
+    {
+      "path": "GameAssembly.dll",
+      "bytes": 87522304,
+      "sha256": "ba3ef02fa87da4c41bb27d7610539c9578132204f0fb5713833e2ef93415ce29"
+    },
+    {
+      "path": "ChainedBeasts_Data/il2cpp_data/Metadata/global-metadata.dat",
+      "bytes": 20312072,
+      "sha256": "b689ca1c435476874b1a2e6e0aab140f07af02a6a9700d8f457c79e89b170075"
+    },
+    {
+      "path": "ChainedBeasts_Data/level1",
+      "bytes": 282320,
+      "sha256": "2525f099cb56299f15a00b3f82c32495406b99e29f940cb948ae99d1ff7cf15d"
+    },
+    {
+      "path": "ChainedBeasts_Data/sharedassets1.assets",
+      "bytes": 308088312,
+      "sha256": "58e12dc39e28cabe47bf6fa42317b399f7b0a25dbbe6807dd21d2bfc1a593729"
+    }
+  ],
+  "floatConstants": [
+    {
+      "name": "Lion damage multiplier",
+      "address": "0x183BA2CC0",
+      "expected": 1.4
+    },
+    {
+      "name": "Lion speed and Bear damage multiplier",
+      "address": "0x183BA2CBC",
+      "expected": 1.2
+    },
+    {
+      "name": "Lion buff duration seconds",
+      "address": "0x183BA2CF4",
+      "expected": 10
+    },
+    {
+      "name": "Eagle ready duration seconds",
+      "address": "0x183BA2CF0",
+      "expected": 8
+    },
+    {
+      "name": "Power Throw direct-impact multiplier",
+      "address": "0x183BA2CD8",
+      "expected": 2
+    },
+    {
+      "name": "Bear base-health multiplier",
+      "address": "0x183BA2DB0",
+      "expected": 1.25
+    },
+    {
+      "name": "Bear movement multiplier",
+      "address": "0x183BA2CB0",
+      "expected": 0.8
+    },
+    {
+      "name": "Bear minimum base stun seconds",
+      "address": "0x183BA2C98",
+      "expected": 0.3
+    }
+  ],
+  "nativeDumps": [
+    {
+      "file": "Player.txt",
+      "sha256": "e54237521c187c79d36a1744b3a440fd042d323483b012e40ea82704cb2e9fde"
+    },
+    {
+      "file": "PlayerData.txt",
+      "sha256": "d2d046844be90ff965a318e89d618e68a67d21e03c288f06ad40f89305863546"
+    },
+    {
+      "file": "PlayerManager.txt",
+      "sha256": "e1948afb9963e28f39e78b35d79a5b78957b42aa24ce39e2e767231968c8c188"
+    },
+    {
+      "file": "Projectile.txt",
+      "sha256": "2a797c4b19f58e8b02016226502fab9088dd8628fd91db0d7d6dbe3030a52c86"
+    },
+    {
+      "file": "Weapon.txt",
+      "sha256": "c4ea2c1435c4db6c16924717bd852a4450336d5d702f4fd5b58283582aeadd8a"
+    },
+    {
+      "file": "StringManager.txt",
+      "sha256": "4d860870626ed607a35676fb9f49e77076d8dc075817d47afc7b4e1003069fab"
+    },
+    {
+      "file": "GladiatorConsts.txt",
+      "sha256": "8886d8bcd4a60a235ef5a5d101b79b471db80ad2f26ce548bccd344230415465"
+    }
+  ],
+  "codeReferences": [
+    {
+      "file": "Player.txt",
+      "method": "System.Void OnExecute(UnityEngine.InputSystem.InputAction+CallbackContext context)",
+      "methodHeaderLine": 36672,
+      "isilInstructions": "237-251",
+      "interpretation": "Lion skill ID 0 applies damage boost with the 10-second literal."
+    },
+    {
+      "file": "Player.txt",
+      "method": "System.Void ApplyDamageBoostRpc(System.Single duration)",
+      "methodHeaderLine": 37220,
+      "isilInstructions": "88-158",
+      "interpretation": "Enumerates LocalPlayers; no self exclusion or distance test; applies effect 27."
+    },
+    {
+      "file": "Player.txt",
+      "method": "System.Single ModifyAttackDamage(System.Single startingDamage, PickupType weaponPickupType, NetworkAgent+eAttackType sourceAttackType, NetworkHealthObject target, System.Boolean isCrit, System.Boolean isBackstab, System.Boolean isSpecialAttack)",
+      "methodHeaderLine": 56812,
+      "isilInstructions": "481-488",
+      "interpretation": "GloatBoost multiplies attack damage by 1.4."
+    },
+    {
+      "file": "Player.txt",
+      "method": "UnityEngine.Vector3 GetModifiedPlayerVelocity(UnityEngine.Vector3 vel)",
+      "methodHeaderLine": 18432,
+      "isilInstructions": "265-340",
+      "interpretation": "The 1.2 multiplier is reused for effect 27, separately from Vigor effect 6."
+    },
+    {
+      "file": "Player.txt",
+      "method": "System.Void OnBattleEventActor(BattleEventData eventData)",
+      "methodHeaderLine": 37642,
+      "isilInstructions": "836-862",
+      "interpretation": "Eagle skill ID 3 readies PowerThrow effect 18 for 8 seconds despite the 4s debug message."
+    },
+    {
+      "file": "Projectile.txt",
+      "method": "System.Void Launch(UnityEngine.Vector3 initialVelocityDir, System.Single throwForce, System.Single launchAngle, System.Single gravity, System.Boolean isServer, Unity.Netcode.NetworkObject throwerObject, PickupType pickupType, System.Int32 durability, System.Int32 modelIndex, System.UInt64 originNetworkObjectID, System.Int32 hallucinationIndex, System.Single damageScale = 1, System.Boolean ignoreObstacles = False, System.Boolean undirectedSpinOnThrow = False, System.Boolean onFire = False)",
+      "methodHeaderLine": 1161,
+      "isilInstructions": "561-595",
+      "interpretation": "Copies PowerThrow to projectile, then consumes player status."
+    },
+    {
+      "file": "Projectile.txt",
+      "method": "System.Void DealDamage(NetworkHealthObject healthObject, System.Boolean isUnblockable, BattleEventData eventData, System.Boolean isAOE = False)",
+      "methodHeaderLine": 13922,
+      "isilInstructions": "83-132",
+      "interpretation": "Direct damage path applies 2.0 to PowerThrow projectile damage."
+    },
+    {
+      "file": "PlayerData.txt",
+      "method": "System.Int32 get_MaxHealth()",
+      "methodHeaderLine": 199,
+      "isilInstructions": "59-81",
+      "interpretation": "Any Bear variant multiplies base-health component by 1.25."
+    },
+    {
+      "file": "Player.txt",
+      "method": "UnityEngine.Vector3 GetModifiedPlayerVelocity(UnityEngine.Vector3 vel)",
+      "methodHeaderLine": 18432,
+      "isilInstructions": "209-258",
+      "interpretation": "Bear beast ID 2 multiplies movement vector by 0.8."
+    },
+    {
+      "file": "Player.txt",
+      "method": "System.Single ModifyAttackDamage(System.Single startingDamage, PickupType weaponPickupType, NetworkAgent+eAttackType sourceAttackType, NetworkHealthObject target, System.Boolean isCrit, System.Boolean isBackstab, System.Boolean isSpecialAttack)",
+      "methodHeaderLine": 56812,
+      "isilInstructions": "142-161",
+      "interpretation": "Skill ID 7 and main-hand Bludgeon damage type use multiplier 1.2."
+    },
+    {
+      "file": "Weapon.txt",
+      "method": "System.Void AttackEffect(UnityEngine.Vector3 attackDir, System.Int32 damage, System.Single collisionMaxDistance, System.Single collisionRadius, System.Single stunDuration, System.Single tripDuration, System.Single knockbackDistance, System.Boolean singleTarget, System.Boolean skipBlockCancel, System.Boolean disarm, System.Single weaken, System.Single collisionStartOffset = 0, System.Boolean radialAttack = False)",
+      "methodHeaderLine": 4228,
+      "isilInstructions": "1256-1301",
+      "interpretation": "Bludgeon hits with skill 7 clamp prepared stun up to 0.3s minimum before normal stun handling."
+    },
+    {
+      "file": "StringManager.txt",
+      "method": "System.String GetSkillDescTerm(SkillType skillType)",
+      "methodHeaderLine": 1371,
+      "isilInstructions": "12-19",
+      "interpretation": "Description key format is Skills/{SkillType}_Desc."
+    }
+  ],
+  "enumMappings": {
+    "SkillType": {
+      "Beast_Lion_Lv1": 0,
+      "Beast_Eagle_Lv1": 3,
+      "Beast_Bear_Lv2": 7
+    },
+    "BeastType": {
+      "Lion": 0,
+      "Eagle": 1,
+      "Bear": 2
+    },
+    "NetworkAttackEffects.eType": {
+      "PowerThrow": 18,
+      "GloatBoost": 27
+    },
+    "DamageType": {
+      "Bludgeon": 3
+    }
+  },
+  "localization": {
+    "assetName": "I2Languages",
+    "extractedFresh": true,
+    "englishCode": "en",
+    "englishIndex": 0,
+    "sourceTermCount": 2136,
+    "descriptionPattern": "Skills/{SkillType}_Desc"
+  },
+  "limitations": [
+    "No gameplay or multiplayer testing.",
+    "No plugin built, installed, or released.",
+    "Fixed native addresses apply only to recorded binary hashes.",
+    "Code references document interpretations; fingerprint checks do not independently prove control-flow interpretations.",
+    "Draft descriptions are partial explanations; special-case mechanics and UI layout need follow-up."
+  ]
+}

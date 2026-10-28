@@ -1,0 +1,13 @@
+# Proprietary inputs and scratch analysis stay local.
+/local/
+**/__pycache__/
+**/bin/
+**/obj/
+*.dll
+*.exe
+*.assets
+*.bundle
+*.resS
+*.resource
+global-metadata.dat
+*.log
