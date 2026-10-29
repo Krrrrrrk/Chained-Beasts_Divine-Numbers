@@ -1,12 +1,38 @@
 # Chained Beasts: Divine Numbers
 
-A display-only BepInEx mod that shows researched numbers in a separate box while you hold **Ctrl**. Original descriptions stay intact; **Shift keeps its normal status explanations**.
+A display-only BepInEx mod that shows researched numbers in a separate box while you hold **Ctrl**, or toggle it with **R3 (click the right stick)** on a controller. Original descriptions stay intact; **Shift keeps its normal status explanations**.
 
-Version **0.2.0** expands the three-card prototype to **206 cards**: 50 skills/beast variants, 134 affliction severity entries, 18 purchases and four statuses. It targets Steam build **26231777**. [Audit findings and limits](docs/audit-report.md) explain coverage and base values.
+The **0.2.1 source update** adds a controller toggle and whole-card potion hover to the **206 cards** introduced in 0.2.0: 50 skills/beast variants, 134 affliction severity entries, 18 purchases and four statuses. It targets Steam build **26231777**. [Audit findings and limits](docs/audit-report.md) explain coverage and base values.
 
-On **character select**, highlight an unlocked supported variant and hold either Ctrl key. Character-info tooltips, hovered character-detail rows and selected/hovered trainer cards also work. In **shop, surgery and Codex screens**, hover the displayed description text while holding Ctrl. New labels may take up to half a second to register while Ctrl stays held. Release Ctrl to hide the box.
+**Controller support requires 0.2.1 or later. The published 0.2.0 release has Ctrl support only.** The 0.2.1 update is built and packaged locally; it has not been published as a release yet.
 
-The panel retains the smaller 22-point text and padding confirmed working by the user in 0.1.1. New 0.2.0 screens/mechanics have build, static and offline verification; they still need manual gameplay review. Unknown/locked descriptions receive no guessed card. One training-only description has no confirmed native trip-duration branch and is recorded as unresolved.
+On **character select**, highlight an unlocked supported variant and hold either Ctrl key. Character-info tooltips, hovered character-detail rows and selected/hovered trainer cards also work. In **potion/healer shops**, hold Ctrl anywhere over the offer's card, including its header, border, empty space or price. Surgery and Codex descriptions also support Ctrl while hovered. New labels may take up to half a second to register while Ctrl stays held. Release Ctrl to hide the box.
+
+With a **controller**, open a supported information/menu screen and click **R3** once. Numbers follow the native highlighted item or your character-select description, without using the mouse. Click R3 again to switch them off. Closing the information menus, losing application focus or disconnecting the owning controller clears the toggle. Keyboard Ctrl still works independently. The native shoulder-button controls keep their normal behavior. Rows that have no native controller focus still use mouse/Ctrl.
+
+After the first launch, `BepInEx/config/local.chainedbeasts.divinenumbers.cfg` has an `[Input]` setting, `ControllerToggleButton`. Choose `RightStickClick` (default), `LeftStickClick`, or `Disabled`, then restart the game. Neither stick click appears in the audited game's default input bindings; custom remaps may differ.
+
+The panel retains the smaller 22-point text and padding confirmed working by the user in 0.1.1. The controller update has build and offline input-sequence checks; controller navigation and placement still need manual gameplay review. Unknown/locked descriptions receive no guessed card. One training-only description has no confirmed native trip-duration branch and is recorded as unresolved.
+
+## Screenshots
+
+User-provided screenshots of 0.2.0 in play. These show the Ctrl panel; they do not demonstrate the new controller toggle or whole-card potion hover.
+
+**Character select — Hulking Bear**
+
+![Hulking Bear's character-select description beside a Divine Numbers card showing health, movement speed and invulnerability values.](docs/screenshots/character-select-bear.png)
+
+**Character info — Agile Ibex**
+
+![The Agile Ibex character-info tooltip beside its movement-speed and dodge-stamina numbers.](docs/screenshots/character-info-ibex.png)
+
+**Trainer — Arm Fatigue III**
+
+![The trainer's Arm Fatigue III description beside a Divine Numbers card explaining its delay, slowing strength and timer reset.](docs/screenshots/trainer-arm-fatigue.png)
+
+**Healer — Tunnel Vision II**
+
+![Healer potion offers with a Divine Numbers card explaining Tunnel Vision II's mask blend strength.](docs/screenshots/healer-tunnel-vision.png)
 
 ## Build and install
 

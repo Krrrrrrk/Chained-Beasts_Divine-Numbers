@@ -83,4 +83,53 @@ for (var edge = 0; edge <= 4; edge++)
     var p = PanelPlacement.Place(anchor, 300, 200, w, h);
     Check(p.Left >= 16 && p.Left + 300 <= w - 16 && p.Top <= h - 16 && p.Top - 200 >= 16, "Edge placement escaped viewport");
 }
-Console.WriteLine($"PASS: {catalog.Count} typed cards and exact description keys, namespace/severity isolation, locked/unknown choice clearing, evidence-sensitive examples, invalid-data rejection, four placements and 1,575 viewport/edge combinations. No Unity/gameplay test performed.");
+// Exercise real input sequences, including held buttons across UI/focus changes.
+var toggle = new NumbersToggle();
+void Frame(bool context = true, bool focused = true, bool ctrl = false,
+    bool down = false, bool connected = true, bool secondDown = false, bool secondConnected = false)
+{
+    var buttons = new List<ControllerButtonState>();
+    if (connected) buttons.Add(new(11, down));
+    if (secondConnected) buttons.Add(new(22, secondDown));
+    toggle.Update(focused, context, ctrl, buttons);
+}
+void IsOff(string reason) => Check(toggle.ControllerDeviceId == null && !toggle.Requested, reason);
+Frame(down: true);
+Check(toggle.Requested && toggle.ControllerDeviceId == 11, "Stick click did not latch");
+for (var i = 0; i < 120; i++) Frame(down: true);
+Check(toggle.Requested, "Held stick repeated the toggle");
+Frame();
+Check(toggle.Requested, "Releasing the stick cleared the latch");
+Frame(down: true);
+IsOff("Second press did not turn numbers off");
+Frame(context: false);
+Frame(context: false, down: true);
+Frame(down: true);
+IsOff("Holding the button while opening a menu armed the toggle");
+Frame(); Frame(down: true);
+Check(toggle.Requested, "Fresh press after opening the menu did not work");
+Frame(context: false, down: true);
+Frame(down: true);
+IsOff("Closing/reopening a menu retained the toggle");
+Frame(); Frame(down: true);
+Frame(focused: false, down: true);
+Frame(down: true);
+IsOff("Losing/regaining application focus retained or rearmed the toggle");
+Frame(); Frame(down: true);
+Frame(connected: false);
+IsOff("Disconnecting the owner retained the toggle");
+Frame(); Frame(down: true);
+Frame(secondConnected: true, secondDown: true);
+Check(toggle.ControllerDeviceId == 22, "Another controller could not take ownership");
+Frame(secondConnected: true);
+Frame(secondConnected: true, secondDown: true, ctrl: true);
+Check(toggle.ControllerDeviceId == null && toggle.Requested, "Controller off incorrectly hid held Ctrl");
+Frame(ctrl: true, connected: false, context: false);
+Check(toggle.Requested, "Keyboard Ctrl needs a connected controller or cached UI context");
+Frame(connected: false);
+IsOff("Releasing Ctrl retained an unlatched overlay");
+Frame(down: true);
+toggle.Reset();
+IsOff("Cleanup retained controller state");
+
+Console.WriteLine($"PASS: {catalog.Count} typed cards and exact description keys, namespace/severity isolation, locked/unknown choice clearing, evidence-sensitive examples, invalid-data rejection, four placements and 1,575 viewport/edge combinations; controller press/hold/release, menu/focus reset, disconnect, ownership and keyboard coexistence sequences. No Unity/gameplay test performed.");

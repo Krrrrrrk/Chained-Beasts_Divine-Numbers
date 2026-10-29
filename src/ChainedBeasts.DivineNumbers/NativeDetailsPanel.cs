@@ -78,7 +78,7 @@ internal sealed class NativeDetailsPanel : IDisposable
         }
         catch { Dispose(); throw; }
     }
-    internal void Show(NumericDetail detail, Bounds anchor, Color color)
+    internal void Show(NumericDetail detail, Bounds anchor, Color color, string controlHint)
     {
         var scale = Mathf.Clamp(Screen.height / 1080f, .5f, 3f);
         _canvas.scaleFactor = scale;
@@ -88,7 +88,7 @@ internal sealed class NativeDetailsPanel : IDisposable
         var body = detail.Body;
         if (body.Contains("{backstab}")) body = body.Replace("{backstab}",
             GladiatorConsts.BackstabMultiplierBase.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture));
-        var content = "<b>Divine Numbers</b>  <size=75%>[Ctrl]</size>\n" +
+        var content = "<b>Divine Numbers</b>  <size=75%>[" + controlHint + "]</size>\n" +
             "<size=90%><color=#FFE29A>" + detail.Name + "</color></size>\n" + body;
         var maxHeight = Screen.height / scale - 48;
         if (content != _lastText || width != _lastWidth || maxHeight != _lastAvailableHeight)

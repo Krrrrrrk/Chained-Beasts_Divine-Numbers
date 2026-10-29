@@ -11,14 +11,16 @@ public sealed class Plugin : BasePlugin
 {
     public const string Id = "local.chainedbeasts.divinenumbers";
     public const string Name = "Chained Beasts Divine Numbers";
-    public const string Version = "0.2.0";
+    public const string Version = "0.2.1";
     internal const string GameHash = "ba3ef02fa87da4c41bb27d7610539c9578132204f0fb5713833e2ef93415ce29";
     private Harmony? _harmony;
     private DetailsController? _controller;
     public override void Load()
     {
-        if (!Config.Bind("Display", "Enabled", true, "Show the separate numbers box while either Ctrl key is held. Restart to apply.").Value)
+        if (!Config.Bind("Display", "Enabled", true, "Enable the separate numbers box (hold Ctrl or toggle with a controller). Restart to apply.").Value)
             return;
+        var controllerButton = Config.Bind("Input", "ControllerToggleButton", ControllerToggleButton.RightStickClick,
+            "Controller numbers toggle: RightStickClick (R3), LeftStickClick (L3), or Disabled. Restart to apply.").Value;
         try
         {
             using var binary = File.OpenRead(Path.Combine(Paths.GameRootPath, "GameAssembly.dll"));
@@ -42,11 +44,11 @@ public sealed class Plugin : BasePlugin
                 ?? throw new InvalidDataException("Numeric details resource is missing");
             var catalog = new DetailCatalog(data);
             _controller = AddComponent<DetailsController>();
-            _controller.Configure(catalog, Log);
+            _controller.Configure(catalog, Log, controllerButton);
             TooltipBindings.Controller = _controller;
             _harmony = new Harmony(Id);
             TooltipBindings.Install(_harmony);
-            Log.LogInfo($"Divine Numbers {Version}: {catalog.Count} audited cards. Hold Ctrl over descriptions for numbers. Expanded UI coverage needs manual verification.");
+            Log.LogInfo($"Divine Numbers {Version}: {catalog.Count} audited cards. Hold Ctrl or toggle numbers with {controllerButton}. Controller UI needs manual verification.");
         }
         catch (Exception ex)
         {

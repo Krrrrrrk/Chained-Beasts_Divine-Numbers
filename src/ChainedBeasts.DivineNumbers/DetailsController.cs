@@ -10,7 +10,8 @@ public sealed class DetailsController : MonoBehaviour
 {
     private sealed record Binding(Component Owner, RectTransform Anchor, NumericDetail? Detail,
         UIPlayerInfoTooltip? Tooltip = null, UILobbyTrainerUpgradePage? Trainer = null,
-        UIGameServerLobbyPage? Lobby = null, I2.Loc.Localize? Description = null);
+        UIGameServerLobbyPage? Lobby = null, I2.Loc.Localize? Description = null,
+        UILobbyShopSelectionPage? Shop = null);
     private readonly Dictionary<int, Binding> _bindings = new();
     private DetailCatalog? _catalog;
     private ManualLogSource? _log;
@@ -18,10 +19,14 @@ public sealed class DetailsController : MonoBehaviour
     private bool _failed;
     private float _templateRetryAt;
     private float _descriptionScanAt;
-    private bool _ctrlWasHeld;
+    private bool _discoveryWasRequested;
+    private ControllerToggleButton _controllerButton;
+    private readonly NumbersToggle _toggle = new();
+    private readonly List<ControllerButtonState> _controllerButtons = new();
     public DetailsController(IntPtr pointer) : base(pointer) { }
     [HideFromIl2Cpp]
-    internal void Configure(DetailCatalog catalog, ManualLogSource log) => (_catalog, _log) = (catalog, log);
+    internal void Configure(DetailCatalog catalog, ManualLogSource log, ControllerToggleButton controllerButton) =>
+        (_catalog, _log, _controllerButton) = (catalog, log, controllerButton);
 
     [HideFromIl2Cpp]
     internal void Bind(UIPlayerInfoTooltip view, int skill) => Guard(() => Register(
@@ -82,31 +87,47 @@ public sealed class DetailsController : MonoBehaviour
             if (item.Value.Owner == null || item.Value.Anchor == null) _bindings.Remove(item.Key);
 
         var keyboard = Keyboard.current;
-        if (!Application.isFocused || keyboard == null ||
-            !(keyboard.leftCtrlKey.isPressed || keyboard.rightCtrlKey.isPressed))
-        {
-            _panel?.Hide();
-            _ctrlWasHeld = false;
-            return;
-        }
+        var ctrlHeld = keyboard != null && (keyboard.leftCtrlKey.isPressed || keyboard.rightCtrlKey.isPressed);
+        _controllerButtons.Clear();
+        if (_controllerButton != ControllerToggleButton.Disabled)
+            foreach (var pad in Gamepad.all)
+            {
+                var button = _controllerButton == ControllerToggleButton.LeftStickClick ? pad.leftStickButton : pad.rightStickButton;
+                _controllerButtons.Add(new ControllerButtonState(pad.deviceId, button.isPressed));
+            }
+        var discoveryRequested = Application.isFocused && (ctrlHeld || _toggle.ControllerDeviceId != null ||
+            _controllerButtons.Any(button => button.Down));
 
         // Serialized descriptions (Codex, surgery, shop, training) need not pass
-        // through a skill widget. Discover exact localization keys only while Ctrl
-        // is held; do not patch localization or scan resources every frame.
-        if (!_ctrlWasHeld || Time.unscaledTime >= _descriptionScanAt)
+        // through a skill widget. Discover keys on Ctrl/controller requests;
+        // do not patch localization or scan resources every frame.
+        if (discoveryRequested && (!_discoveryWasRequested || Time.unscaledTime >= _descriptionScanAt))
         {
             _descriptionScanAt = Time.unscaledTime + .5f;
             foreach (var description in Resources.FindObjectsOfTypeAll<I2.Loc.Localize>())
             {
                 if (description == null || !description.gameObject.scene.IsValid() ||
-                    !Visible(description) || _catalog == null ||
-                    !_catalog.TryGetTerm(description.Term, out var detail)) continue;
+                    !Visible(description) || _catalog == null) continue;
                 if (description.GetComponentInParent<UIStatusTooltip>()?.gameObject.name == NativeDetailsPanel.PanelName) continue;
-                var anchor = description.transform.TryCast<RectTransform>();
-                if (anchor != null) _bindings[description.GetInstanceID()] = new Binding(description, anchor, detail, Description: description);
+                _catalog.TryGetTerm(description.Term, out var detail);
+                // Unsupported focused descriptions must clear the old controller
+                // card too. Limit these blockers to actual description labels.
+                if (detail == null && !(IsDescriptionKey(description.Term) && ControllerContext.HasFocusableParent(description))) continue;
+                var shop = description.GetComponentInParent<UILobbyShopSelectionPage>();
+                // Status explanations nested under a shop page retain their own
+                // hitbox. Only the offer's main description owns the whole card.
+                if (shop != null && shop.itemDescription != description) shop = null;
+                var anchor = ShopCardAnchor(shop) ?? description.transform.TryCast<RectTransform>();
+                if (anchor != null) _bindings[description.GetInstanceID()] = new Binding(
+                    description, anchor, detail, Description: description, Shop: shop);
             }
         }
-        _ctrlWasHeld = true;
+        _discoveryWasRequested = discoveryRequested;
+        var hasContext = _bindings.Values.Any(binding => Visible(binding.Owner) &&
+            (binding.Lobby == null || (binding.Lobby.characterDescription != null && Visible(binding.Lobby.characterDescription))));
+        _toggle.Update(Application.isFocused, hasContext, ctrlHeld, _controllerButtons);
+        if (!_toggle.Requested) { _panel?.Hide(); return; }
+        var controllerOnly = !ctrlHeld && _toggle.ControllerDeviceId != null;
 
         Binding? selected = null;
         var best = 0;
@@ -126,9 +147,10 @@ public sealed class DetailsController : MonoBehaviour
             }
             if (binding.Lobby != null && (binding.Lobby.characterDescription == null ||
                 !Visible(binding.Lobby.characterDescription))) continue;
-            var hovered = RectTransformUtility.RectangleContainsScreenPoint(binding.Anchor, position,
+            var hovered = !controllerOnly && RectTransformUtility.RectangleContainsScreenPoint(binding.Anchor, position,
                 NativeDetailsPanel.CameraFor(binding.Anchor));
-            var score = binding.Description != null ? (hovered ? 8 : 0)
+            var score = controllerOnly ? ControllerScore(binding, _toggle.ControllerDeviceId!.Value)
+                : binding.Description != null ? (hovered ? 8 : 0)
                 : binding.Tooltip != null ? (hovered ? 6 : 3)
                 : binding.Trainer != null ? (binding.Trainer.isHovered ? 6 : binding.Trainer.isSelected ? 2 : 0)
                 : binding.Lobby != null ? (hovered ? 6 : IsLocalLobbyPage(binding.Lobby) ? 4 : 0)
@@ -149,14 +171,39 @@ public sealed class DetailsController : MonoBehaviour
         }
         var bounds = NativeDetailsPanel.ScreenBounds(selected.Anchor);
         // Keep both vanilla Shift boxes and the main description out of the new box's way.
-        var status = selected.Tooltip != null ? selected.Tooltip.statusTooltips : selected.Trainer?.statusTooltips;
+        var status = selected.Tooltip != null ? selected.Tooltip.statusTooltips
+            : selected.Trainer != null ? selected.Trainer.statusTooltips : selected.Shop?.statusTooltips;
         if (status != null)
             foreach (var tip in status)
                 if (tip != null && tip.root != null && tip.root.activeInHierarchy)
                     bounds = NativeDetailsPanel.Union(bounds, NativeDetailsPanel.ScreenBounds(tip.transform.Cast<RectTransform>()));
         var color = selected.Tooltip != null ? selected.Tooltip.playerColor
             : selected.Trainer != null ? selected.Trainer.defaultColor : Color.white;
-        _panel.Show(selected.Detail, bounds, color);
+        var hint = _toggle.ControllerDeviceId == null ? "Ctrl" :
+            _controllerButton == ControllerToggleButton.LeftStickClick ? "L3: On" : "R3: On";
+        _panel.Show(selected.Detail, bounds, color, hint);
+    }
+    private static RectTransform? ShopCardAnchor(UILobbyShopSelectionPage? shop)
+    {
+        if (shop == null) return null;
+        // This is the game's full native interaction rectangle, including the
+        // header, frame, empty space and price, rather than its text child.
+        var anchor = shop.navigationButton?.InteractionAnchor;
+        if (anchor != null && anchor.rect.width > 0 && anchor.rect.height > 0) return anchor;
+        anchor = shop.root?.TryCast<RectTransform>() ?? shop.transform.TryCast<RectTransform>();
+        return anchor != null && anchor.rect.width > 0 && anchor.rect.height > 0 ? anchor : null;
+    }
+    private static bool IsDescriptionKey(string? term) => term != null &&
+        (((term.StartsWith("Skills/", StringComparison.Ordinal) || term.StartsWith("Injuries/", StringComparison.Ordinal) ||
+            term.StartsWith("Purchases/", StringComparison.Ordinal)) && term.Contains("_Desc", StringComparison.Ordinal)) ||
+            (term.StartsWith("UI/", StringComparison.Ordinal) && term.EndsWith("TooltipDesc", StringComparison.Ordinal)));
+    private static int ControllerScore(Binding binding, int deviceId)
+    {
+        if (binding.Description != null) return ControllerContext.Focused(binding.Description, deviceId) ? 8 : 0;
+        if (binding.Tooltip != null) return ControllerContext.OwnsTooltip(binding.Tooltip, deviceId) ? 7 : 0;
+        if (binding.Trainer != null) return ControllerContext.Focused(binding.Trainer, deviceId) ? 6 : 0;
+        if (binding.Lobby != null) return IsLocalLobbyPage(binding.Lobby) && ControllerContext.MatchesPlayer(binding.Lobby.playerIndex, deviceId) ? 4 : 0;
+        return ControllerContext.Focused(binding.Owner, deviceId) ? 5 : 0;
     }
     private static bool Visible(Component owner)
     {
@@ -179,10 +226,13 @@ public sealed class DetailsController : MonoBehaviour
                 if (tip != null) return tip;
         if (binding.Trainer != null && binding.Trainer.statusTooltipPrefab != null)
             return binding.Trainer.statusTooltipPrefab;
+        if (binding.Shop != null && binding.Shop.statusTooltipPrefab != null)
+            return binding.Shop.statusTooltipPrefab;
         foreach (var tip in Resources.FindObjectsOfTypeAll<UIStatusTooltip>())
             if (tip != null && tip.gameObject.name != NativeDetailsPanel.PanelName) return tip;
         return null;
     }
+    [HideFromIl2Cpp]
     private void Guard(Action action)
     {
         if (_failed) return;
@@ -200,6 +250,7 @@ public sealed class DetailsController : MonoBehaviour
         _panel?.Dispose();
         _panel = null;
         _bindings.Clear();
+        _toggle.Reset();
     }
     public void OnDestroy() => Cleanup();
 }

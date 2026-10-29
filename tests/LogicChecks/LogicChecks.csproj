@@ -8,6 +8,7 @@
   <ItemGroup>
     <Compile Include="..\..\src\ChainedBeasts.DivineNumbers\DetailCatalog.cs" Link="DetailCatalog.cs" />
     <Compile Include="..\..\src\ChainedBeasts.DivineNumbers\PanelPlacement.cs" Link="PanelPlacement.cs" />
+    <Compile Include="..\..\src\ChainedBeasts.DivineNumbers\NumbersToggle.cs" Link="NumbersToggle.cs" />
     <None Include="..\..\data\numeric-details.json" Link="details.json" CopyToOutputDirectory="Always" />
   </ItemGroup>
 </Project>
