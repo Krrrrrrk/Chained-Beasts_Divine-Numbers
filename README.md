@@ -1,22 +1,71 @@
 # Chained Beasts: Divine Numbers
 
-A display-only BepInEx mod that shows researched numbers in a separate box while you hold **Ctrl**, or toggle it with **R3 (click the right stick)** on a controller. Original descriptions stay intact; **Shift keeps its normal status explanations**.
+Ever wish the game would just tell you what a skill *actually* does?
 
-Version **0.2.4** connects R3 to the merchant's per-player purchase index, the trainer's affliction preview and the post-training skill-choice index. These menus suppress the unrelated HUD-skill fallback. The healer potion binding introduced in 0.2.3 remains. There are **206 cards**: 50 skills/beast variants, 134 affliction severity entries, 18 purchases and four statuses. It targets Steam build **26231777**. [Audit findings and limits](docs/audit-report.md) explain coverage and base values.
+Divine Numbers adds a small info panel with the numbers behind skills, afflictions, potions, and other effects in **Chained Beasts**. Hold **Ctrl** while looking at something, or press **R3** on a controller, to see the details.
 
-Download **[Divine Numbers v0.2.4](https://github.com/Krrrrrrk/Chained-Beasts_Divine-Numbers/releases/tag/v0.2.4)** for the controller bindings and whole-card hover support. Older 0.2.0 builds have Ctrl support only.
+It doesn't replace the game's descriptions or change how anything works. It's just extra information when you want it. **Shift still works normally** for the game's built-in status explanations.
 
-On **character select**, highlight an unlocked supported variant and hold either Ctrl key. Character-info tooltips, hovered character-detail rows and selected/hovered trainer cards also work. In **potion/healer shops**, hold Ctrl anywhere over the combined sign and potion preview area, including the header, border, blank space, price, potion and pedestal. Surgery and Codex descriptions also support Ctrl while hovered. New labels may take up to half a second to register while Ctrl stays held. Release Ctrl to hide the box.
+**Current version:** 0.2.4 · **Supported Steam build:** 26231777
 
-With a **controller**, click **R3** once. Numbers follow the native highlighted item or your character-select description, without using the mouse. From the collapsed bottom HUD, R3 inspects your first visible skill; hold **RB** to use the game's normal character-info navigation for other entries. Click R3 again to switch the numbers off. The toggle clears when all inspection contexts disappear, application focus is lost or its pad disconnects. It can remain on while returning to a visible HUD. Keyboard Ctrl remains independent. Rows without native controller focus still use mouse/Ctrl.
+**[Download Divine Numbers v0.2.4](https://github.com/Krrrrrrk/Chained-Beasts_Divine-Numbers/releases/tag/v0.2.4)**
 
-After the first launch, `BepInEx/config/local.chainedbeasts.divinenumbers.cfg` has an `[Input]` setting, `ControllerToggleButton`. Choose `RightStickClick` (default), `LeftStickClick`, or `Disabled`, then restart the game. Neither stick click appears in the audited game's default input bindings; custom remaps may differ.
+## What does it show?
 
-The panel retains the smaller 22-point text and padding confirmed working by the user. The user confirmed the updated 0.2.4 UI works after testing the controller fixes. Build, offline regression and provenance checks also pass. This does not establish exhaustive controller/multiplayer coverage or measured final damage. Unknown/locked descriptions receive no guessed card. One training-only description has no confirmed native trip-duration branch and is recorded as unresolved.
+There are currently **206 entries** covering:
+
+- 50 skills and beast variants
+- 134 affliction entries (including different severity levels)
+- 18 shop purchases
+- 4 statuses
+
+The panel shows things like actual stat changes, effect strengths, timers, and other values that aren't always obvious from the normal descriptions.
+
+I haven't filled in numbers I couldn't verify. Locked or unknown descriptions won't get a made-up info card. There's also one training-related description whose trip-duration behavior I haven't pinned down yet. The [audit notes](docs/audit-report.md) have the full breakdown if you're curious.
+
+## How to use it
+
+### Keyboard and mouse
+
+Hold **either Ctrl key** while inspecting something. Let go to hide the panel.
+
+It works with:
+
+- Unlocked, supported beast variants on the character-select screen
+- Character-info tooltips and hovered detail rows
+- Selected or hovered trainer cards
+- Healer potions and shop offers
+- Surgery and Codex descriptions
+
+For healer potions, you don't need to hover over one tiny spot. The whole sign/potion preview area counts, including the header, price, border, pedestal, and empty space.
+
+Sometimes a new description takes a moment to register. If the panel doesn't pop up immediately, keep Ctrl held for about half a second.
+
+### Controller
+
+Click **R3 (right stick)** to turn the numbers on or off. The panel follows whatever the game currently has highlighted, so you don't have to move a mouse around. Older v0.2.0 releases only support Ctrl; use v0.2.4 for controller support.
+
+On the collapsed bottom HUD, R3 shows the first visible skill. Hold **RB** to use the game's normal character-info navigation to inspect other entries.
+
+The toggle resets if you leave all inspection contexts, alt-tab away from the game, or disconnect the controller. If you're returning to a visible HUD, it can stay on. Ctrl works separately, so you can still use the keyboard whenever you want.
+
+A few things that don't have native controller selection still need a mouse and Ctrl.
+
+**Want to use L3 instead?** After launching the mod once, open:
+
+`BepInEx/config/local.chainedbeasts.divinenumbers.cfg`
+
+Under `[Input]`, set `ControllerToggleButton` to one of these:
+
+- `RightStickClick` — default (R3)
+- `LeftStickClick` — L3
+- `Disabled` — no controller toggle
+
+Restart the game after changing it. The default game controls don't use either stick click in the build I checked, but keep your own custom bindings in mind.
 
 ## Screenshots
 
-User-provided screenshots of 0.2.0 in play. These show the Ctrl panel; they do not demonstrate the new controller toggle or whole-card potion hover.
+These screenshots are from v0.2.0, showing the keyboard/Ctrl panel. Controller support and the larger potion hover area were added later.
 
 **Character select — Hulking Bear**
 
@@ -34,24 +83,55 @@ User-provided screenshots of 0.2.0 in play. These show the Ctrl panel; they do n
 
 ![Healer potion offers with a Divine Numbers card explaining Tunnel Vision II's mask blend strength.](docs/screenshots/healer-tunnel-vision.png)
 
-## Build and install
+## Installation
 
-Use the .NET SDK and the installed game's BepInEx IL2CPP interop files:
+1. Install **BepInEx 6 (IL2CPP)** for Chained Beasts if you haven't already.
+2. Download the ZIP from the [latest release](https://github.com/Krrrrrrk/Chained-Beasts_Divine-Numbers/releases/latest).
+3. Close the game and extract the ZIP into your **Chained Beasts** game folder. Merge the included `BepInEx` folder with the one that's already there.
+4. Start the game. That's it.
+
+You **don't** need my Mod Foundation project for this one. Divine Numbers runs on its own.
+
+To uninstall it, delete `BepInEx/plugins/ChainedBeasts.DivineNumbers/ChainedBeasts.DivineNumbers.dll`.
+
+**Important:** The mod checks that the game's executable, metadata, and two asset files match the build it was made for. If an update changes those files, Divine Numbers will disable its UI hooks rather than risk showing incorrect information. If an update breaks it, check back for a newer release.
+
+## Building it yourself
+
+You'll need the **.NET SDK** and the BepInEx IL2CPP interop files from your installed game.
+
+Build the plugin:
 
 ```powershell
 dotnet build src/ChainedBeasts.DivineNumbers/ChainedBeasts.DivineNumbers.csproj -c Release
+```
+
+Run the logic checks:
+
+```powershell
 dotnet run --project tests/LogicChecks/LogicChecks.csproj -c Release
 ```
 
-Download the ZIP from [GitHub Releases](https://github.com/Krrrrrrk/Chained-Beasts_Divine-Numbers/releases/latest) and, with the game closed, merge its `BepInEx` folder into the game folder. For a source build, copy `src/ChainedBeasts.DivineNumbers/bin/Release/net6.0/ChainedBeasts.DivineNumbers.dll` into `BepInEx/plugins/ChainedBeasts.DivineNumbers/`. Only this DLL is needed; there is no Foundation dependency. Remove it to uninstall. `scripts/build.ps1` builds, verifies and packages the ZIP (Python 3.11+ is required for provenance checks).
+The finished DLL will be at:
 
-The mod checks the audited binary, metadata and two asset files before enabling UI hooks. A changed build disables it until re-audited. It changes no combat, saves or network traffic.
+`src/ChainedBeasts.DivineNumbers/bin/Release/net6.0/ChainedBeasts.DivineNumbers.dll`
 
-- [Card data and source references](data/numeric-details.json)
-- [Coverage of registered definitions and localized training/status entries](data/coverage.json)
-- [Build fingerprints, literals and asset facts](data/expanded-evidence.json)
-- [Read-only verification](scripts/verify-catalog.py)
-- [UI behavior and manual checks](docs/ctrl-details.md)
-- [Original three-card research](docs/first-pass-findings.md)
+Copy it into `BepInEx/plugins/ChainedBeasts.DivineNumbers/`. That's the only DLL this mod needs.
 
-Original game files, full localization catalogs and decompiler output are excluded from Git. The MIT license applies to this project's original work, not the game or its assets.
+If you want to build, verify, and package a release ZIP in one go, use `scripts/build.ps1`. The verification scripts require **Python 3.11+**.
+
+## Technical stuff
+
+Divine Numbers is **display-only**. It doesn't change combat calculations, save data, or network traffic. The values come from checking the game's code and assets, not from guessing based on the descriptions. That also means this isn't a promise that every damage outcome or every multiplayer/controller situation has been tested.
+
+If you want to dig into how the numbers were found or how the UI works, here's the relevant stuff:
+
+- [Numbers and source references](data/numeric-details.json)
+- [Coverage list](data/coverage.json)
+- [Build and asset evidence](data/expanded-evidence.json)
+- [Catalog verification script](scripts/verify-catalog.py)
+- [UI behavior and testing notes](docs/ctrl-details.md)
+- [Original research notes](docs/first-pass-findings.md)
+- [Full audit and known limitations](docs/audit-report.md)
+
+Game files, localization catalogs, and decompiler output aren't included in this repository. The MIT license covers the original code and other work in this project, not Chained Beasts or its assets.
