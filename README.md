@@ -57,9 +57,9 @@ A few things that don't have native controller selection still need a mouse and 
 
 Under `[Input]`, set `ControllerToggleButton` to one of these:
 
-- `RightStickClick` — default (R3)
-- `LeftStickClick` — L3
-- `Disabled` — no controller toggle
+- `RightStickClick` - default (R3)
+- `LeftStickClick` - L3
+- `Disabled` - no controller toggle
 
 Restart the game after changing it. The default game controls don't use either stick click in the build I checked, but keep your own custom bindings in mind.
 
@@ -67,19 +67,19 @@ Restart the game after changing it. The default game controls don't use either s
 
 These screenshots are from v0.2.0, showing the keyboard/Ctrl panel. Controller support and the larger potion hover area were added later.
 
-**Character select — Hulking Bear**
+**Character select - Hulking Bear**
 
 ![Hulking Bear's character-select description beside a Divine Numbers card showing health, movement speed and invulnerability values.](docs/screenshots/character-select-bear.png)
 
-**Character info — Agile Ibex**
+**Character info - Agile Ibex**
 
 ![The Agile Ibex character-info tooltip beside its movement-speed and dodge-stamina numbers.](docs/screenshots/character-info-ibex.png)
 
-**Trainer — Arm Fatigue III**
+**Trainer - Arm Fatigue III**
 
 ![The trainer's Arm Fatigue III description beside a Divine Numbers card explaining its delay, slowing strength and timer reset.](docs/screenshots/trainer-arm-fatigue.png)
 
-**Healer — Tunnel Vision II**
+**Healer - Tunnel Vision II**
 
 ![Healer potion offers with a Divine Numbers card explaining Tunnel Vision II's mask blend strength.](docs/screenshots/healer-tunnel-vision.png)
 
