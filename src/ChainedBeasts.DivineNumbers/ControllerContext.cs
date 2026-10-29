@@ -27,20 +27,11 @@ internal static class ControllerContext
         var doctor = owner.GetComponentInParent<UILobbyDoctorSelectionPage>();
         if (doctor != null) return PotionFocused(doctor, deviceId);
         var shop = owner.GetComponentInParent<UILobbyShopSelectionPage>();
-        if (shop != null)
-        {
-            if (shop.focusedPlayerIndices != null)
-                foreach (var player in shop.focusedPlayerIndices)
-                    if (MatchesPlayer(player, deviceId)) return true;
-            return false;
-        }
+        if (shop != null) return MerchantFocused(shop, deviceId);
+        var progress = owner.GetComponentInParent<UILobbyTrainerProgress>();
+        if (progress != null) return MatchesPlayer(progress.playerIndex, deviceId);
         var trainer = owner.GetComponentInParent<UILobbyTrainerUpgradePage>();
-        if (trainer != null)
-        {
-            var nav = trainer.navPage;
-            return nav != null && (nav.ownerPlayerIndex < 0 || MatchesPlayer(nav.ownerPlayerIndex, deviceId)) &&
-                (nav.lastFocusedState || trainer.isSelected);
-        }
+        if (trainer != null) return SkillChoiceFocused(trainer, deviceId);
         var codex = owner.GetComponentInParent<UICodexPage>();
         if (codex != null)
             return codex.Discovered && codex.gamepadHighlightContainer != null &&
@@ -48,6 +39,26 @@ internal static class ControllerContext
         var button = owner.GetComponentInParent<UIClientNavigationButton>();
         return button != null && button.lastFocusedState &&
             (button.ownerPlayerIndex < 0 || MatchesPlayer(button.ownerPlayerIndex, deviceId));
+    }
+
+    internal static bool MerchantFocused(UILobbyShopSelectionPage page, int deviceId)
+    {
+        var client = DeviceClient(deviceId);
+        var state = page.controller?.state;
+        var indices = state?.navigatePurchaseIndex;
+        var navigating = state?.navigatePurchase;
+        if (client == null || indices == null || navigating == null) return false;
+        var player = client.PlayerIndex;
+        return player < (ulong)indices.Length && player < (ulong)navigating.Length &&
+            navigating[(int)player] && indices[(int)player] == page.Index;
+    }
+
+    internal static bool SkillChoiceFocused(UILobbyTrainerUpgradePage page, int deviceId)
+    {
+        var client = DeviceClient(deviceId);
+        var indices = page.controller?.uiState?.upgradeSelectionIndex;
+        return client != null && indices != null && client.PlayerIndex < (ulong)indices.Length &&
+            indices[(int)client.PlayerIndex] == page.Index;
     }
 
     internal static bool PotionFocused(UILobbyDoctorSelectionPage page, int deviceId)
@@ -73,6 +84,7 @@ internal static class ControllerContext
     internal static bool HasFocusableParent(Component owner) =>
         owner.GetComponentInParent<UILobbyDoctorSelectionPage>() != null ||
         owner.GetComponentInParent<UILobbyShopSelectionPage>() != null ||
+        owner.GetComponentInParent<UILobbyTrainerProgress>() != null ||
         owner.GetComponentInParent<UILobbyTrainerUpgradePage>() != null ||
         owner.GetComponentInParent<UICodexPage>() != null ||
         owner.GetComponentInParent<UIClientNavigationButton>() != null;

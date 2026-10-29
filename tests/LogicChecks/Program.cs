@@ -17,6 +17,9 @@ Check(catalog.TryGet("injury", 901, 1, out var minor) && minor.Body.Contains("16
 Check(!catalog.TryGet("injury", 901, 0, out _) && !catalog.TryGet("injury", 901, 3, out _), "Missing/invalid severity guessed another level");
 Check(catalog.TryGet("injury", 510, 3, out var stamina) && stamina.Body.Contains("+75%") && stamina.Body.Contains("+15%"), "Fixed damage and severity-scaled stamina were confused");
 Check(catalog.TryGet("purchase", 3008, 0, out var bow) && bow.Body.Contains("arrow base damage: 12") && bow.Body.Contains("5 base damage"), "Fired-arrow damage was confused with thrown-bow damage");
+Check(catalog.TryGet("purchase", 3000, 0, out var club) && club.Body.Contains("melee damage: 10") && club.Body.Contains("impact damage: 15"), "Merchant's typed Wooden Club purchase does not resolve");
+Check(catalog.TryGetTerm("Injuries/ColourBlindness_Desc_1", out var colorBlindness) && colorBlindness.Body.Contains("66%"), "Training affliction preview lost its exact severity card");
+Check(catalog.TryGet(400, out var noMercy) && noMercy.Name == "No Mercy" && noMercy.Body.Contains("{backstab}"), "Learned-skill No Mercy lookup lost its backstab explanation");
 Check(catalog.TryGet("status", 8, 0, out var backstab) && backstab.Body.Contains("{backstab}"), "Backstab multiplier no longer follows the audited native getter");
 Check(catalog.TryGet("status", 1, 0, out var vigor) && !vigor.Body.Contains("backstab", StringComparison.OrdinalIgnoreCase) &&
     !backstab.Body.Contains("stamina", StringComparison.OrdinalIgnoreCase), "Composing a combined skill mutated the standalone status cards");
@@ -132,6 +135,17 @@ var twoPlayers = new InspectionSelection<string>();
 twoPlayers.Consider("Other player's potion", 0, offer: true);
 twoPlayers.Consider("Owning player's potion", 10, offer: true);
 Check(twoPlayers.Selected(controller: true) == "Owning player's potion", "Another player's unfocused potion won selection");
+foreach (var menu in new[] { "merchant", "training affliction", "learned-skill choices" })
+{
+    var focusedMenu = new InspectionSelection<string>();
+    focusedMenu.Consider("Desperate Ibex HUD", 1, hud: true);
+    focusedMenu.Consider(menu, 10, offer: true);
+    Check(focusedMenu.Selected(controller: true) == menu, "Modal controller selection lost to HUD: " + menu);
+    var unfocusedMenu = new InspectionSelection<string>();
+    unfocusedMenu.Consider("Desperate Ibex HUD", 1, hud: true);
+    unfocusedMenu.Consider(menu, 0, offer: true);
+    Check(unfocusedMenu.Selected(controller: true) == null, "Unfocused modal fell back to beast numbers: " + menu);
+}
 void Frame(bool context = true, bool focused = true, bool ctrl = false,
     bool down = false, bool connected = true, bool secondDown = false, bool secondConnected = false)
 {
@@ -180,4 +194,4 @@ Frame(down: true);
 toggle.Reset();
 IsOff("Cleanup retained controller state");
 
-Console.WriteLine($"PASS: {catalog.Count} typed cards and exact description keys, namespace/severity isolation, locked/unknown choice clearing, evidence-sensitive examples, invalid-data rejection, four placements and 1,575 viewport/edge combinations; distinct shop/healer hover geometry; healer focus, unknown offer and no-focus HUD suppression; controller press/hold/release, menu/focus reset, disconnect, ownership and keyboard coexistence sequences. No Unity/gameplay test performed.");
+Console.WriteLine($"PASS: {catalog.Count} typed cards and exact description keys, namespace/severity isolation, locked/unknown choice clearing, evidence-sensitive examples, invalid-data rejection, four placements and 1,575 viewport/edge combinations; distinct shop/healer hover geometry; healer/merchant/trainer modal selection and no-focus HUD suppression; controller press/hold/release, menu/focus reset, disconnect, ownership and keyboard coexistence sequences. No Unity/gameplay test performed.");

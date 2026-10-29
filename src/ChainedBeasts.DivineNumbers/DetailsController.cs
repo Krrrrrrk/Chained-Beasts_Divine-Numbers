@@ -12,7 +12,7 @@ public sealed class DetailsController : MonoBehaviour
         UIPlayerInfoTooltip? Tooltip = null, UILobbyTrainerUpgradePage? Trainer = null,
         UIGameServerLobbyPage? Lobby = null, I2.Loc.Localize? Description = null,
         UILobbyShopSelectionPage? Shop = null, UIPlayerInfoPage? Hud = null,
-        UILobbyDoctorSelectionPage? Potion = null);
+        UILobbyDoctorSelectionPage? Potion = null, UILobbyTrainerProgress? Progress = null);
     private readonly Dictionary<int, Binding> _bindings = new();
     private DetailCatalog? _catalog;
     private ManualLogSource? _log;
@@ -149,6 +149,19 @@ public sealed class DetailsController : MonoBehaviour
                 _catalog?.TryGetTerm(shop.itemDescription.Term, out detail!);
                 _bindings[shop.GetInstanceID()] = new Binding(shop, anchor, detail, Description: shop.itemDescription, Shop: shop);
             }
+            foreach (var progress in Resources.FindObjectsOfTypeAll<UILobbyTrainerProgress>())
+            {
+                if (progress == null || !progress.gameObject.scene.IsValid() || !Visible(progress) || progress.injuryDescription == null) continue;
+                var anchor = progress.injuryDescription.transform.TryCast<RectTransform>();
+                if (anchor == null) continue;
+                NumericDetail? detail = null;
+                _catalog?.TryGetTerm(progress.injuryDescription.Term, out detail!);
+                _bindings[progress.GetInstanceID()] = new Binding(progress, anchor, detail,
+                    Description: progress.injuryDescription, Progress: progress);
+            }
+            foreach (var choice in Resources.FindObjectsOfTypeAll<UILobbyTrainerUpgradePage>())
+                if (choice != null && choice.gameObject.scene.IsValid() && Visible(choice))
+                    Register(choice, choice.transform.TryCast<RectTransform>(), (int)choice.SkillType, trainer: choice);
             foreach (var description in Resources.FindObjectsOfTypeAll<I2.Loc.Localize>())
             {
                 if (description == null || !description.gameObject.scene.IsValid() ||
@@ -164,6 +177,8 @@ public sealed class DetailsController : MonoBehaviour
                 if (shop != null && shop.itemDescription == description) continue; // Direct offer binding above.
                 var potion = description.GetComponentInParent<UILobbyDoctorSelectionPage>();
                 if (potion != null && potion.remedyDescription == description) continue;
+                var progress = description.GetComponentInParent<UILobbyTrainerProgress>();
+                if (progress != null && progress.injuryDescription == description) continue;
                 var anchor = description.transform.TryCast<RectTransform>();
                 if (anchor != null) _bindings[description.GetInstanceID()] = new Binding(
                     description, anchor, detail, Description: description);
@@ -203,6 +218,21 @@ public sealed class DetailsController : MonoBehaviour
                 _catalog?.TryGetTerm(Visible(binding.Description) ? binding.Description.Term : null, out current!);
                 binding = binding with { Detail = current };
             }
+            if (binding.Shop != null && controllerOnly)
+            {
+                // Merchant item text may be generated independently of I2 terms.
+                // Resolve the current typed purchase, once its title is visible.
+                NumericDetail? current = null;
+                if (binding.Shop.itemName != null && Visible(binding.Shop.itemName))
+                    _catalog?.TryGet("purchase", (int)binding.Shop.PurchaseType, 0, out current!);
+                binding = binding with { Detail = current };
+            }
+            if (binding.Trainer != null)
+            {
+                NumericDetail? current = null;
+                _catalog?.TryGet((int)binding.Trainer.SkillType, out current!);
+                binding = binding with { Detail = current };
+            }
             if (binding.Hud != null)
             {
                 var slot = FirstHudSlot(binding.Hud);
@@ -222,13 +252,17 @@ public sealed class DetailsController : MonoBehaviour
                 : binding.Trainer != null ? (binding.Trainer.isHovered ? 6 : binding.Trainer.isSelected ? 2 : 0)
                 : binding.Lobby != null ? (hovered ? 6 : IsLocalLobbyPage(binding.Lobby) ? 4 : 0)
                 : hovered ? 5 : 0;
-            selection.Consider(binding, score, hud: binding.Hud != null, offer: binding.Potion != null || binding.Shop != null);
+            selection.Consider(binding, score, hud: binding.Hud != null,
+                offer: binding.Potion != null || binding.Shop != null || binding.Trainer != null || binding.Progress != null);
         }
         var selected = selection.Selected(controllerOnly);
         if (controllerOnly)
         {
             var key = selected == null ? $"none; offersVisible={selection.OffersVisible}" :
                 selected.Potion != null ? $"healer offer {selected.Potion.Index}; term={selected.Potion.remedyDescription?.Term}; card={selected.Detail != null}" :
+                selected.Shop != null ? $"merchant offer {selected.Shop.Index}; purchase={(int)selected.Shop.PurchaseType}; term={selected.Shop.itemDescription?.Term}; card={selected.Detail != null}" :
+                selected.Progress != null ? $"training affliction; player={selected.Progress.playerIndex}; term={selected.Progress.injuryDescription?.Term}; card={selected.Detail != null}" :
+                selected.Trainer != null ? $"skill offer {selected.Trainer.Index}; skill={(int)selected.Trainer.SkillType}; card={selected.Detail != null}" :
                 $"{selected.Owner.GetType().Name}; card={selected.Detail != null}";
             if (key != _controllerSelection) { _controllerSelection = key; _log?.LogInfo("Numbers controller selection: " + key); }
         }
@@ -333,10 +367,12 @@ public sealed class DetailsController : MonoBehaviour
     private static int ControllerScore(Binding binding, int deviceId)
     {
         if (binding.Potion != null) return ControllerContext.PotionFocused(binding.Potion, deviceId) ? 10 : 0;
+        if (binding.Shop != null) return ControllerContext.MerchantFocused(binding.Shop, deviceId) ? 10 : 0;
+        if (binding.Progress != null) return ControllerContext.MatchesPlayer(binding.Progress.playerIndex, deviceId) ? 10 : 0;
         if (binding.Hud != null) return ControllerContext.MatchesClient(binding.Hud.clientID, deviceId) ? 1 : 0;
+        if (binding.Trainer != null) return ControllerContext.SkillChoiceFocused(binding.Trainer, deviceId) ? 10 : 0;
         if (binding.Description != null) return ControllerContext.Focused(binding.Description, deviceId) ? 8 : 0;
         if (binding.Tooltip != null) return ControllerContext.OwnsTooltip(binding.Tooltip, deviceId) ? 7 : 0;
-        if (binding.Trainer != null) return ControllerContext.Focused(binding.Trainer, deviceId) ? 6 : 0;
         if (binding.Lobby != null) return binding.Lobby.connected && ControllerContext.MatchesPlayer(binding.Lobby.playerIndex, deviceId) ? 4 : 0;
         return ControllerContext.Focused(binding.Owner, deviceId) ? 5 : 0;
     }

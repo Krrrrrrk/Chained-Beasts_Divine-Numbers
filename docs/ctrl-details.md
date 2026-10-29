@@ -1,4 +1,4 @@
-# Ctrl and controller details: 0.2.3
+# Ctrl and controller details: 0.2.4
 
 Hold either Ctrl key to see researched numbers in a separate native-style panel. Original descriptions stay intact and Shift retains its normal explanations. The user confirmed the 0.1.1 character-select support and smaller text work well. Expanded 0.2.0 interactions still need manual verification.
 
@@ -6,7 +6,7 @@ Controller: click the **right stick (R3)** to inspect the native selected item o
 
 The generated `BepInEx/config/local.chainedbeasts.divinenumbers.cfg` exposes `[Input] ControllerToggleButton`: `RightStickClick` (default), `LeftStickClick`, or `Disabled`. Restart to apply. No key binding or input action is replaced.
 
-Controller troubleshooting: use 0.2.3 for healer potions. Runtime logs confirmed the 0.2.2 toggle and player mapping worked, but the healer was missed because it uses `UILobbyDoctorSelectionPage`, not the general shop's `UILobbyShopSelectionPage`. The healer now has direct bindings and its native boolean focus array selects the owning player's offer. A visible offer menu suppresses the HUD fallback, even when no offer is focused. `BepInEx/LogOutput.log` records visible healer-card counts and changes in controller selection. Hardware behavior still needs manual verification.
+Controller troubleshooting: use 0.2.4 for merchant and trainer menus. The user confirmed R3 potion selection in 0.2.3, but merchant cards, the trainer affliction and post-training skill choices failed. Merchant selection now reads native per-player menu state and resolves the current typed purchase ID for controller mode. Training afflictions bind `UILobbyTrainerProgress`, while skill choices read the native selected skill-card index rather than the separate card navigation flags. Menu contexts suppress the HUD fallback even with no focused/supported card. Logs include the selected offer index, typed ID or description term. The new paths need manual runtime verification.
 
 ## Where to use it
 
@@ -27,7 +27,9 @@ Seven postfix hooks observe the same native UI methods as 0.1.1: the four UIPlay
 
 Additional contexts use visible I2.Loc.Localize.Term values discovered while Ctrl is held or the controller toggle is requested. Localization, translation resolution and input actions are not patched. Discovery has a half-second interval; resource scanning does not run every frame. Current keys are rechecked before showing pooled labels. In keyboard mode hovered description text has priority; controller mode uses native focus and excludes mouse hover. The clone's own labels are excluded.
 
-The toggle samples Unity Input System gamepads by index even when no keyboard is present. Device IDs resolve through `InputSystem.GetDeviceById` and native `GameInput.GetDeviceClient`, including the no-explicit-assignment single-player fallback. `GetClientDevice` alone is not its inverse. Native trainer navigation flags, shop focused-player lists and Codex gamepad highlights supply selection. A low-priority HUD binding reads the current first native `visualSkillList` entry and anchors to its visible slot; it never chooses a different supported entry when that slot is unsupported. Focused native tooltips and offers outrank this fallback. Shared menus can retain shared native focus. Another pad's click takes ownership of the one overlay.
+The toggle samples Unity Input System gamepads by index even when no keyboard is present. Device IDs resolve through `InputSystem.GetDeviceById` and native `GameInput.GetDeviceClient`, including the no-explicit-assignment single-player fallback. `GetClientDevice` alone is not its inverse. Native healer focus flags, merchant/trainer menu indices and Codex highlights supply selection. A low-priority HUD binding reads the first native `visualSkillList` entry and anchors to its visible slot; it never chooses another supported entry when that slot is unsupported. Visible offer/training contexts suppress this fallback even without a supported focused card. Shared menus can retain shared native focus. Another pad's click takes ownership of the one overlay.
+
+Merchant controller focus uses `UILobbyShop.state.navigatePurchase[player]` and `navigatePurchaseIndex[player] == page.Index`; its detail resolves through `PurchaseType` after the title is visible. Keyboard inspection retains its existing term lookup. Training previews bind the current visible `UILobbyTrainerProgress.injuryDescription` and its `playerIndex`, preserving native severity terms. Skill-choice focus uses `UILobbyTrainer.uiState.upgradeSelectionIndex[player] == UILobbyTrainerUpgradePage.Index`; `navPage.lastFocusedState` and `isSelected` do not identify the separate Learn/Trade action widgets' current controller choice. Native arrays are bounds checked before reading, and current skill IDs are re-resolved every frame.
 
 The audited `InputActions` asset embedded in the native constructor contains no `leftStickPress` or `rightStickPress` binding. UI right shoulder is CharacterInfo and left shoulder is Tooltip, so both are preserved. This is a default-binding check, not proof about custom remaps. Local Cpp2IL `UnityEngine/InputSystem/InputActions.txt` SHA256: `f1a873f155d5100f5154fa458f18ad3ae71d0ed557517e103d384228e30c5a38`; the shipped game's binary hash gate covers that constructor.
 
@@ -49,6 +51,7 @@ Four input hashes gate loading: GameAssembly, metadata, level1 and sharedassets1
 - Four placement directions and 1,575 viewport/edge combinations.
 - Sign-plus-potion hover regression using the serialized prefab's dimensions/offsets, at two scales; header, blank area, price and preview points, plus outside rejection.
 - Separate healer-prefab geometry checks, plus the reported Ibex-HUD-versus-potion selection scenario, concealed/no-card offers, no focused offer and per-player candidate priority.
+- Merchant/trainer modal-selection regressions suppressing the Desperate Ibex HUD, plus Wooden Club purchase ID 3000, Color Blindness I's exact severity term and No Mercy skill ID 400 lookup checks.
 - Controller input sequences: press/hold/release, second-click off, menu/focus reset, held-on-entry suppression, disconnect, another controller taking ownership and Ctrl coexistence. These exercise the production state machine without Unity.
 - Four game hashes, 157 native literals, 35 native dump hashes and all active card keys checked. Input/literal identity checks do not independently prove every inferred semantic relationship.
 

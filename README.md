@@ -2,9 +2,9 @@
 
 A display-only BepInEx mod that shows researched numbers in a separate box while you hold **Ctrl**, or toggle it with **R3 (click the right stick)** on a controller. Original descriptions stay intact; **Shift keeps its normal status explanations**.
 
-The **0.2.3 source update** binds the healer's actual potion cards, so controller focus and whole-box hover use the remedy, sign, healing value and model preview. A visible potion menu suppresses the unrelated HUD-skill fallback. It includes the **206 cards** introduced in 0.2.0: 50 skills/beast variants, 134 affliction severity entries, 18 purchases and four statuses. It targets Steam build **26231777**. [Audit findings and limits](docs/audit-report.md) explain coverage and base values.
+The **0.2.4 source update** connects R3 to the merchant's per-player purchase index, the trainer's affliction preview and the post-training skill-choice index. These menus suppress the unrelated HUD-skill fallback. The healer potion binding introduced in 0.2.3 remains. There are **206 cards**: 50 skills/beast variants, 134 affliction severity entries, 18 purchases and four statuses. It targets Steam build **26231777**. [Audit findings and limits](docs/audit-report.md) explain coverage and base values.
 
-**Use 0.2.3 for the healer potion bindings. The published 0.2.0 release has Ctrl support only.** The 0.2.3 update is built and packaged locally; it has not been published as a release yet.
+**Use 0.2.4 for the merchant and trainer controller bindings. The published 0.2.0 release has Ctrl support only.** The 0.2.4 update is built and packaged locally; it has not been published as a release yet.
 
 On **character select**, highlight an unlocked supported variant and hold either Ctrl key. Character-info tooltips, hovered character-detail rows and selected/hovered trainer cards also work. In **potion/healer shops**, hold Ctrl anywhere over the combined sign and potion preview area, including the header, border, blank space, price, potion and pedestal. Surgery and Codex descriptions also support Ctrl while hovered. New labels may take up to half a second to register while Ctrl stays held. Release Ctrl to hide the box.
 
@@ -12,7 +12,7 @@ With a **controller**, click **R3** once. Numbers follow the native highlighted 
 
 After the first launch, `BepInEx/config/local.chainedbeasts.divinenumbers.cfg` has an `[Input]` setting, `ControllerToggleButton`. Choose `RightStickClick` (default), `LeftStickClick`, or `Disabled`, then restart the game. Neither stick click appears in the audited game's default input bindings; custom remaps may differ.
 
-The panel retains the smaller 22-point text and padding confirmed working by the user in 0.1.1. The controller update has build and offline input-sequence checks; controller navigation and placement still need manual gameplay review. Unknown/locked descriptions receive no guessed card. One training-only description has no confirmed native trip-duration branch and is recorded as unresolved.
+The panel retains the smaller 22-point text and padding confirmed working by the user. R3 potion selection was confirmed working in 0.2.3. Merchant/trainer changes have build and offline regression checks and still need a manual runtime retest. Unknown/locked descriptions receive no guessed card. One training-only description has no confirmed native trip-duration branch and is recorded as unresolved.
 
 ## Screenshots
 

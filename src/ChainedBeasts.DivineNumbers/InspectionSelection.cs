@@ -1,7 +1,7 @@
 namespace ChainedBeasts.DivineNumbers;
 
-// Keep visible offers separate from their focus score: an unfocused or
-// unsupported potion must not reveal an unrelated collapsed-HUD skill.
+// Keep visible menus separate from their focus score: an unfocused or
+// unsupported offer/training card must not reveal a collapsed-HUD skill.
 internal sealed class InspectionSelection<T> where T : class
 {
     private T? _best, _bestWithoutHud;
