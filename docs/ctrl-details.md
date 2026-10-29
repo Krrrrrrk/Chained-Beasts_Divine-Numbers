@@ -1,19 +1,19 @@
-# Ctrl and controller details: 0.2.1
+# Ctrl and controller details: 0.2.2
 
 Hold either Ctrl key to see researched numbers in a separate native-style panel. Original descriptions stay intact and Shift retains its normal explanations. The user confirmed the 0.1.1 character-select support and smaller text work well. Expanded 0.2.0 interactions still need manual verification.
 
-Controller: click the **right stick (R3)** while a supported info/menu screen is open. The box stays on and follows the native selected item or that controller's character-select description. Click again to turn it off. The heading shows `[R3: On]` while latched. It resets when all bound info menus close, application focus is lost or the owning pad disconnects. Holding the button does not repeat the toggle or arm it when entering a menu/returning focus. Ctrl remains independent. Unsupported focused descriptions clear the old card. Non-focusable character-detail rows still require mouse/Ctrl.
+Controller: click the **right stick (R3)** to inspect the native selected item or that controller's character-select description. From the collapsed bottom HUD, it shows the first actual visible skill; native focused tooltips take priority when you hold RB and navigate normally. The mod does not force the native held-RB interface open. Click again to turn the numbers off. The heading shows `[R3: On]` while latched. It resets when all inspection contexts disappear, application focus is lost or the pad disconnects. It can remain latched when returning from a menu to a visible HUD. Holding the button does not repeat the toggle or arm it when entering a context/returning focus. Ctrl remains independent. Unsupported focused descriptions clear the old card.
 
 The generated `BepInEx/config/local.chainedbeasts.divinenumbers.cfg` exposes `[Input] ControllerToggleButton`: `RightStickClick` (default), `LeftStickClick`, or `Disabled`. Restart to apply. No key binding or input action is replaced.
 
-Controller troubleshooting: the 0.2.0 DLL has no R3 support. The user's reported R3 failure was checked against the installed assembly and game log, both of which showed 0.2.0; the 0.2.1 controller update had been left packaged rather than installed. A working Ctrl panel alone does not establish that the controller update is loaded. Check the startup version in `BepInEx/LogOutput.log` after installing/restarting. Hardware controller behavior remains a manual check.
+Controller troubleshooting: use 0.2.2. The 0.2.1 runtime was confirmed loaded with R3 enabled but the user reported failure. Its ownership check used an inverse lookup that did not implement the game's global/single-player fallback. Version 0.2.2 uses native device-to-client resolution, samples indexed connected gamepads and includes brief input-count, press and toggle logs in `BepInEx/LogOutput.log`. Hardware behavior remains a manual check; build/static checks do not establish that every controller model works.
 
 ## Where to use it
 
 - Character select: highlight an unlocked supported variant. Hover another visible player's description to inspect theirs.
 - Character info: inspect an audited skill, affliction severity, purchase or status.
 - Trainer/character-details lists: select or hover the supported skill as before.
-- Potion/healer shop: hold Ctrl over any part of the offer's native interaction rectangle, including the header, border, blank space and price.
+- Potion/healer shop: hold Ctrl over the combined sign and separate potion preview, including the header, border, blank space, price, potion and pedestal.
 - Surgery and Codex: hover the displayed description text while holding Ctrl.
 - Vanilla Shift status boxes: hover an audited Vigor, Weak, Fire or Backstab explanation while holding Ctrl.
 
@@ -27,11 +27,11 @@ Seven postfix hooks observe the same native UI methods as 0.1.1: the four UIPlay
 
 Additional contexts use visible I2.Loc.Localize.Term values discovered while Ctrl is held or the controller toggle is requested. Localization, translation resolution and input actions are not patched. Discovery has a half-second interval; resource scanning does not run every frame. Current keys are rechecked before showing pooled labels. In keyboard mode hovered description text has priority; controller mode uses native focus and excludes mouse hover. The clone's own labels are excluded.
 
-The toggle samples Unity Input System gamepads even when no keyboard is present. Device IDs select the owning pad; the game's `GameInput.GetClientDevice` mapping restricts player-specific tooltip and character-select pages. Native trainer navigation flags, shop focused-player lists and Codex gamepad highlights supply selection. Shared menus can retain shared native focus. One overlay is active at a time; another pad's click takes ownership. No new navigation is added to rows the game cannot focus.
+The toggle samples Unity Input System gamepads by index even when no keyboard is present. Device IDs resolve through `InputSystem.GetDeviceById` and native `GameInput.GetDeviceClient`, including the no-explicit-assignment single-player fallback. `GetClientDevice` alone is not its inverse. Native trainer navigation flags, shop focused-player lists and Codex gamepad highlights supply selection. A low-priority HUD binding reads the current first native `visualSkillList` entry and anchors to its visible slot; it never chooses a different supported entry when that slot is unsupported. Focused native tooltips and offers outrank this fallback. Shared menus can retain shared native focus. Another pad's click takes ownership of the one overlay.
 
 The audited `InputActions` asset embedded in the native constructor contains no `leftStickPress` or `rightStickPress` binding. UI right shoulder is CharacterInfo and left shoulder is Tooltip, so both are preserved. This is a default-binding check, not proof about custom remaps. Local Cpp2IL `UnityEngine/InputSystem/InputActions.txt` SHA256: `f1a873f155d5100f5154fa458f18ad3ae71d0ed557517e103d384228e30c5a38`; the shipped game's binary hash gate covers that constructor.
 
-Potion hover uses `UILobbyShopSelectionPage.navigationButton.InteractionAnchor`, with the card root as a fallback, for both hit testing and occupied bounds. The localized main description remains the data source and visibility gate, so pooled or unrevealed offers cannot inherit another card's numbers. Nested status explanations retain their own hitboxes. Native shop Shift/LB status panels are included in occupied bounds and the shop's own tooltip prefab can supply the frame. No purchase/click behavior is changed.
+Potion offers bind directly from visible `UILobbyShopSelectionPage` objects. Hover and placement use a screen-space union of the sign's native interaction anchor, name, description, price, backing images and `ui3DView`. The prefab sign is 368x406 at (-125,250); the separate 250x350 preview is centered at (0,135). A sign-only rectangle misses the potion/pedestal and right edge. The localized main description remains the data source and visibility gate, with current keys rechecked each frame. Nested status explanations keep their own hitboxes. Native shop Shift/LB panels are included in occupied bounds. No purchase/click behavior changes.
 
 The private, non-interactive UIStatusTooltip clone keeps 22-point type, 24-pixel horizontal/20-pixel vertical padding and measured preferred height, with smaller type if needed. Placement tries right/left/below/above and clamps to the viewport. Known native Shift boxes are included in occupied bounds. Other screens and simultaneous Shift/Ctrl placement still require manual review where space is limited.
 
@@ -45,6 +45,7 @@ Four input hashes gate loading: GameAssembly, metadata, level1 and sharedassets1
 - All 206 typed cards/exact keys; namespace/severity isolation; unknown/locked-key clearing; invalid-data rejection; shared-card isolation.
 - Evidence-sensitive examples: pickup disarm 16/32%, stamina drawback 25% per severity, fired arrows versus thrown bows, implemented stun chance versus localization.
 - Four placement directions and 1,575 viewport/edge combinations.
+- Sign-plus-potion hover regression using the serialized prefab's dimensions/offsets, at two scales; header, blank area, price and preview points, plus outside rejection.
 - Controller input sequences: press/hold/release, second-click off, menu/focus reset, held-on-entry suppression, disconnect, another controller taking ownership and Ctrl coexistence. These exercise the production state machine without Unity.
 - Four game hashes, 157 native literals, 35 native dump hashes and all active card keys checked. Input/literal identity checks do not independently prove every inferred semantic relationship.
 
@@ -58,6 +59,6 @@ Four input hashes gate loading: GameAssembly, metadata, level1 and sharedassets1
 6. Close/reopen menus, change scenes and application focus. No stale card should remain.
 7. Check smaller windows, wide screens, UI scaling, multiplayer/local-player pages and other installed mods.
 8. Review long cards and Backstab's setting-dependent value. Compare selected mechanics in controlled gameplay before treating them as measured final damage.
-9. With a controller, highlight supported/unsupported/locked choices in character select, character info, trainer, shop, surgery and Codex. Click R3; verify the card follows native focus without mouse movement, disappears for unsupported choices and a second click turns it off. Confirm native shoulder-button tooltips still work.
+9. With a controller, press R3 from the collapsed bottom HUD; check the first visible skill's numbers. Hold RB and navigate other entries; native selections must take priority. Check supported/unsupported/locked choices in character select, trainer, shop, surgery and Codex. Confirm a second click turns numbers off and native shoulder-button tooltips still work. Repeat in single-player without an explicit device assignment and with two explicitly assigned local controllers.
 10. Hold R3 across several frames, menu close/reopen and focus loss/return. Disconnect the pad while latched; reconnect. Check there is no repeated or stale toggle. Test without a keyboard and with two local controllers inspecting different players.
 11. Try `LeftStickClick` and `Disabled` after restarting. With a controller latched, hold/release Ctrl and toggle the controller off while Ctrl remains held.

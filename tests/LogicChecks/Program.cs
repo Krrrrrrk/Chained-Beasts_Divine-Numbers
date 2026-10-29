@@ -84,6 +84,23 @@ for (var edge = 0; edge <= 4; edge++)
     Check(p.Left >= 16 && p.Left + 300 <= w - 16 && p.Top <= h - 16 && p.Top - 200 >= 16, "Edge placement escaped viewport");
 }
 // Exercise real input sequences, including held buttons across UI/focus changes.
+// Serialized shop prefab: OffsetContent sign is 368x406 at (-125,250).
+// The separate 250x350 potion preview is at (0,135). The old sign-only
+// hitbox misses both the preview's right edge and its bottom/pedestal area.
+var sign = new Bounds(-309, 47, 59, 453);
+var potionPreview = new Bounds(-125, -40, 125, 310);
+var completeOffer = PanelPlacement.Union(sign, potionPreview);
+foreach (var (x, y) in new[] { (-300f, 450f), (-300f, 60f), (100f, 0f), (120f, 200f), (-20f, 200f) })
+{
+    Check(PanelPlacement.Contains(completeOffer, x, y), "Complete offer misses header/blank space/price/potion");
+    var scaled = new Bounds(completeOffer.Left * 2 + 1000, completeOffer.Bottom * 2 + 300,
+        completeOffer.Right * 2 + 1000, completeOffer.Top * 2 + 300);
+    Check(PanelPlacement.Contains(scaled, x * 2 + 1000, y * 2 + 300), "Scaled offer hover misses the same visible point");
+}
+Check(!PanelPlacement.Contains(sign, 100, 0), "Regression fixture no longer distinguishes sign-only hover");
+Check(!PanelPlacement.Contains(completeOffer, 130, 0) && !PanelPlacement.Contains(completeOffer, -310, 100),
+    "Offer hitbox extends into unrelated UI");
+
 var toggle = new NumbersToggle();
 void Frame(bool context = true, bool focused = true, bool ctrl = false,
     bool down = false, bool connected = true, bool secondDown = false, bool secondConnected = false)
@@ -95,6 +112,7 @@ void Frame(bool context = true, bool focused = true, bool ctrl = false,
 }
 void IsOff(string reason) => Check(toggle.ControllerDeviceId == null && !toggle.Requested, reason);
 Frame(down: true);
+Check(!toggle.IsNewPress(new(11, true)), "Held R3 is treated as a fresh HUD-inspection request");
 Check(toggle.Requested && toggle.ControllerDeviceId == 11, "Stick click did not latch");
 for (var i = 0; i < 120; i++) Frame(down: true);
 Check(toggle.Requested, "Held stick repeated the toggle");
@@ -132,4 +150,4 @@ Frame(down: true);
 toggle.Reset();
 IsOff("Cleanup retained controller state");
 
-Console.WriteLine($"PASS: {catalog.Count} typed cards and exact description keys, namespace/severity isolation, locked/unknown choice clearing, evidence-sensitive examples, invalid-data rejection, four placements and 1,575 viewport/edge combinations; controller press/hold/release, menu/focus reset, disconnect, ownership and keyboard coexistence sequences. No Unity/gameplay test performed.");
+Console.WriteLine($"PASS: {catalog.Count} typed cards and exact description keys, namespace/severity isolation, locked/unknown choice clearing, evidence-sensitive examples, invalid-data rejection, four placements and 1,575 viewport/edge combinations; sign-plus-potion hover at two scales; controller press/hold/release, menu/focus reset, disconnect, ownership and keyboard coexistence sequences. No Unity/gameplay test performed.");

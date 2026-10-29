@@ -135,8 +135,7 @@ internal sealed class NativeDetailsPanel : IDisposable
         }
         return new Bounds(left, bottom, right, top);
     }
-    internal static Bounds Union(Bounds a, Bounds b) => new(Math.Min(a.Left, b.Left), Math.Min(a.Bottom, b.Bottom),
-        Math.Max(a.Right, b.Right), Math.Max(a.Top, b.Top));
+    internal static Bounds Union(Bounds a, Bounds b) => PanelPlacement.Union(a, b);
     public void Dispose()
     {
         if (_canvasRoot != null) { _canvasRoot.SetActive(false); Object.Destroy(_canvasRoot); }

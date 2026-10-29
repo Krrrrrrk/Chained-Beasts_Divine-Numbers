@@ -9,6 +9,7 @@ internal sealed class NumbersToggle
     private readonly HashSet<int> _down = new();
     internal int? ControllerDeviceId { get; private set; }
     internal bool Requested { get; private set; }
+    internal bool IsNewPress(ControllerButtonState button) => button.Down && !_down.Contains(button.DeviceId);
 
     internal void Update(bool focused, bool hasContext, bool ctrlHeld,
         IReadOnlyList<ControllerButtonState> buttons)

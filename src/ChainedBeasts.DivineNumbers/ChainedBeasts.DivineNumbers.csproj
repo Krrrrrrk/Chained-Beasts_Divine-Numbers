@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Version>0.2.1</Version>
+    <Version>0.2.2</Version>
     <ChainedBeastsGameDir Condition="'$(ChainedBeastsGameDir)' == '' and '$(CHAINED_BEASTS_GAME_DIR)' != ''">$(CHAINED_BEASTS_GAME_DIR)</ChainedBeastsGameDir>
     <ChainedBeastsGameDir Condition="'$(ChainedBeastsGameDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Chained Beasts</ChainedBeastsGameDir>
     <BepInExRoot>$(ChainedBeastsGameDir)\BepInEx</BepInExRoot>

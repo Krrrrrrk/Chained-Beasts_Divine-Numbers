@@ -5,6 +5,10 @@ internal readonly record struct Bounds(float Left, float Bottom, float Right, fl
 internal readonly record struct PanelPosition(float Left, float Top);
 internal static class PanelPlacement
 {
+    internal static Bounds Union(Bounds a, Bounds b) => new(Math.Min(a.Left, b.Left), Math.Min(a.Bottom, b.Bottom),
+        Math.Max(a.Right, b.Right), Math.Max(a.Top, b.Top));
+    internal static bool Contains(Bounds bounds, float x, float y) =>
+        x >= bounds.Left && x <= bounds.Right && y >= bounds.Bottom && y <= bounds.Top;
     internal static PanelPosition Place(Bounds anchor, float width, float height,
         float screenWidth, float screenHeight, float margin = 16, float gap = 18)
     {

@@ -11,7 +11,7 @@ public sealed class DetailsController : MonoBehaviour
     private sealed record Binding(Component Owner, RectTransform Anchor, NumericDetail? Detail,
         UIPlayerInfoTooltip? Tooltip = null, UILobbyTrainerUpgradePage? Trainer = null,
         UIGameServerLobbyPage? Lobby = null, I2.Loc.Localize? Description = null,
-        UILobbyShopSelectionPage? Shop = null);
+        UILobbyShopSelectionPage? Shop = null, UIPlayerInfoPage? Hud = null);
     private readonly Dictionary<int, Binding> _bindings = new();
     private DetailCatalog? _catalog;
     private ManualLogSource? _log;
@@ -23,6 +23,7 @@ public sealed class DetailsController : MonoBehaviour
     private ControllerToggleButton _controllerButton;
     private readonly NumbersToggle _toggle = new();
     private readonly List<ControllerButtonState> _controllerButtons = new();
+    private int _padCount = -1;
     public DetailsController(IntPtr pointer) : base(pointer) { }
     [HideFromIl2Cpp]
     internal void Configure(DetailCatalog catalog, ManualLogSource log, ControllerToggleButton controllerButton) =>
@@ -90,11 +91,21 @@ public sealed class DetailsController : MonoBehaviour
         var ctrlHeld = keyboard != null && (keyboard.leftCtrlKey.isPressed || keyboard.rightCtrlKey.isPressed);
         _controllerButtons.Clear();
         if (_controllerButton != ControllerToggleButton.Disabled)
-            foreach (var pad in Gamepad.all)
+        {
+            var pads = Gamepad.all;
+            for (var i = 0; i < pads.Count; i++)
             {
+                var pad = pads[i];
+                if (pad == null || !pad.added) continue;
                 var button = _controllerButton == ControllerToggleButton.LeftStickClick ? pad.leftStickButton : pad.rightStickButton;
-                _controllerButtons.Add(new ControllerButtonState(pad.deviceId, button.isPressed));
+                _controllerButtons.Add(new ControllerButtonState(pad.deviceId, button.isPressed || button.wasPressedThisFrame));
             }
+            if (_padCount != _controllerButtons.Count)
+            {
+                _padCount = _controllerButtons.Count;
+                _log?.LogInfo($"Numbers input: {_padCount} connected gamepad(s); toggle={_controllerButton}.");
+            }
+        }
         var discoveryRequested = Application.isFocused && (ctrlHeld || _toggle.ControllerDeviceId != null ||
             _controllerButtons.Any(button => button.Down));
 
@@ -104,6 +115,25 @@ public sealed class DetailsController : MonoBehaviour
         if (discoveryRequested && (!_discoveryWasRequested || Time.unscaledTime >= _descriptionScanAt))
         {
             _descriptionScanAt = Time.unscaledTime + .5f;
+            foreach (var page in Resources.FindObjectsOfTypeAll<UIPlayerInfoPage>())
+                if (page != null && page.gameObject.scene.IsValid() && Visible(page))
+                {
+                    var slot = FirstHudSlot(page);
+                    if (slot == null) continue;
+                    var anchor = slot.transform.TryCast<RectTransform>();
+                    if (anchor != null) _bindings[page.GetInstanceID()] = new Binding(page, anchor, null, Hud: page);
+                }
+            // Bind the serialized offer directly. Its potion preview is a sibling
+            // of the sign, so a localized text-child hitbox is insufficient.
+            foreach (var shop in Resources.FindObjectsOfTypeAll<UILobbyShopSelectionPage>())
+            {
+                if (shop == null || !shop.gameObject.scene.IsValid() || !Visible(shop) || shop.itemDescription == null) continue;
+                var anchor = ShopCardAnchor(shop);
+                if (anchor == null) continue;
+                NumericDetail? detail = null;
+                _catalog?.TryGetTerm(shop.itemDescription.Term, out detail!);
+                _bindings[shop.GetInstanceID()] = new Binding(shop, anchor, detail, Description: shop.itemDescription, Shop: shop);
+            }
             foreach (var description in Resources.FindObjectsOfTypeAll<I2.Loc.Localize>())
             {
                 if (description == null || !description.gameObject.scene.IsValid() ||
@@ -116,16 +146,23 @@ public sealed class DetailsController : MonoBehaviour
                 var shop = description.GetComponentInParent<UILobbyShopSelectionPage>();
                 // Status explanations nested under a shop page retain their own
                 // hitbox. Only the offer's main description owns the whole card.
-                if (shop != null && shop.itemDescription != description) shop = null;
-                var anchor = ShopCardAnchor(shop) ?? description.transform.TryCast<RectTransform>();
+                if (shop != null && shop.itemDescription == description) continue; // Direct offer binding above.
+                var anchor = description.transform.TryCast<RectTransform>();
                 if (anchor != null) _bindings[description.GetInstanceID()] = new Binding(
-                    description, anchor, detail, Description: description, Shop: shop);
+                    description, anchor, detail, Description: description);
             }
         }
         _discoveryWasRequested = discoveryRequested;
-        var hasContext = _bindings.Values.Any(binding => Visible(binding.Owner) &&
-            (binding.Lobby == null || (binding.Lobby.characterDescription != null && Visible(binding.Lobby.characterDescription))));
+        foreach (var button in _controllerButtons)
+            if (_toggle.IsNewPress(button))
+            {
+                _log?.LogInfo($"Numbers controller click: device={button.DeviceId}; client={ControllerContext.DeviceClient(button.DeviceId)?.PlayerIndex.ToString() ?? "unmapped"}; focused={Application.isFocused}.");
+            }
+        var hasContext = _bindings.Values.Any(Eligible);
+        var previousDevice = _toggle.ControllerDeviceId;
         _toggle.Update(Application.isFocused, hasContext, ctrlHeld, _controllerButtons);
+        if (previousDevice != _toggle.ControllerDeviceId)
+            _log?.LogInfo($"Numbers controller toggle: {(_toggle.ControllerDeviceId == null ? "off" : "on")}; context={hasContext}.");
         if (!_toggle.Requested) { _panel?.Hide(); return; }
         var controllerOnly = !ctrlHeld && _toggle.ControllerDeviceId != null;
 
@@ -136,7 +173,7 @@ public sealed class DetailsController : MonoBehaviour
         foreach (var stored in _bindings.Values)
         {
             var binding = stored;
-            if (!Visible(binding.Owner)) continue;
+            if (!Eligible(binding)) continue;
             // Pooled labels can change their term between scans. Resolve again
             // before display so a new/unsupported description never inherits data.
             if (binding.Description != null)
@@ -145,10 +182,19 @@ public sealed class DetailsController : MonoBehaviour
                 _catalog?.TryGetTerm(binding.Description.Term, out current!);
                 binding = binding with { Detail = current };
             }
+            if (binding.Hud != null)
+            {
+                var slot = FirstHudSlot(binding.Hud);
+                if (slot == null || !Visible(slot)) continue;
+                NumericDetail? current = null;
+                _catalog?.TryGet((int)binding.Hud.visualSkillList[0], out current!);
+                binding = binding with { Detail = current, Anchor = slot.transform.Cast<RectTransform>() };
+            }
             if (binding.Lobby != null && (binding.Lobby.characterDescription == null ||
                 !Visible(binding.Lobby.characterDescription))) continue;
-            var hovered = !controllerOnly && RectTransformUtility.RectangleContainsScreenPoint(binding.Anchor, position,
-                NativeDetailsPanel.CameraFor(binding.Anchor));
+            var hovered = !controllerOnly && (binding.Shop != null
+                ? PanelPlacement.Contains(OfferBounds(binding), position.x, position.y)
+                : RectTransformUtility.RectangleContainsScreenPoint(binding.Anchor, position, NativeDetailsPanel.CameraFor(binding.Anchor)));
             var score = controllerOnly ? ControllerScore(binding, _toggle.ControllerDeviceId!.Value)
                 : binding.Description != null ? (hovered ? 8 : 0)
                 : binding.Tooltip != null ? (hovered ? 6 : 3)
@@ -169,7 +215,7 @@ public sealed class DetailsController : MonoBehaviour
             if (template == null) return; // Native UI assets may not have loaded yet.
             _panel = new NativeDetailsPanel(template, transform);
         }
-        var bounds = NativeDetailsPanel.ScreenBounds(selected.Anchor);
+        var bounds = selected.Shop != null ? OfferBounds(selected) : NativeDetailsPanel.ScreenBounds(selected.Anchor);
         // Keep both vanilla Shift boxes and the main description out of the new box's way.
         var status = selected.Tooltip != null ? selected.Tooltip.statusTooltips
             : selected.Trainer != null ? selected.Trainer.statusTooltips : selected.Shop?.statusTooltips;
@@ -182,6 +228,38 @@ public sealed class DetailsController : MonoBehaviour
         var hint = _toggle.ControllerDeviceId == null ? "Ctrl" :
             _controllerButton == ControllerToggleButton.LeftStickClick ? "L3: On" : "R3: On";
         _panel.Show(selected.Detail, bounds, color, hint);
+    }
+    private static bool Eligible(Binding binding) => Visible(binding.Owner) &&
+        (binding.Description == null || Visible(binding.Description)) &&
+        (binding.Hud == null || (FirstHudSlot(binding.Hud) is { } slot && Visible(slot))) &&
+        (binding.Lobby == null || (binding.Lobby.characterDescription != null && Visible(binding.Lobby.characterDescription)));
+
+    private static UIGameLevelLobbySlot? FirstHudSlot(UIPlayerInfoPage page)
+    {
+        // Native controller info is held with RB; forcing it open lasts only one
+        // frame. Inspect the first actual visible HUD skill directly instead.
+        return page.visualSkillList != null && page.visualSkillList.Count > 0 &&
+            page.skillSlots != null && page.skillSlots.Length > 0 ? page.skillSlots[0] : null;
+    }
+
+    private static Bounds OfferBounds(Binding binding)
+    {
+        var bounds = NativeDetailsPanel.ScreenBounds(binding.Anchor);
+        void Include(Component? part)
+        {
+            if (part == null || !Visible(part)) return;
+            var rect = part.transform.TryCast<RectTransform>();
+            if (rect != null && rect.rect.width > 0 && rect.rect.height > 0)
+                bounds = PanelPlacement.Union(bounds, NativeDetailsPanel.ScreenBounds(rect));
+        }
+        var shop = binding.Shop!;
+        Include(shop.itemDescription);
+        Include(shop.itemName);
+        Include(shop.costValue);
+        Include(shop.ui3DView); // Separate sibling: the potion and pedestal area.
+        if (shop.backgroundTint != null)
+            for (var i = 0; i < shop.backgroundTint.Length; i++) Include(shop.backgroundTint[i]);
+        return bounds;
     }
     private static RectTransform? ShopCardAnchor(UILobbyShopSelectionPage? shop)
     {
@@ -199,10 +277,11 @@ public sealed class DetailsController : MonoBehaviour
             (term.StartsWith("UI/", StringComparison.Ordinal) && term.EndsWith("TooltipDesc", StringComparison.Ordinal)));
     private static int ControllerScore(Binding binding, int deviceId)
     {
+        if (binding.Hud != null) return ControllerContext.MatchesClient(binding.Hud.clientID, deviceId) ? 1 : 0;
         if (binding.Description != null) return ControllerContext.Focused(binding.Description, deviceId) ? 8 : 0;
         if (binding.Tooltip != null) return ControllerContext.OwnsTooltip(binding.Tooltip, deviceId) ? 7 : 0;
         if (binding.Trainer != null) return ControllerContext.Focused(binding.Trainer, deviceId) ? 6 : 0;
-        if (binding.Lobby != null) return IsLocalLobbyPage(binding.Lobby) && ControllerContext.MatchesPlayer(binding.Lobby.playerIndex, deviceId) ? 4 : 0;
+        if (binding.Lobby != null) return binding.Lobby.connected && ControllerContext.MatchesPlayer(binding.Lobby.playerIndex, deviceId) ? 4 : 0;
         return ControllerContext.Focused(binding.Owner, deviceId) ? 5 : 0;
     }
     private static bool Visible(Component owner)

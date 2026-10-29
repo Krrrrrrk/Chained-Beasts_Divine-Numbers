@@ -1,21 +1,25 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace ChainedBeasts.DivineNumbers;
 
 internal static class ControllerContext
 {
-    private static bool MatchesClient(ClientIdentifier? client, int deviceId)
+    internal static ClientIdentifier? DeviceClient(int deviceId)
     {
-        if (client == null) return false;
-        var device = GameInput.GetClientDevice(client);
-        return device != null && device.deviceId == deviceId;
+        var device = InputSystem.GetDeviceById(deviceId);
+        // GetClientDevice is not the inverse of GetDeviceClient: the latter also
+        // implements the game's unassigned/global single-player input fallback.
+        return device == null ? null : GameInput.GetDeviceClient(device);
     }
+
+    internal static bool MatchesClient(ClientIdentifier? client, int deviceId) =>
+        client != null && DeviceClient(deviceId) == client;
 
     internal static bool MatchesPlayer(int playerIndex, int deviceId)
     {
-        var session = NetworkSession.Instance;
-        return playerIndex >= 0 && session != null &&
-            MatchesClient(session.GetClientByPlayerIndex((ulong)playerIndex), deviceId);
+        var client = DeviceClient(deviceId);
+        return playerIndex >= 0 && client != null && client.PlayerIndex == (ulong)playerIndex;
     }
 
     internal static bool Focused(Component owner, int deviceId)

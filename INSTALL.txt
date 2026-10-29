@@ -1,4 +1,4 @@
-Divine Numbers 0.2.1
+Divine Numbers 0.2.2
 
 Requires Steam build 26231777 and an existing BepInEx IL2CPP installation.
 No Foundation dependency.
@@ -10,14 +10,16 @@ BepInEx/plugins/ChainedBeasts.DivineNumbers/ChainedBeasts.DivineNumbers.dll
 Hold either Ctrl key for a separate numbers box. Character select, character
 info, character-details skill rows and trainer cards retain their usual behavior.
 In potion/healer shops, hold Ctrl anywhere over the offer card, including the
-header, border, empty space and price. In surgery and Codex screens, hover the
+header, border, empty space, price and separate potion/pedestal preview. In surgery and Codex screens, hover the
 displayed description text with Ctrl. New labels can take up to half a second.
 Release Ctrl to hide it. Shift keeps the game's normal status explanations.
 
 Controller: open a supported info/menu screen and click the right stick (R3)
 to toggle the numbers box. It follows the native highlighted item or your
-character-select description. Click R3 again to turn it off. Closing the info
-menus, losing application focus or disconnecting that pad clears the toggle.
+character-select description. From the collapsed HUD, it inspects the first
+visible skill; hold RB for normal character-info navigation of other entries.
+Click R3 again to turn it off. Losing all inspection contexts, application focus
+or the owning pad clears the toggle. Returning to a visible HUD can keep it on.
 The native shoulder-button controls keep working. Rows without native controller
 focus still require mouse/Ctrl. Controller navigation needs manual testing.
 
@@ -26,9 +28,9 @@ BepInEx/config/local.chainedbeasts.divinenumbers.cfg
 [Input]
 ControllerToggleButton = RightStickClick
 Other choices: LeftStickClick, Disabled. Restart to apply changes.
-The older 0.2.0 DLL has no controller toggle. Check the loaded version in
-BepInEx/LogOutput.log if R3 does nothing; the controller update must be installed
-and the game restarted before it can respond.
+Use 0.2.2 for corrected controller ownership and the complete potion hover area.
+Check BepInEx/LogOutput.log if R3 does nothing: startup lists connected gamepads,
+and presses log the device, resolved player, application focus and toggle state.
 
 Includes 206 cards: 50 skills/variants, 134 affliction severity entries,
 18 purchases and four shared statuses. See AUDIT.md for findings and limits.
