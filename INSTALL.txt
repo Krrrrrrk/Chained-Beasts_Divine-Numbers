@@ -1,4 +1,4 @@
-Divine Numbers 0.2.2
+Divine Numbers 0.2.3
 
 Requires Steam build 26231777 and an existing BepInEx IL2CPP installation.
 No Foundation dependency.
@@ -28,7 +28,9 @@ BepInEx/config/local.chainedbeasts.divinenumbers.cfg
 [Input]
 ControllerToggleButton = RightStickClick
 Other choices: LeftStickClick, Disabled. Restart to apply changes.
-Use 0.2.2 for corrected controller ownership and the complete potion hover area.
+Use 0.2.3 for the healer's actual potion cards. R3 follows the highlighted potion;
+the HUD skill fallback is suppressed while offers are visible. Unknown/concealed
+offers clear the card instead of showing unrelated beast numbers.
 Check BepInEx/LogOutput.log if R3 does nothing: startup lists connected gamepads,
 and presses log the device, resolved player, application focus and toggle state.
 

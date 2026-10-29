@@ -2,9 +2,9 @@
 
 A display-only BepInEx mod that shows researched numbers in a separate box while you hold **Ctrl**, or toggle it with **R3 (click the right stick)** on a controller. Original descriptions stay intact; **Shift keeps its normal status explanations**.
 
-The **0.2.2 source update** corrects single-player controller ownership, adds collapsed-HUD inspection and covers the complete potion offer, including its separate model preview. It includes the **206 cards** introduced in 0.2.0: 50 skills/beast variants, 134 affliction severity entries, 18 purchases and four statuses. It targets Steam build **26231777**. [Audit findings and limits](docs/audit-report.md) explain coverage and base values.
+The **0.2.3 source update** binds the healer's actual potion cards, so controller focus and whole-box hover use the remedy, sign, healing value and model preview. A visible potion menu suppresses the unrelated HUD-skill fallback. It includes the **206 cards** introduced in 0.2.0: 50 skills/beast variants, 134 affliction severity entries, 18 purchases and four statuses. It targets Steam build **26231777**. [Audit findings and limits](docs/audit-report.md) explain coverage and base values.
 
-**Use 0.2.2 for the corrected controller and potion hover behavior. The published 0.2.0 release has Ctrl support only.** The 0.2.2 update is built and packaged locally; it has not been published as a release yet.
+**Use 0.2.3 for the healer potion bindings. The published 0.2.0 release has Ctrl support only.** The 0.2.3 update is built and packaged locally; it has not been published as a release yet.
 
 On **character select**, highlight an unlocked supported variant and hold either Ctrl key. Character-info tooltips, hovered character-detail rows and selected/hovered trainer cards also work. In **potion/healer shops**, hold Ctrl anywhere over the combined sign and potion preview area, including the header, border, blank space, price, potion and pedestal. Surgery and Codex descriptions also support Ctrl while hovered. New labels may take up to half a second to register while Ctrl stays held. Release Ctrl to hide the box.
 

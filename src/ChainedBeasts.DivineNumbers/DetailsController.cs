@@ -11,7 +11,8 @@ public sealed class DetailsController : MonoBehaviour
     private sealed record Binding(Component Owner, RectTransform Anchor, NumericDetail? Detail,
         UIPlayerInfoTooltip? Tooltip = null, UILobbyTrainerUpgradePage? Trainer = null,
         UIGameServerLobbyPage? Lobby = null, I2.Loc.Localize? Description = null,
-        UILobbyShopSelectionPage? Shop = null, UIPlayerInfoPage? Hud = null);
+        UILobbyShopSelectionPage? Shop = null, UIPlayerInfoPage? Hud = null,
+        UILobbyDoctorSelectionPage? Potion = null);
     private readonly Dictionary<int, Binding> _bindings = new();
     private DetailCatalog? _catalog;
     private ManualLogSource? _log;
@@ -24,6 +25,8 @@ public sealed class DetailsController : MonoBehaviour
     private readonly NumbersToggle _toggle = new();
     private readonly List<ControllerButtonState> _controllerButtons = new();
     private int _padCount = -1;
+    private int _visiblePotionCount = -1;
+    private string? _controllerSelection;
     public DetailsController(IntPtr pointer) : base(pointer) { }
     [HideFromIl2Cpp]
     internal void Configure(DetailCatalog catalog, ManualLogSource log, ControllerToggleButton controllerButton) =>
@@ -125,6 +128,18 @@ public sealed class DetailsController : MonoBehaviour
                 }
             // Bind the serialized offer directly. Its potion preview is a sibling
             // of the sign, so a localized text-child hitbox is insufficient.
+            foreach (var potion in Resources.FindObjectsOfTypeAll<UILobbyDoctorSelectionPage>())
+            {
+                if (potion == null || !potion.gameObject.scene.IsValid() || !Visible(potion) || potion.remedyDescription == null) continue;
+                var anchor = PotionCardAnchor(potion);
+                if (anchor == null) continue;
+                NumericDetail? detail = null;
+                _catalog?.TryGetTerm(potion.remedyDescription.Term, out detail!);
+                // Register water/random/unsupported offers too: their focus must
+                // clear numbers rather than fall back to the player's beast.
+                _bindings[potion.GetInstanceID()] = new Binding(potion, anchor, detail,
+                    Description: potion.remedyDescription, Potion: potion);
+            }
             foreach (var shop in Resources.FindObjectsOfTypeAll<UILobbyShopSelectionPage>())
             {
                 if (shop == null || !shop.gameObject.scene.IsValid() || !Visible(shop) || shop.itemDescription == null) continue;
@@ -147,10 +162,18 @@ public sealed class DetailsController : MonoBehaviour
                 // Status explanations nested under a shop page retain their own
                 // hitbox. Only the offer's main description owns the whole card.
                 if (shop != null && shop.itemDescription == description) continue; // Direct offer binding above.
+                var potion = description.GetComponentInParent<UILobbyDoctorSelectionPage>();
+                if (potion != null && potion.remedyDescription == description) continue;
                 var anchor = description.transform.TryCast<RectTransform>();
                 if (anchor != null) _bindings[description.GetInstanceID()] = new Binding(
                     description, anchor, detail, Description: description);
             }
+        }
+        var potionCount = _bindings.Values.Count(binding => binding.Potion != null && Eligible(binding));
+        if (discoveryRequested && potionCount != _visiblePotionCount)
+        {
+            _visiblePotionCount = potionCount;
+            _log?.LogInfo($"Numbers healer cards: {potionCount} visible.");
         }
         _discoveryWasRequested = discoveryRequested;
         foreach (var button in _controllerButtons)
@@ -165,9 +188,7 @@ public sealed class DetailsController : MonoBehaviour
             _log?.LogInfo($"Numbers controller toggle: {(_toggle.ControllerDeviceId == null ? "off" : "on")}; context={hasContext}.");
         if (!_toggle.Requested) { _panel?.Hide(); return; }
         var controllerOnly = !ctrlHeld && _toggle.ControllerDeviceId != null;
-
-        Binding? selected = null;
-        var best = 0;
+        var selection = new InspectionSelection<Binding>();
         var mouse = Mouse.current;
         var position = mouse == null ? new Vector2(-10000, -10000) : mouse.position.ReadValue();
         foreach (var stored in _bindings.Values)
@@ -179,7 +200,7 @@ public sealed class DetailsController : MonoBehaviour
             if (binding.Description != null)
             {
                 NumericDetail? current = null;
-                _catalog?.TryGetTerm(binding.Description.Term, out current!);
+                _catalog?.TryGetTerm(Visible(binding.Description) ? binding.Description.Term : null, out current!);
                 binding = binding with { Detail = current };
             }
             if (binding.Hud != null)
@@ -192,7 +213,7 @@ public sealed class DetailsController : MonoBehaviour
             }
             if (binding.Lobby != null && (binding.Lobby.characterDescription == null ||
                 !Visible(binding.Lobby.characterDescription))) continue;
-            var hovered = !controllerOnly && (binding.Shop != null
+            var hovered = !controllerOnly && (binding.Shop != null || binding.Potion != null
                 ? PanelPlacement.Contains(OfferBounds(binding), position.x, position.y)
                 : RectTransformUtility.RectangleContainsScreenPoint(binding.Anchor, position, NativeDetailsPanel.CameraFor(binding.Anchor)));
             var score = controllerOnly ? ControllerScore(binding, _toggle.ControllerDeviceId!.Value)
@@ -201,8 +222,17 @@ public sealed class DetailsController : MonoBehaviour
                 : binding.Trainer != null ? (binding.Trainer.isHovered ? 6 : binding.Trainer.isSelected ? 2 : 0)
                 : binding.Lobby != null ? (hovered ? 6 : IsLocalLobbyPage(binding.Lobby) ? 4 : 0)
                 : hovered ? 5 : 0;
-            if (score > best) { best = score; selected = binding; }
+            selection.Consider(binding, score, hud: binding.Hud != null, offer: binding.Potion != null || binding.Shop != null);
         }
+        var selected = selection.Selected(controllerOnly);
+        if (controllerOnly)
+        {
+            var key = selected == null ? $"none; offersVisible={selection.OffersVisible}" :
+                selected.Potion != null ? $"healer offer {selected.Potion.Index}; term={selected.Potion.remedyDescription?.Term}; card={selected.Detail != null}" :
+                $"{selected.Owner.GetType().Name}; card={selected.Detail != null}";
+            if (key != _controllerSelection) { _controllerSelection = key; _log?.LogInfo("Numbers controller selection: " + key); }
+        }
+        else _controllerSelection = null;
         if (selected?.Detail == null) { _panel?.Hide(); return; }
 
         if (_panel == null || !_panel.IsValid)
@@ -215,10 +245,11 @@ public sealed class DetailsController : MonoBehaviour
             if (template == null) return; // Native UI assets may not have loaded yet.
             _panel = new NativeDetailsPanel(template, transform);
         }
-        var bounds = selected.Shop != null ? OfferBounds(selected) : NativeDetailsPanel.ScreenBounds(selected.Anchor);
+        var bounds = selected.Shop != null || selected.Potion != null ? OfferBounds(selected) : NativeDetailsPanel.ScreenBounds(selected.Anchor);
         // Keep both vanilla Shift boxes and the main description out of the new box's way.
         var status = selected.Tooltip != null ? selected.Tooltip.statusTooltips
-            : selected.Trainer != null ? selected.Trainer.statusTooltips : selected.Shop?.statusTooltips;
+            : selected.Trainer != null ? selected.Trainer.statusTooltips
+            : selected.Potion != null ? selected.Potion.statusTooltips : selected.Shop?.statusTooltips;
         if (status != null)
             foreach (var tip in status)
                 if (tip != null && tip.root != null && tip.root.activeInHierarchy)
@@ -229,8 +260,10 @@ public sealed class DetailsController : MonoBehaviour
             _controllerButton == ControllerToggleButton.LeftStickClick ? "L3: On" : "R3: On";
         _panel.Show(selected.Detail, bounds, color, hint);
     }
-    private static bool Eligible(Binding binding) => Visible(binding.Owner) &&
-        (binding.Description == null || Visible(binding.Description)) &&
+    private static bool Eligible(Binding binding) => Visible(binding.Owner) && Visible(binding.Anchor) &&
+        // Concealed/unrevealed offers remain focus blockers even when their
+        // description child is hidden. Their numeric detail resolves to null.
+        (binding.Potion != null || binding.Shop != null || binding.Description == null || Visible(binding.Description)) &&
         (binding.Hud == null || (FirstHudSlot(binding.Hud) is { } slot && Visible(slot))) &&
         (binding.Lobby == null || (binding.Lobby.characterDescription != null && Visible(binding.Lobby.characterDescription)));
 
@@ -252,14 +285,36 @@ public sealed class DetailsController : MonoBehaviour
             if (rect != null && rect.rect.width > 0 && rect.rect.height > 0)
                 bounds = PanelPlacement.Union(bounds, NativeDetailsPanel.ScreenBounds(rect));
         }
-        var shop = binding.Shop!;
-        Include(shop.itemDescription);
-        Include(shop.itemName);
-        Include(shop.costValue);
-        Include(shop.ui3DView); // Separate sibling: the potion and pedestal area.
-        if (shop.backgroundTint != null)
-            for (var i = 0; i < shop.backgroundTint.Length; i++) Include(shop.backgroundTint[i]);
+        if (binding.Potion != null)
+        {
+            var potion = binding.Potion;
+            Include(potion.remedyDescription);
+            Include(potion.remedyName);
+            Include(potion.waterName);
+            Include(potion.healingValue);
+            Include(potion.ui3DView);
+            Include(potion.potionIcon);
+            if (potion.backgroundTint != null)
+                for (var i = 0; i < potion.backgroundTint.Length; i++) Include(potion.backgroundTint[i]);
+        }
+        else if (binding.Shop != null)
+        {
+            var shop = binding.Shop;
+            Include(shop.itemDescription);
+            Include(shop.itemName);
+            Include(shop.costValue);
+            Include(shop.ui3DView);
+            if (shop.backgroundTint != null)
+                for (var i = 0; i < shop.backgroundTint.Length; i++) Include(shop.backgroundTint[i]);
+        }
         return bounds;
+    }
+    private static RectTransform? PotionCardAnchor(UILobbyDoctorSelectionPage potion)
+    {
+        var anchor = potion.navigationButton?.InteractionAnchor;
+        if (anchor != null && anchor.rect.width > 0 && anchor.rect.height > 0) return anchor;
+        anchor = potion.offsetContentRoot?.transform.TryCast<RectTransform>() ?? potion.transform.TryCast<RectTransform>();
+        return anchor != null && anchor.rect.width > 0 && anchor.rect.height > 0 ? anchor : null;
     }
     private static RectTransform? ShopCardAnchor(UILobbyShopSelectionPage? shop)
     {
@@ -277,6 +332,7 @@ public sealed class DetailsController : MonoBehaviour
             (term.StartsWith("UI/", StringComparison.Ordinal) && term.EndsWith("TooltipDesc", StringComparison.Ordinal)));
     private static int ControllerScore(Binding binding, int deviceId)
     {
+        if (binding.Potion != null) return ControllerContext.PotionFocused(binding.Potion, deviceId) ? 10 : 0;
         if (binding.Hud != null) return ControllerContext.MatchesClient(binding.Hud.clientID, deviceId) ? 1 : 0;
         if (binding.Description != null) return ControllerContext.Focused(binding.Description, deviceId) ? 8 : 0;
         if (binding.Tooltip != null) return ControllerContext.OwnsTooltip(binding.Tooltip, deviceId) ? 7 : 0;
@@ -307,6 +363,8 @@ public sealed class DetailsController : MonoBehaviour
             return binding.Trainer.statusTooltipPrefab;
         if (binding.Shop != null && binding.Shop.statusTooltipPrefab != null)
             return binding.Shop.statusTooltipPrefab;
+        if (binding.Potion != null && binding.Potion.statusTooltipPrefab != null)
+            return binding.Potion.statusTooltipPrefab;
         foreach (var tip in Resources.FindObjectsOfTypeAll<UIStatusTooltip>())
             if (tip != null && tip.gameObject.name != NativeDetailsPanel.PanelName) return tip;
         return null;
@@ -329,6 +387,7 @@ public sealed class DetailsController : MonoBehaviour
         _panel?.Dispose();
         _panel = null;
         _bindings.Clear();
+        _controllerSelection = null;
         _toggle.Reset();
     }
     public void OnDestroy() => Cleanup();

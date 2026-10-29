@@ -24,6 +24,8 @@ internal static class ControllerContext
 
     internal static bool Focused(Component owner, int deviceId)
     {
+        var doctor = owner.GetComponentInParent<UILobbyDoctorSelectionPage>();
+        if (doctor != null) return PotionFocused(doctor, deviceId);
         var shop = owner.GetComponentInParent<UILobbyShopSelectionPage>();
         if (shop != null)
         {
@@ -48,6 +50,16 @@ internal static class ControllerContext
             (button.ownerPlayerIndex < 0 || MatchesPlayer(button.ownerPlayerIndex, deviceId));
     }
 
+    internal static bool PotionFocused(UILobbyDoctorSelectionPage page, int deviceId)
+    {
+        var client = DeviceClient(deviceId);
+        var flags = page.focusedPlayerIndices;
+        // Doctor cards store one boolean per player, unlike the general shop's
+        // list of focused player indices. Do not interpret bools as player IDs.
+        return client != null && flags != null && client.PlayerIndex < (ulong)flags.Length &&
+            flags[(int)client.PlayerIndex];
+    }
+
     internal static bool OwnsTooltip(UIPlayerInfoTooltip tooltip, int deviceId)
     {
         var info = tooltip.GetComponentInParent<UIPlayerInfoPage>();
@@ -59,6 +71,7 @@ internal static class ControllerContext
     }
 
     internal static bool HasFocusableParent(Component owner) =>
+        owner.GetComponentInParent<UILobbyDoctorSelectionPage>() != null ||
         owner.GetComponentInParent<UILobbyShopSelectionPage>() != null ||
         owner.GetComponentInParent<UILobbyTrainerUpgradePage>() != null ||
         owner.GetComponentInParent<UICodexPage>() != null ||

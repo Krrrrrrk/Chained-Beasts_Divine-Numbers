@@ -101,7 +101,37 @@ Check(!PanelPlacement.Contains(sign, 100, 0), "Regression fixture no longer dist
 Check(!PanelPlacement.Contains(completeOffer, 130, 0) && !PanelPlacement.Contains(completeOffer, -310, 100),
     "Offer hitbox extends into unrelated UI");
 
+// The HEALER has a different component and different positions from the shop.
+// UILobbyDoctorSelectionPage: sign (-145,35), preview (0,-80).
+var healerSign = new Bounds(-329, -168, 39, 238);
+var healerPreview = new Bounds(-125, -255, 125, 95);
+var healerOffer = PanelPlacement.Union(healerSign, healerPreview);
+foreach (var (x, y) in new[] { (-320f, 230f), (-320f, 0f), (-200f, 0f), (0f, -160f), (100f, -220f) })
+    Check(PanelPlacement.Contains(healerOffer, x, y), "Healer header/frame/text/healing/model point missed");
+Check(!PanelPlacement.Contains(healerSign, 100, -220) && PanelPlacement.Contains(healerOffer, 100, -220),
+    "Healer model regression no longer distinguishes sign-only hover");
+Check(!PanelPlacement.Contains(healerOffer, 126, -220) && !PanelPlacement.Contains(healerOffer, -330, 0),
+    "Healer bounds escaped into adjacent UI");
+
 var toggle = new NumbersToggle();
+// Reproduce the reported healer screen with a visible Ibex HUD underneath it.
+var healer = new InspectionSelection<string>();
+healer.Consider("Agile Ibex HUD", 1, hud: true);
+healer.Consider("Dislocated Shoulder II potion", 10, offer: true);
+Check(healer.Selected(controller: true) == "Dislocated Shoulder II potion", "Focused healer potion lost to HUD");
+var unknownPotion = new InspectionSelection<string>();
+unknownPotion.Consider("Agile Ibex HUD", 1, hud: true);
+unknownPotion.Consider("Concealed/no-card potion", 10, offer: true);
+Check(unknownPotion.Selected(controller: true) == "Concealed/no-card potion", "Unsupported offer fell back to beast numbers");
+var noFocus = new InspectionSelection<string>();
+noFocus.Consider("Agile Ibex HUD", 1, hud: true);
+noFocus.Consider("Unfocused healer potion", 0, offer: true);
+Check(noFocus.Selected(controller: true) == null, "Healer with no focused offer displayed unrelated HUD numbers");
+Check(noFocus.Selected(controller: false) == "Agile Ibex HUD", "Controller-only HUD suppression changed keyboard inspection");
+var twoPlayers = new InspectionSelection<string>();
+twoPlayers.Consider("Other player's potion", 0, offer: true);
+twoPlayers.Consider("Owning player's potion", 10, offer: true);
+Check(twoPlayers.Selected(controller: true) == "Owning player's potion", "Another player's unfocused potion won selection");
 void Frame(bool context = true, bool focused = true, bool ctrl = false,
     bool down = false, bool connected = true, bool secondDown = false, bool secondConnected = false)
 {
@@ -150,4 +180,4 @@ Frame(down: true);
 toggle.Reset();
 IsOff("Cleanup retained controller state");
 
-Console.WriteLine($"PASS: {catalog.Count} typed cards and exact description keys, namespace/severity isolation, locked/unknown choice clearing, evidence-sensitive examples, invalid-data rejection, four placements and 1,575 viewport/edge combinations; sign-plus-potion hover at two scales; controller press/hold/release, menu/focus reset, disconnect, ownership and keyboard coexistence sequences. No Unity/gameplay test performed.");
+Console.WriteLine($"PASS: {catalog.Count} typed cards and exact description keys, namespace/severity isolation, locked/unknown choice clearing, evidence-sensitive examples, invalid-data rejection, four placements and 1,575 viewport/edge combinations; distinct shop/healer hover geometry; healer focus, unknown offer and no-focus HUD suppression; controller press/hold/release, menu/focus reset, disconnect, ownership and keyboard coexistence sequences. No Unity/gameplay test performed.");

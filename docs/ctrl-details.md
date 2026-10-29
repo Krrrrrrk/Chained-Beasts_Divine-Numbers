@@ -1,4 +1,4 @@
-# Ctrl and controller details: 0.2.2
+# Ctrl and controller details: 0.2.3
 
 Hold either Ctrl key to see researched numbers in a separate native-style panel. Original descriptions stay intact and Shift retains its normal explanations. The user confirmed the 0.1.1 character-select support and smaller text work well. Expanded 0.2.0 interactions still need manual verification.
 
@@ -6,7 +6,7 @@ Controller: click the **right stick (R3)** to inspect the native selected item o
 
 The generated `BepInEx/config/local.chainedbeasts.divinenumbers.cfg` exposes `[Input] ControllerToggleButton`: `RightStickClick` (default), `LeftStickClick`, or `Disabled`. Restart to apply. No key binding or input action is replaced.
 
-Controller troubleshooting: use 0.2.2. The 0.2.1 runtime was confirmed loaded with R3 enabled but the user reported failure. Its ownership check used an inverse lookup that did not implement the game's global/single-player fallback. Version 0.2.2 uses native device-to-client resolution, samples indexed connected gamepads and includes brief input-count, press and toggle logs in `BepInEx/LogOutput.log`. Hardware behavior remains a manual check; build/static checks do not establish that every controller model works.
+Controller troubleshooting: use 0.2.3 for healer potions. Runtime logs confirmed the 0.2.2 toggle and player mapping worked, but the healer was missed because it uses `UILobbyDoctorSelectionPage`, not the general shop's `UILobbyShopSelectionPage`. The healer now has direct bindings and its native boolean focus array selects the owning player's offer. A visible offer menu suppresses the HUD fallback, even when no offer is focused. `BepInEx/LogOutput.log` records visible healer-card counts and changes in controller selection. Hardware behavior still needs manual verification.
 
 ## Where to use it
 
@@ -31,7 +31,9 @@ The toggle samples Unity Input System gamepads by index even when no keyboard is
 
 The audited `InputActions` asset embedded in the native constructor contains no `leftStickPress` or `rightStickPress` binding. UI right shoulder is CharacterInfo and left shoulder is Tooltip, so both are preserved. This is a default-binding check, not proof about custom remaps. Local Cpp2IL `UnityEngine/InputSystem/InputActions.txt` SHA256: `f1a873f155d5100f5154fa458f18ad3ae71d0ed557517e103d384228e30c5a38`; the shipped game's binary hash gate covers that constructor.
 
-Potion offers bind directly from visible `UILobbyShopSelectionPage` objects. Hover and placement use a screen-space union of the sign's native interaction anchor, name, description, price, backing images and `ui3DView`. The prefab sign is 368x406 at (-125,250); the separate 250x350 preview is centered at (0,135). A sign-only rectangle misses the potion/pedestal and right edge. The localized main description remains the data source and visibility gate, with current keys rechecked each frame. Nested status explanations keep their own hitboxes. Native shop Shift/LB panels are included in occupied bounds. No purchase/click behavior changes.
+Healer potion offers bind directly from visible `UILobbyDoctorSelectionPage` objects. Hover and placement use a screen-space union of the native navigation anchor, remedy/water name, remedy description, healing value, backing images, potion icon and `ui3DView`. The healer prefab has a 368x406 sign at (-145,35) and a separate 250x350 preview centered at (0,-80). Focus reads `focusedPlayerIndices[playerIndex]`, a boolean array. General purchases retain their separate `UILobbyShopSelectionPage` binding, whose focus field is a list of player indices and whose sign/preview positions differ. The two widget types must not be interchanged.
+
+The current visible description term supplies the numeric detail each frame. Concealed descriptions yield no card; their visible offers still block stale beast numbers. A pure selection policy suppresses the collapsed-HUD fallback whenever an offer menu is visible. Unknown/concealed focused offers are retained as blockers, not skipped in favor of a supported HUD entry. Nested status explanations retain their own hitboxes, and native Shift/LB panels contribute to occupied bounds. No purchase/click behavior changes.
 
 The private, non-interactive UIStatusTooltip clone keeps 22-point type, 24-pixel horizontal/20-pixel vertical padding and measured preferred height, with smaller type if needed. Placement tries right/left/below/above and clamps to the viewport. Known native Shift boxes are included in occupied bounds. Other screens and simultaneous Shift/Ctrl placement still require manual review where space is limited.
 
@@ -46,6 +48,7 @@ Four input hashes gate loading: GameAssembly, metadata, level1 and sharedassets1
 - Evidence-sensitive examples: pickup disarm 16/32%, stamina drawback 25% per severity, fired arrows versus thrown bows, implemented stun chance versus localization.
 - Four placement directions and 1,575 viewport/edge combinations.
 - Sign-plus-potion hover regression using the serialized prefab's dimensions/offsets, at two scales; header, blank area, price and preview points, plus outside rejection.
+- Separate healer-prefab geometry checks, plus the reported Ibex-HUD-versus-potion selection scenario, concealed/no-card offers, no focused offer and per-player candidate priority.
 - Controller input sequences: press/hold/release, second-click off, menu/focus reset, held-on-entry suppression, disconnect, another controller taking ownership and Ctrl coexistence. These exercise the production state machine without Unity.
 - Four game hashes, 157 native literals, 35 native dump hashes and all active card keys checked. Input/literal identity checks do not independently prove every inferred semantic relationship.
 
@@ -59,6 +62,6 @@ Four input hashes gate loading: GameAssembly, metadata, level1 and sharedassets1
 6. Close/reopen menus, change scenes and application focus. No stale card should remain.
 7. Check smaller windows, wide screens, UI scaling, multiplayer/local-player pages and other installed mods.
 8. Review long cards and Backstab's setting-dependent value. Compare selected mechanics in controlled gameplay before treating them as measured final damage.
-9. With a controller, press R3 from the collapsed bottom HUD; check the first visible skill's numbers. Hold RB and navigate other entries; native selections must take priority. Check supported/unsupported/locked choices in character select, trainer, shop, surgery and Codex. Confirm a second click turns numbers off and native shoulder-button tooltips still work. Repeat in single-player without an explicit device assignment and with two explicitly assigned local controllers.
+9. With a controller, press R3 from the collapsed bottom HUD; check the first visible skill's numbers. Hold RB and navigate other entries. In the healer, move focus among supported potions and verify their names/severities replace the HUD card. Move to water or a concealed random offer: no unrelated beast card should appear. Check the other menus and a second R3 click. Repeat in single-player and with two assigned local controllers. Inspect the visible-card count/selection logs if a menu fails to bind.
 10. Hold R3 across several frames, menu close/reopen and focus loss/return. Disconnect the pad while latched; reconnect. Check there is no repeated or stale toggle. Test without a keyboard and with two local controllers inspecting different players.
 11. Try `LeftStickClick` and `Disabled` after restarting. With a controller latched, hold/release Ctrl and toggle the controller off while Ctrl remains held.
