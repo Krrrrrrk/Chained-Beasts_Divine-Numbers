@@ -42,7 +42,8 @@ Unknown/locked descriptions have no guessed card. Numbers are usually base
 values; final results depend on modifiers. One training-only entry is unresolved.
 
 Original descriptions and combat behavior are preserved. Smaller type and padding
-remain. Build/offline checks pass; expanded UI needs manual testing.
+remain. The user confirmed the updated 0.2.4 UI works. Build/offline checks pass;
+additional configurations and numeric mechanics still need manual testing.
 See MANUAL-CHECKS.md. No game was launched or automated for this update.
 
 To uninstall, close the game and remove only this mod's DLL.

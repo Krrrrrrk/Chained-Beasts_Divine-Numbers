@@ -50,7 +50,7 @@ See the curated card JSON for the other probabilities, durations, severity formu
 
 ## Verification boundary
 
-Compilation and offline checks pass. The read-only verifier checks four game hashes, 157 native float literals, 35 native dump hashes, catalog/coverage consistency and real localization keys. These establish source identity and literal values; semantic interpretation still comes from the static audit. The user's confirmation establishes the previous 0.1.1 UI worked well. The expanded 0.2.0 UI paths and all numeric mechanics still need manual runtime/gameplay checks. No game was launched or automated for this audit.
+Compilation and offline checks pass. The read-only verifier checks four game hashes, 157 native float literals, 35 native dump hashes, catalog/coverage consistency and real localization keys. These establish source identity and literal values; semantic interpretation still comes from the static audit. The user confirmed the updated 0.2.4 UI works after the controller fixes. Numeric mechanics, additional hardware and multiplayer configurations still need manual checks. No game was launched or automated by the agent for this audit.
 
 ```powershell
 python scripts/verify-catalog.py --game-dir 'C:\Program Files (x86)\Steam\steamapps\common\Chained Beasts'

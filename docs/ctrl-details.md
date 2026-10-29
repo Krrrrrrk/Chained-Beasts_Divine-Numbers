@@ -1,12 +1,12 @@
 # Ctrl and controller details: 0.2.4
 
-Hold either Ctrl key to see researched numbers in a separate native-style panel. Original descriptions stay intact and Shift retains its normal explanations. The user confirmed the 0.1.1 character-select support and smaller text work well. Expanded 0.2.0 interactions still need manual verification.
+Hold either Ctrl key to see researched numbers in a separate native-style panel. Original descriptions stay intact and Shift retains its normal explanations. The user confirmed the updated 0.2.4 UI works after testing the merchant/trainer controller fixes, following the earlier potion and character-select tests. The checklist below remains useful for additional configurations and multiplayer coverage.
 
 Controller: click the **right stick (R3)** to inspect the native selected item or that controller's character-select description. From the collapsed bottom HUD, it shows the first actual visible skill; native focused tooltips take priority when you hold RB and navigate normally. The mod does not force the native held-RB interface open. Click again to turn the numbers off. The heading shows `[R3: On]` while latched. It resets when all inspection contexts disappear, application focus is lost or the pad disconnects. It can remain latched when returning from a menu to a visible HUD. Holding the button does not repeat the toggle or arm it when entering a context/returning focus. Ctrl remains independent. Unsupported focused descriptions clear the old card.
 
 The generated `BepInEx/config/local.chainedbeasts.divinenumbers.cfg` exposes `[Input] ControllerToggleButton`: `RightStickClick` (default), `LeftStickClick`, or `Disabled`. Restart to apply. No key binding or input action is replaced.
 
-Controller troubleshooting: use 0.2.4 for merchant and trainer menus. The user confirmed R3 potion selection in 0.2.3, but merchant cards, the trainer affliction and post-training skill choices failed. Merchant selection now reads native per-player menu state and resolves the current typed purchase ID for controller mode. Training afflictions bind `UILobbyTrainerProgress`, while skill choices read the native selected skill-card index rather than the separate card navigation flags. Menu contexts suppress the HUD fallback even with no focused/supported card. Logs include the selected offer index, typed ID or description term. The new paths need manual runtime verification.
+Controller troubleshooting: use 0.2.4 for merchant and trainer menus. Merchant selection reads native per-player menu state and resolves the current typed purchase ID for controller mode. Training afflictions bind `UILobbyTrainerProgress`, while skill choices read the native selected skill-card index rather than separate action-widget flags. Menu contexts suppress the HUD fallback even with no focused/supported card. Logs include the selected offer index, typed ID or description term. The user confirmed this update works; additional hardware and multiplayer configurations remain manual checks.
 
 ## Where to use it
 
@@ -41,7 +41,7 @@ The private, non-interactive UIStatusTooltip clone keeps 22-point type, 24-pixel
 
 Values are usually audited bases, not live player totals. Backstab reads the audited GladiatorConsts.BackstabMultiplierBase getter because a setting selects 2x or 1.5x. Target resistance can further change the bonus. The overlay patches no combat method and writes no saves or network messages. A UI exception disables it and logs once while native UI continues.
 
-Four input hashes gate loading: GameAssembly, metadata, level1 and sharedassets1. A changed input disables the mod for re-audit, including the asset-backed values. No Unity session or gameplay was launched/automated for this update. The user's confirmation applies to 0.1.1, not all new screens or mechanics.
+Four input hashes gate loading: GameAssembly, metadata, level1 and sharedassets1. A changed input disables the mod for re-audit, including the asset-backed values. No Unity session or gameplay was launched/automated by the agent. The user confirmed the 0.2.4 UI in their manual test; that does not prove all numeric mechanics or every multiplayer/controller configuration.
 
 ## Completed checks
 
