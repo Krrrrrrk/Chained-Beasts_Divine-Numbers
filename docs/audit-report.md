@@ -1,4 +1,8 @@
-# Expanded effect audit: 0.2.0
+# Expanded effect audit
+
+Hotfix refresh for **0.2.5 / Steam build 26369255**: the 157 recorded native constants, six player settings, 14 vision-effect components, 235 weapon stat blocks and all 206 descriptions still match. The embedded fingerprints, dump hashes and literal addresses now point to this build. The first-pass files remain the original research snapshot. This is static inspection; the hotfix still needs an in-game retest.
+
+## Original expanded catalog (0.2.0)
 
 The inventory reviews 113 registered skills, 101 afflictions and 63 purchases, plus localized training-only skills and 11 shared status explanations. Affliction severities are separate descriptions. The resulting coverage file has 434 rows, including unreleased and intentionally concealed entries.
 

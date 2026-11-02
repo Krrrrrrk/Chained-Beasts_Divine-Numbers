@@ -1,14 +1,16 @@
 # Chained Beasts: Divine Numbers
 
+Updated for the Chained Beasts 1.0.2 hotfix, Steam build **26369255**. In-game and multiplayer retesting is still pending.
+
 Ever wish the game would just tell you what a skill *actually* does?
 
 Divine Numbers adds a small info panel with the numbers behind skills, afflictions, potions, and other effects in **Chained Beasts**. Hold **Ctrl** while looking at something, or press **R3** on a controller, to see the details.
 
 It doesn't replace the game's descriptions or change how anything works. It's just extra information when you want it. **Shift still works normally** for the game's built-in status explanations.
 
-**Current version:** 0.2.4 · **Supported Steam build:** 26231777
+**Current version:** 0.2.5 · **Supported Steam build:** 26369255
 
-**[Download Divine Numbers v0.2.4](https://github.com/Krrrrrrk/Chained-Beasts_Divine-Numbers/releases/tag/v0.2.4)**
+**[Download Divine Numbers v0.2.5](https://github.com/Krrrrrrk/Chained-Beasts_Divine-Numbers/releases/tag/v0.2.5)**
 
 ## What does it show?
 

@@ -1,6 +1,6 @@
-Divine Numbers 0.2.4
+Divine Numbers 0.2.5
 
-Requires Steam build 26231777 and an existing BepInEx IL2CPP installation.
+Requires Steam build 26369255 and an existing BepInEx IL2CPP installation.
 No Foundation dependency.
 
 Close the game. Copy the included BepInEx folder into the Chained Beasts folder.

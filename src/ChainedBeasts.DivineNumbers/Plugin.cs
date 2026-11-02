@@ -11,8 +11,8 @@ public sealed class Plugin : BasePlugin
 {
     public const string Id = "local.chainedbeasts.divinenumbers";
     public const string Name = "Chained Beasts Divine Numbers";
-    public const string Version = "0.2.4";
-    internal const string GameHash = "ba3ef02fa87da4c41bb27d7610539c9578132204f0fb5713833e2ef93415ce29";
+    public const string Version = "0.2.5";
+    internal const string GameHash = "0deadea3eb9a6ee3bdb69ab7945d4b6dfe40a07be0727edb5cb4dc20c05c3f6e";
     private Harmony? _harmony;
     private DetailsController? _controller;
     public override void Load()
