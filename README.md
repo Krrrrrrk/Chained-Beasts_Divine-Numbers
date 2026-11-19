@@ -1,6 +1,6 @@
 # Chained Beasts: Divine Numbers
 
-Updated for **Chained Beasts 1.0.3, Steam build 26775394**. Built against fresh game bindings; the game was not launched for this update.
+I've given this a surface-level test on **Chained Beasts 1.0.3 (Steam build 26775394)**, and the basic features appear to be working. I haven't checked every mechanic or edge case.
 
 Ever wish the game would just tell you what a skill *actually* does?
 
