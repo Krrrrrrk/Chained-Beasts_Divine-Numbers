@@ -1,797 +1,798 @@
 {
-  "steamBuildId": "26369255",
-  "validation": "static native code and serialized assets; expanded runtime UI and gameplay not agent-tested",
+  "steamBuildId": "26775394",
+  "validation": "Build compatibility refresh; existing card catalog carried forward. Native gameplay mechanics have not been exhaustively re-audited or tested in game.",
   "gameFiles": [
     {
       "path": "GameAssembly.dll",
-      "bytes": 87524864,
-      "sha256": "0deadea3eb9a6ee3bdb69ab7945d4b6dfe40a07be0727edb5cb4dc20c05c3f6e"
+      "bytes": 87641088,
+      "sha256": "ae48a9c3f8018d3f996c4e692a3736f8b5dcb4ead5c8d0e6e40f3e83f0004a6a"
     },
     {
       "path": "ChainedBeasts_Data/il2cpp_data/Metadata/global-metadata.dat",
-      "bytes": 20312556,
-      "sha256": "d3576ba8280b8a8f18a63ec895aa927617fdf255af03971bd0407cd1c2ee5fbc"
+      "bytes": 20339952,
+      "sha256": "06e3ba76bbf74d9d50e849f019ccbe487be47924b7bd0872395aa12072cc9b35"
     },
     {
       "path": "ChainedBeasts_Data/level1",
-      "bytes": 282320,
-      "sha256": "6bc68c7f26f141c7b6b00369a1074df3438eec87c1aa42cf3c70838ff46eefe3"
+      "bytes": 282592,
+      "sha256": "a43e8de2147fbeb7dd6b06b5ea363dc25701bf3b64e6d337bd63026c432f68d6"
     },
     {
       "path": "ChainedBeasts_Data/sharedassets1.assets",
-      "bytes": 308088312,
-      "sha256": "3d27c1a13e0d4f321c14ca3d9aa96f58b62c8df46eafabb709421c4fb4077d75"
+      "bytes": 308262648,
+      "sha256": "f2e559eb40e9de2a8874993b9e24aa0d9d4557d7ed02617d47e5d81dafd9a6b3"
     }
   ],
   "nativeDumps": [
     {
       "file": "Player.txt",
-      "sha256": "3c5d8e27e493ba7cff2b9f60ab9d82276ddd7de52568c7fdbe968faf7be8f62e"
+      "sha256": "4f9cfe93d6d571050c9ff65f290a853793b97546fdb79465c81841b15b333780"
     },
     {
       "file": "PlayerData.txt",
-      "sha256": "d7eec8d2ba8285f005856110c3a50d5b13f787363156a1f5f4d984b04b0680c8"
+      "sha256": "1f29492e96da271a9d6f42693378282fa806804abd7a0d5ee4237f952805e125"
     },
     {
       "file": "PlayerCrowdData.txt",
-      "sha256": "b6bc6493200c2e530f14cb6d6955d7871235e421ed352e85c27270a545d002af"
+      "sha256": "4c77c788fa54e64ebe1820cde80f187d11de5197f8f95ed1a67fb2e4a29a3f12"
     },
     {
       "file": "NetworkAgent.txt",
-      "sha256": "43680d8e0cd6785e1af14d90291501ea9d4f86528498ec31eaf43a2331bd40cf"
+      "sha256": "0453c4a795c73e1807e5cea8408bcb6cff9711f144c66cba44b10092fa0e7e7f"
     },
     {
       "file": "NetworkHealthObject.txt",
-      "sha256": "f3e4a96a9843faefc46c75a761e9d07f3fb36cd35a76f652426999ef2c24af07"
+      "sha256": "0ef72b9f94bdc3cfd06a52b575c64247985879201408855d8cecf680fe59a52d"
     },
     {
       "file": "RunDataManager.txt",
-      "sha256": "3056d2045ba2a2b35efd066f2e0cbf8d924d5031555dab9209acdd7cbdbf1481"
+      "sha256": "ae2b1f407709c4b2385f78494bcc69583c050a83c9d09023dd1a7cd2b3de0268"
     },
     {
       "file": "GladiatorConsts.txt",
-      "sha256": "7e457ed637958137d4cb0e991328fabd623d84cf89ec77f05ef6317bfad3ba37"
+      "sha256": "8e37890e92252a955371ea1ebf5763ea64024f8dc4f0c4bd10eb22ee9e3a9c05"
     },
     {
       "file": "Weapon.txt",
-      "sha256": "b3370b39d68a14fcc4434b9a56d8b6e0518fbc028d651cb81eeaf2e6e03dc32e"
+      "sha256": "2be1da9fdb9fdd40f391daa0970a82f80ebb1af074bed3a9a11437b68a557e0f"
     },
     {
       "file": "WeaponBow.txt",
-      "sha256": "fa795d0a822af6effba0c12c307caec87f86c4f23b442481a6343edab2bd42b8"
+      "sha256": "e96a23647cd953c1bd570916a27e4b0f1e42f29fe60b61d2f2043d5c27c2287e"
     },
     {
       "file": "WeaponPunch.txt",
-      "sha256": "e4d69858928ba67ce92ce04c2cf8a7f6dbe8af6f2e46f81a3a34164363a41740"
+      "sha256": "3b6cab76b0569773c47570de127d43c2bd50b60764c937c7a56799f6486b3b55"
     },
     {
       "file": "WeaponKnockback.txt",
-      "sha256": "8b266b975f19c88d41dd73296c3a8615346eb4ac835c0c57b95e028060f89797"
+      "sha256": "75099058ee772de57678a048b51cb90c5e18c4fa431e25fd6635be9a8223fee2"
     },
     {
       "file": "WeaponWirecutters.txt",
-      "sha256": "70f64010037e0df279850e7b4641dbd20ab8181aa179a82291a83cd24a4af33b"
+      "sha256": "10361b66cf03b81f7e78a6a1a2801161b1d0703c95abad4b506b7b70b915b6ce"
     },
     {
       "file": "Enemy.txt",
-      "sha256": "d610408b6ad3afd96e2f76c2aad2006f12236657e86b9dd8da123a2dffff22b4"
+      "sha256": "d32b18a70a3c5f092ee9fac87a96740233cfc2b46a126f7af0f8e0e801735154"
     },
     {
       "file": "EnemyManager.txt",
-      "sha256": "754d0f59a960c896a5dbdb7f4ae6b5cc7a5207b6bd81b19d013d8ce02f58ba88"
+      "sha256": "c9255eb6a8c1f0ed418b49f0c24e85e934b84f0831dfb16af9220c83132a021b"
     },
     {
       "file": "Chain.txt",
-      "sha256": "596b2db8fe4e62bd2430353f436820e7265cef85ae9b6b4e5efd78730067e220"
+      "sha256": "c9e07230ddc18d9227eedaf2827fc19e1b111c905dbe547b609f0a66d8df59d5"
     },
     {
       "file": "ChainManager.txt",
-      "sha256": "04ce218c7a1bfa7af13b8817bcecb7377a51f469679d8ff0155fc97b1251f908"
+      "sha256": "7554b2347104629b4d863d0060539f9aa2fbe47a8edae8e0076f10a1aad711aa"
     },
     {
       "file": "GameLevel.txt",
-      "sha256": "e72d304d1cdcb1d4206e839b8358e5e65e5be69b2a3cd58786c2fb94df47b55c"
+      "sha256": "79d22921990cb166f23a223b7b5e1ce4a2d9f46134c82051a58d4b532d991b22"
     },
     {
       "file": "NetworkPrefabSpawner.txt",
-      "sha256": "85a96d73d74510ff8966939b53af9d1979fa3fcd7e522a5f38dc16ad4b4a03f4"
+      "sha256": "243b772f5b7774d55f3e9ec787a8ecbfbc893c9fb59b24c179b91977d06ce1d6"
     },
     {
       "file": "NetworkPrefabSpawnerList.txt",
-      "sha256": "b8d760f7f2c28cfb545670b967bb880a4dda10e6db2c435f641308179722c504"
+      "sha256": "3771c4b49a1ff857814f7adc8bc0ba1b35ddc8e5453e703c58601b1a19d5eda3"
     },
     {
       "file": "UIGameLobbyTrainerRpc.txt",
-      "sha256": "b76e2d04d661b7f5874b57cf7664bab1ca464e97ee2aa1cf01c18425a19ef3d6"
+      "sha256": "05661f0f2a38e2980964eb7da8434a391fe416044cb65c4f9a4e41758b51b737"
     },
     {
       "file": "UIGameLobbyDoctorRpc.txt",
-      "sha256": "2dc1397a7afc135eb041be76305bafde476942dd91425955152c21aa0d661960"
+      "sha256": "870553975ad64dd2b4d6c16229288a08eef56e3e047fb79127e7a56e83ad444d"
     },
     {
       "file": "Pickup.txt",
-      "sha256": "7107e7efa3be048ff16b0b9f69dd32f5ce1ae6ab0502e7529e2a22ee49c8fd09"
+      "sha256": "56f003fd4aa20b410e800af12748e933373c4742baff60e97e7e07eb5b9b47ee"
     },
     {
       "file": "PickupManager.txt",
-      "sha256": "bd39512561eb474b6d9db4ebb434dc7872d43e80b875fa27999235df4489b0e9"
+      "sha256": "a36a5b36f9bc1e9f9a4e49fa5153df330aaaf2cf03e6f043297700842c7e3a7b"
     },
     {
       "file": "NearsightedVision.txt",
-      "sha256": "5ce22f40465658370fb310ab8958d259f919466b366d7b5e1953bb2905c137b0"
+      "sha256": "f1e32cfdb33f963a443f469ea338f381d5043a13292649e37ffb154146160db5"
     },
     {
       "file": "FarsightedVision.txt",
-      "sha256": "7d06cca4d18f73c561f06a7a8ae08e1902453e8edfab7cb96c640ed061c5994c"
+      "sha256": "cb94841d26dad1616561f569c0a4988cf9d6f08139e99457ec93cca2660e3a6e"
     },
     {
       "file": "Glare.txt",
-      "sha256": "7119c890cd678fb228197060e4bceca7b036a1d6b64ec4d7e8a4019e0c577977"
+      "sha256": "d77609e3e0316c5efe202b3a700554367976acdd2750c849ffbb6a23e49c4e19"
     },
     {
       "file": "DoubleVision.txt",
-      "sha256": "ebcfc01200e762317eeafbce20a473af3224f4f3513d94c5010aff1f495e561b"
+      "sha256": "e18f45abf6ed1834ceaa482fecc2ceb95b58327ab0c19196ae1450b1e230e154"
     },
     {
       "file": "BlackOutVision.txt",
-      "sha256": "27794188895b0b1c2b4c0c060faa155324492ba27f2ebc378041f320bc81c595"
+      "sha256": "d56d838f754883664fdd72ceac50bc5f45d8d6c6ffa36a34c579d470dfcfc1ab"
     },
     {
       "file": "CameraZoomedIn.txt",
-      "sha256": "88a85b64dbab362db51c51e1c9d7b2bfec77d60e71cdd66a006d6b2fb23df91a"
+      "sha256": "afef670318df4b242f603d1dfdad5597cc517a1c16c9662d4503aa5be208d0c6"
     },
     {
       "file": "ConeOfVision.txt",
-      "sha256": "dd00d1ff7c5aaffd535b4c0058352843745c6ec89795abc47ace050abe4dc499"
+      "sha256": "ab777fcbb3b9e54ad08879240a4352241e606058e2d7a909b1a8875868ee507c"
     },
     {
       "file": "ConeOfVisionPass.txt",
-      "sha256": "ff061a286f1e93200cc15c78f2e20802cf93991a20e8ac6cf74b0549d4cd23a9"
+      "sha256": "be3c1eea8010f7872d39c4783123a57c2958f5ee69251a013e8ae00b5cd4fcea"
     },
     {
       "file": "ColourBlindness.txt",
-      "sha256": "1667124a09df4250b7dd68455ea4a889d11c7f84a9d9d72d8a69cdd1be4781f6"
+      "sha256": "38aac6450299f142a7bf82bd1b5029096d2a4592e889fdb0c75f77143b7ef4c3"
     },
     {
       "file": "RenderEffectManager.txt",
-      "sha256": "590f9a325a2871b5bec7d06f7e540daccec4f16ee7d1f87a28444f088381eaf6"
+      "sha256": "9ae92e02ee0d5b3ed9edbbfe0a081fad06897868070f1631aa73e14fd0dc41a9"
     },
     {
       "file": "UIGameServerLobbyPage.txt",
-      "sha256": "fff175b86cf5de80fead0f81b069106906e9cfc5ff1045db52f824177db022c6"
+      "sha256": "b9c5a4d823cf8447e1b821eb352c244bf5fcd43c69e2b73a30fca13621445227"
     },
     {
       "file": "UIPlayerInfoTooltip.txt",
-      "sha256": "2a4ae2ea0dc05d277c321a901830c7d4c3f71345645de1cbc0856e9d3d8ec94f"
+      "sha256": "fc9900c48bad5fd2622633f80ff7f34a0bbb662b70a54ae69c85bac2f35e1e80"
     }
   ],
   "floatConstants": [
     {
-      "address": "0x183ba3c10",
+      "address": "0x183bbac10",
       "expected": 1.0
     },
     {
-      "address": "0x183ba4028",
+      "address": "0x183bbb034",
       "expected": 6.2831854820251465
     },
     {
-      "address": "0x183ba3c0c",
+      "address": "0x183bbac0c",
       "expected": 0.5
     },
     {
-      "address": "0x183ba3da4",
+      "address": "0x183bbada8",
       "expected": 0.15000000596046448
     },
     {
-      "address": "0x183ba3ce4",
+      "address": "0x183bbace4",
       "expected": 4.0
     },
     {
-      "address": "0x183ba3ca0",
+      "address": "0x183bbaca0",
       "expected": 0.3499999940395355
     },
     {
-      "address": "0x183ba3da8",
+      "address": "0x183bbadac",
       "expected": 0.4000000059604645
     },
     {
-      "address": "0x183ba3c70",
+      "address": "0x183bbac70",
       "expected": -1.0
     },
     {
-      "address": "0x183ba3dd0",
+      "address": "0x183bbadd4",
       "expected": 360.0
     },
     {
-      "address": "0x183ba3d0c",
+      "address": "0x183bbad0c",
       "expected": 90.0
     },
     {
-      "address": "0x183ba3cb0",
+      "address": "0x183bbacb0",
       "expected": 0.800000011920929
     },
     {
-      "address": "0x183ba3c08",
+      "address": "0x183bbac08",
       "expected": 0.10000000149011612
     },
     {
-      "address": "0x183ba3db4",
+      "address": "0x183bbadb4",
       "expected": 1.5499999523162842
     },
     {
-      "address": "0x183ba3dcc",
+      "address": "0x183bbadcc",
       "expected": 20.0
     },
     {
-      "address": "0x183ba3ce8",
+      "address": "0x183bbace8",
       "expected": 6.0
     },
     {
-      "address": "0x183ba3c80",
+      "address": "0x183bbac80",
       "expected": 0.009999999776482582
     },
     {
-      "address": "0x183ba3dc0",
+      "address": "0x183bbadc0",
       "expected": 1.600000023841858
     },
     {
-      "address": "0x183ba3cdc",
+      "address": "0x183bbacdc",
       "expected": 2.5
     },
     {
-      "address": "0x183ba3de0",
+      "address": "0x183bbade0",
       "expected": 1.0
     },
     {
-      "address": "0x183ba3df0",
+      "address": "0x183bbadf0",
       "expected": 0.0
     },
     {
-      "address": "0x183ba3c7c",
+      "address": "0x183bbac7c",
       "expected": 9.999999747378752e-06
     },
     {
-      "address": "0x183ba3c78",
+      "address": "0x183bbac78",
       "expected": 9.999999439624929e-11
     },
     {
-      "address": "0x183ba3c84",
+      "address": "0x183bbac84",
       "expected": 0.05000000074505806
     },
     {
-      "address": "0x183ba3cbc",
+      "address": "0x183bbacbc",
       "expected": 1.2000000476837158
     },
     {
-      "address": "0x183ba3db0",
+      "address": "0x183bbadb0",
       "expected": 1.25
     },
     {
-      "address": "0x183ba3d9c",
+      "address": "0x183bbad9c",
       "expected": 1.401298464324817e-45
     },
     {
-      "address": "0x183ba3dd4",
+      "address": "0x183bbadd8",
       "expected": 500.0
     },
     {
-      "address": "0x183ba3e14",
+      "address": "0x183bbae14",
       "expected": 0.6600000262260437
     },
     {
-      "address": "0x183ba3cc4",
+      "address": "0x183bbacc4",
       "expected": 1.5
     },
     {
-      "address": "0x183ba3cf0",
+      "address": "0x183bbacf0",
       "expected": 8.0
     },
     {
-      "address": "0x183ba3eb4",
+      "address": "0x183bbaeb4",
       "expected": 14.0
     },
     {
-      "address": "0x183ba3cf4",
+      "address": "0x183bbacf4",
       "expected": 10.0
     },
     {
-      "address": "0x183ba3ce0",
+      "address": "0x183bbace0",
       "expected": 3.5
     },
     {
-      "address": "0x183ba3c18",
+      "address": "0x183bbac18",
       "expected": 0.0
     },
     {
-      "address": "0x183ba4554",
+      "address": "0x183bbb618",
       "expected": 64.0
     },
     {
-      "address": "0x183ba3cac",
+      "address": "0x183bbacac",
       "expected": 0.75
     },
     {
-      "address": "0x183ba3d30",
+      "address": "0x183bbad30",
       "expected": -0.0
     },
     {
-      "address": "0x183ba3f94",
+      "address": "0x183bbaf10",
       "expected": 45.0
     },
     {
-      "address": "0x183ba3d04",
+      "address": "0x183bbad04",
       "expected": 30.0
     },
     {
-      "address": "0x183ba3c38",
+      "address": "0x183bbac38",
       "expected": 15.0
     },
     {
-      "address": "0x183ba4550",
+      "address": "0x183bbb614",
       "expected": 22.0
     },
     {
-      "address": "0x183ba3d10",
+      "address": "0x183bbad10",
       "expected": 100.0
     },
     {
-      "address": "0x183ba3cc0",
+      "address": "0x183bbacc0",
       "expected": 1.399999976158142
     },
     {
-      "address": "0x183ba3cc8",
+      "address": "0x183bbacc8",
       "expected": 1.7999999523162842
     },
     {
-      "address": "0x183ba4548",
+      "address": "0x183bbb5f0",
       "expected": 0.666670024394989
     },
     {
-      "address": "0x183ba3dc8",
+      "address": "0x183bbadc8",
       "expected": 7.0
     },
     {
-      "address": "0x183ba3ca4",
+      "address": "0x183bbaca4",
       "expected": 0.6000000238418579
     },
     {
-      "address": "0x183ba3ee0",
+      "address": "0x183bbaee0",
       "expected": -1.5707963705062866
     },
     {
-      "address": "0x183ba3c8c",
+      "address": "0x183bbac8c",
       "expected": 0.20000000298023224
     },
     {
-      "address": "0x183ba3e60",
+      "address": "0x183bbae6c",
       "expected": -0.20000000298023224
     },
     {
-      "address": "0x183ba3d28",
+      "address": "0x183bbad28",
       "expected": -90.0
     },
     {
-      "address": "0x183ba3c04",
+      "address": "0x183bbac04",
       "expected": 0.01745329238474369
     },
     {
-      "address": "0x183ba3e54",
+      "address": "0x183bbae5c",
       "expected": 50.0
     },
     {
-      "address": "0x183ba3ca8",
+      "address": "0x183bbaca8",
       "expected": 0.699999988079071
     },
     {
-      "address": "0x183ba40c0",
+      "address": "0x183bbb0c0",
       "expected": 0.949999988079071
     },
     {
-      "address": "0x183ba3e30",
+      "address": "0x183bbae38",
       "expected": 0.8500000238418579
     },
     {
-      "address": "0x183ba3fc8",
+      "address": "0x183bbafbc",
       "expected": 13.0
     },
     {
-      "address": "0x183ba3f34",
+      "address": "0x183bbaf44",
       "expected": 0.6499999761581421
     },
     {
-      "address": "0x183ba3c24",
+      "address": "0x183bbac24",
       "expected": 5.0
     },
     {
-      "address": "0x183ba3ec0",
+      "address": "0x183bbaec0",
       "expected": 40.0
     },
     {
-      "address": "0x183ba3e44",
+      "address": "0x183bbae4c",
       "expected": 4.5
     },
     {
-      "address": "0x183ba4168",
+      "address": "0x183bbb1f0",
       "expected": 0.07500000298023224
     },
     {
-      "address": "0x183ba3ee8",
+      "address": "0x183bbaee8",
       "expected": -5.0
     },
     {
-      "address": "0x183ba3edc",
+      "address": "0x183bbaedc",
       "expected": -0.5
     },
     {
-      "address": "0x183ba3f3c",
+      "address": "0x183bbaf4c",
       "expected": 1.75
     },
     {
-      "address": "0x183ba4314",
+      "address": "0x183bbb3b0",
       "expected": 999999.0
     },
     {
-      "address": "0x183ba3d00",
+      "address": "0x183bbad00",
       "expected": 16.0
     },
     {
-      "address": "0x183ba3cb8",
+      "address": "0x183bbacb8",
       "expected": 1.100000023841858
     },
     {
-      "address": "0x183ba3c20",
+      "address": "0x183bbac20",
       "expected": 3.0
     },
     {
-      "address": "0x183ba3c98",
+      "address": "0x183bbac98",
       "expected": 0.30000001192092896
     },
     {
-      "address": "0x183ba3f4c",
+      "address": "0x183bbaf5c",
       "expected": 18.0
     },
     {
-      "address": "0x183ba3f58",
+      "address": "0x183bbaf68",
       "expected": 999.0
     },
     {
-      "address": "0x183ba3ebc",
+      "address": "0x183bbaebc",
       "expected": 25.0
     },
     {
-      "address": "0x183ba3f48",
+      "address": "0x183bbaf58",
       "expected": 12.0
     },
     {
-      "address": "0x183ba4578",
+      "address": "0x183bbb61c",
       "expected": -2000.0
     },
     {
-      "address": "0x183ba3f24",
+      "address": "0x183bbaf34",
       "expected": 0.125
     },
     {
-      "address": "0x183ba3cb4",
+      "address": "0x183bbacb4",
       "expected": 0.8999999761581421
     },
     {
-      "address": "0x183ba3e10",
+      "address": "0x183bbae10",
       "expected": 0.33000001311302185
     },
     {
-      "address": "0x183ba41b4",
+      "address": "0x183bbb138",
       "expected": 0.07999999821186066
     },
     {
-      "address": "0x183ba3fb8",
+      "address": "0x183bbafac",
       "expected": 2.5999999046325684
     },
     {
-      "address": "0x183ba41ec",
+      "address": "0x183bbb390",
       "expected": 2.1500000953674316
     },
     {
-      "address": "0x183ba41c4",
+      "address": "0x183bbb37c",
       "expected": 1.0299999713897705
     },
     {
-      "address": "0x183ba41b8",
+      "address": "0x183bbb370",
       "expected": 0.8399999737739563
     },
     {
-      "address": "0x183ba40f0",
+      "address": "0x183bbb0ec",
       "expected": 1.0499999523162842
     },
     {
-      "address": "0x183ba41bc",
+      "address": "0x183bbb374",
       "expected": 0.9599999785423279
     },
     {
-      "address": "0x183ba41cc",
+      "address": "0x183bbb384",
       "expected": 1.090000033378601
     },
     {
-      "address": "0x183ba41c8",
+      "address": "0x183bbb380",
       "expected": 1.0399999618530273
     },
     {
-      "address": "0x183ba41c0",
+      "address": "0x183bbb378",
       "expected": 0.9700000286102295
     },
     {
-      "address": "0x183ba41e8",
+      "address": "0x183bbb38c",
       "expected": 1.8450000286102295
     },
     {
-      "address": "0x183ba41d0",
-      "expected": 1.1024999618530273
+      "address": "0x183bbb388",
+      "expected": 1.1299999952316284,
+      "priorBuildExpected": 1.1024999618530273
     },
     {
-      "address": "0x183ba41d4",
+      "address": "0x183bbb028",
       "expected": 1.3200000524520874
     },
     {
-      "address": "0x183ba3ea8",
+      "address": "0x183bbaea4",
       "expected": 1.0666600465774536
     },
     {
-      "address": "0x183ba3e94",
+      "address": "0x183bbada4",
       "expected": 0.019999999552965164
     },
     {
-      "address": "0x183ba3d14",
+      "address": "0x183bbad14",
       "expected": 180.0
     },
     {
-      "address": "0x183ba3e90",
+      "address": "0x183bbae90",
       "expected": 1.0000000031710769e-30
     },
     {
-      "address": "0x183ba3c3c",
+      "address": "0x183bbac3c",
       "expected": 57.295780181884766
     },
     {
-      "address": "0x183ba3ecc",
+      "address": "0x183bbaecc",
       "expected": 1500.0
     },
     {
-      "address": "0x183ba3e9c",
+      "address": "0x183bbae98",
       "expected": 0.4620000123977661
     },
     {
-      "address": "0x183ba3ec4",
+      "address": "0x183bbaec4",
       "expected": 69.0
     },
     {
-      "address": "0x183ba3ea0",
+      "address": "0x183bbae9c",
       "expected": 0.6060000061988831
     },
     {
-      "address": "0x183ba3ec8",
+      "address": "0x183bbaec8",
       "expected": 480.0
     },
     {
-      "address": "0x183ba3e98",
+      "address": "0x183bbae94",
       "expected": 0.05999999865889549
     },
     {
-      "address": "0x183ba3c94",
+      "address": "0x183bbac94",
       "expected": 0.25
     },
     {
-      "address": "0x183ba3ea4",
+      "address": "0x183bbaea0",
       "expected": 0.9999989867210388
     },
     {
-      "address": "0x183ba3eb8",
+      "address": "0x183bbaeb8",
       "expected": 17.5
     },
     {
-      "address": "0x183ba3ee4",
+      "address": "0x183bbaee4",
       "expected": -3.0
     },
     {
-      "address": "0x183ba3ed4",
+      "address": "0x183bbaed4",
       "expected": -0.10000000149011612
     },
     {
-      "address": "0x183ba3ed8",
+      "address": "0x183bbaed8",
       "expected": -0.13962633907794952
     },
     {
-      "address": "0x183ba3eb0",
+      "address": "0x183bbaeac",
       "expected": 3.1415927410125732
     },
     {
-      "address": "0x183ba3eac",
+      "address": "0x183bbaea8",
       "expected": 1.5707963705062866
     },
     {
-      "address": "0x183ba3ef0",
+      "address": "0x183bbaef0",
       "expected": 1.5
     },
     {
-      "address": "0x183ba3f00",
+      "address": "0x183bbaf00",
       "expected": 0.18000000715255737
     },
     {
-      "address": "0x183ba3f9c",
+      "address": "0x183bbaf14",
       "expected": 135.0
     },
     {
-      "address": "0x183ba3fa4",
+      "address": "0x183bbaf18",
       "expected": -25.0
     },
     {
-      "address": "0x183ba3f80",
+      "address": "0x183bbaf08",
       "expected": 0.014999999664723873
     },
     {
-      "address": "0x183ba3f18",
+      "address": "0x183bbaf0c",
       "expected": 0.029999999329447746
     },
     {
-      "address": "0x183ba3fa0",
+      "address": "0x183bbafa0",
       "expected": -12.0
     },
     {
-      "address": "0x183ba3f04",
+      "address": "0x183bbaf04",
       "expected": 1.2999999523162842
     },
     {
-      "address": "0x183ba3f54",
+      "address": "0x183bbaf64",
       "expected": 600.0
     },
     {
-      "address": "0x183ba3bfc",
+      "address": "0x183bbabfc",
       "expected": 9.999999747378752e-05
     },
     {
-      "address": "0x183ba3f1c",
+      "address": "0x183bbaf2c",
       "expected": 0.032999999821186066
     },
     {
-      "address": "0x183ba3f50",
+      "address": "0x183bbaf60",
       "expected": 24.0
     },
     {
-      "address": "0x183ba3f28",
+      "address": "0x183bbaf38",
       "expected": 0.3330000042915344
     },
     {
-      "address": "0x183ba3f2c",
+      "address": "0x183bbaf3c",
       "expected": 0.33329999446868896
     },
     {
-      "address": "0x183ba3f44",
+      "address": "0x183bbaf54",
       "expected": 9.5
     },
     {
-      "address": "0x183ba3f20",
+      "address": "0x183bbaf30",
       "expected": 0.0625
     },
     {
-      "address": "0x183ba3f5c",
+      "address": "0x183bbaf6c",
       "expected": -0.07843136787414551
     },
     {
-      "address": "0x183ba3f10",
+      "address": "0x183bbaf24",
       "expected": 0.01568627543747425
     },
     {
-      "address": "0x183ba3f70",
+      "address": "0x183bbaf80",
       "expected": 0.0
     },
     {
-      "address": "0x183ba3e00",
+      "address": "0x183bbae00",
       "expected": 1.0
     },
     {
-      "address": "0x183ba3f30",
+      "address": "0x183bbaf40",
       "expected": 0.44999998807907104
     },
     {
-      "address": "0x183ba3cd8",
+      "address": "0x183bbacd8",
       "expected": 2.0
     },
     {
-      "address": "0x183ba3f40",
+      "address": "0x183bbaf50",
       "expected": 1.899999976158142
     },
     {
-      "address": "0x183ba3f14",
+      "address": "0x183bbaf28",
       "expected": 0.02666660025715828
     },
     {
-      "address": "0x183ba3f0c",
+      "address": "0x183bbaf20",
       "expected": 0.01333330012857914
     },
     {
-      "address": "0x183ba3f38",
+      "address": "0x183bbaf48",
       "expected": 1.149999976158142
     },
     {
-      "address": "0x183ba3f08",
+      "address": "0x183bbaf1c",
       "expected": 9.999999974752427e-07
     },
     {
-      "address": "0x183ba3f60",
+      "address": "0x183bbaf70",
       "expected": 1.0
     },
     {
-      "address": "0x183ba3f90",
+      "address": "0x183bbb598",
       "expected": 35.0
     },
     {
-      "address": "0x183ba3f98",
+      "address": "0x183bbadd0",
       "expected": 70.0
     },
     {
-      "address": "0x183ba3f88",
+      "address": "0x183bbb604",
       "expected": 1.4500000476837158
     },
     {
-      "address": "0x183ba3f8c",
+      "address": "0x183bbb610",
       "expected": 1.9500000476837158
     },
     {
-      "address": "0x183ba3fa8",
+      "address": "0x183bbaf94",
       "expected": 0.4440000057220459
     },
     {
-      "address": "0x183ba3fac",
+      "address": "0x183bbaf98",
       "expected": 0.6660000085830688
     },
     {
-      "address": "0x183ba3fd8",
+      "address": "0x183bbaf9c",
       "expected": 18.84955596923828
     },
     {
-      "address": "0x183ba40a8",
+      "address": "0x183bbb0a8",
       "expected": -80.0
     },
     {
-      "address": "0x183ba409c",
+      "address": "0x183bbb09c",
       "expected": 1.590000033378601
     },
     {
-      "address": "0x183ba40b8",
+      "address": "0x183bbb0b8",
       "expected": -2.299999952316284
     },
     {
-      "address": "0x183ba3e64",
+      "address": "0x183bbae70",
       "expected": -3.5
     },
     {
-      "address": "0x183ba40bc",
+      "address": "0x183bbb0bc",
       "expected": -180.0
     },
     {
-      "address": "0x183ba4208",
+      "address": "0x183bbb27c",
       "expected": 0.6666666865348816
     },
     {
-      "address": "0x183ba3f84",
+      "address": "0x183bbaf90",
       "expected": 0.03999999910593033
     },
     {
-      "address": "0x183ba404c",
+      "address": "0x183bbb04c",
       "expected": 9.0
     },
     {
-      "address": "0x183ba402c",
+      "address": "0x183bbb050",
       "expected": 11.0
     },
     {
-      "address": "0x183ba4048",
+      "address": "0x183bbb048",
       "expected": 3.299999952316284
     },
     {
-      "address": "0x183ba4054",
+      "address": "0x183bbb058",
       "expected": -10.0
     },
     {
-      "address": "0x183ba4044",
+      "address": "0x183bbb044",
       "expected": 0.1899999976158142
     }
   ],
@@ -863,7 +864,7 @@
     },
     "weaponSource": "Curated base values in cards come from analysis/weapon-damage/weapon-prefabs.json; fired arrows use arrowPrefab, not the throwable bow projectile."
   },
-  "hotfixAudit": {
+  "previousBuildAudit": {
     "steamBuildId": "26369255",
     "numericConstantsUnchanged": 157,
     "playerFieldsUnchanged": 6,
@@ -871,5 +872,22 @@
     "weaponStatBlocksUnchanged": 235,
     "descriptionsUnchanged": 206,
     "nativeReview": "Numeric source methods retain their mechanics. GameLevel.OnAllPlayersSpawned now checks an empty ally list before selecting the Infatuated camera target. Enemy.OnCollisionStay has a recovered tail, outside the card formulas. Address-normalized ISIL comparison is bounded static evidence, not a gameplay test."
+  },
+  "hotfixAudit": {
+    "gameVersion": "1.0.3",
+    "steamBuildId": "26775394",
+    "generatedBindingsRefreshed": true,
+    "nativeLiteralAddressesRefreshed": 157,
+    "changedNativeLiterals": [
+      {
+        "oldAddress": "0x183ba41d0",
+        "newAddress": "0x183bbb388",
+        "oldValue": 1.1024999618530273,
+        "newValue": 1.1299999952316284
+      }
+    ],
+    "catalogCarriedForward": true,
+    "gameLaunched": false,
+    "gameplayTested": false
   }
 }

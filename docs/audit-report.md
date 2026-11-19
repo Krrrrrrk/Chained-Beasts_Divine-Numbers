@@ -1,5 +1,11 @@
 # Expanded effect audit
 
+## Game 1.0.3 compatibility refresh (0.2.6)
+
+The existing 206-card catalog is carried forward. Game/data fingerprints, generated bindings, native literal addresses and dump hashes now target Steam build 26775394. This update did not launch the game or repeat a full mechanics audit.
+
+## Previous research
+
 Hotfix refresh for **0.2.5 / Steam build 26369255**: the 157 recorded native constants, six player settings, 14 vision-effect components, 235 weapon stat blocks and all 206 descriptions still match. The embedded fingerprints, dump hashes and literal addresses now point to this build. The first-pass files remain the original research snapshot. This is static inspection; the hotfix still needs an in-game retest.
 
 ## Original expanded catalog (0.2.0)

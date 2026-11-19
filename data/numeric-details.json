@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "version": "0.2.5",
-  "steamBuildId": "26369255",
+  "version": "0.2.6",
+  "steamBuildId": "26775394",
   "language": "en",
   "entries": [
     {
@@ -2303,7 +2303,7 @@
         "Other stun modifiers still apply."
       ],
       "evidence": [
-        "NetworkAgent.OnBlock:587-601 (native literal at 0x183ba3cd8)"
+        "NetworkAgent.OnBlock:587-601 (native literal at 0x183bbacd8)"
       ]
     },
     {
